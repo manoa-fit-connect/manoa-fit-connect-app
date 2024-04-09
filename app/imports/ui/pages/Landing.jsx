@@ -21,7 +21,7 @@ const Landing = () => {
       <Container className="align-items-center-center" id="middle">
         <Row>
           <Col>
-            <Link to="/List" style={linkStyles}>
+            <Link to="/Friends" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <PeopleFill size={125} />
               </div>
@@ -30,7 +30,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/equipment" style={linkStyles}>
+            <Link to="/Equipment" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <Image width={125} className="pt-3 pb-3" src="\images\dumbbell_logo.png" />
               </div>
@@ -39,7 +39,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/profile" style={linkStyles}>
+            <Link to="/Profile" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <PersonFill size={125} />
               </div>
@@ -50,7 +50,7 @@ const Landing = () => {
         </Row>
         <Row className="pt-5">
           <Col>
-            <Link to="/progress" style={linkStyles}>
+            <Link to="/Progress" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <GraphUp size={125} />
               </div>
@@ -59,7 +59,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/favorite" style={linkStyles}>
+            <Link to="/Favorite" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <Image width={125} src="\images\heart.png" />
               </div>
@@ -68,7 +68,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/events" style={linkStyles}>
+            <Link to="/Events" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <CalendarEventFill size={125} />
               </div>
