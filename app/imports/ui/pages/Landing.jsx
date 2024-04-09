@@ -1,21 +1,137 @@
 import React from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
+import { CalendarEventFill, GraphUp, PeopleFill, PersonFill } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 
 /* A simple static component to render some text for the landing page. */
-const Landing = () => (
-  <Container id="landing-page" fluid className="py-3">
-    <Row className="align-middle text-center">
-      <Col xs={4}>
-        <Image roundedCircle src="/images/meteor-logo.png" width="150px" />
-      </Col>
+const Landing = () => {
+  const { currentUser } = useTracker(() => ({
+    currentUser: Meteor.user() ? Meteor.user().username : '',
+  }), []);
+  const linkStyles = {
+    textDecoration: 'none',
+    color: 'inherit',
+    cursor: 'pointer',
+  };
 
-      <Col xs={8} className="d-flex flex-column justify-content-center">
-        <h1>Welcome to this template</h1>
-        <p>Now get to work and modify this app!</p>
-      </Col>
+  if (currentUser) {
+    return (
+      <Container className="align-items-center-center" id="middle">
+        <Row>
+          <Col>
+            <Link to="/List" style={linkStyles}>
+              <div className="d-flex justify-content-center">
+                <PeopleFill size={125} />
+              </div>
+              <h1 className="text-md-center">Your friends</h1>
+              <h5 className="text-md-center">See who is online and working out and match people with similar interests</h5>
+            </Link>
+          </Col>
+          <Col>
+            <Link to="/equipment" style={linkStyles}>
+              <div className="d-flex justify-content-center">
+                <Image width={125} className="pt-3 pb-3" src="\images\dumbbell_logo.png" />
+              </div>
+              <h1 className="text-md-center">Equipment</h1>
+              <h5 className="text-md-center">See what equipment is available in the gym</h5>
+            </Link>
+          </Col>
+          <Col>
+            <Link to="/profile" style={linkStyles}>
+              <div className="d-flex justify-content-center">
+                <PersonFill size={125} />
+              </div>
+              <h1 className="text-md-center">Profile</h1>
+              <h5 className="text-md-center">Edit and see your profile</h5>
+            </Link>
+          </Col>
+        </Row>
+        <Row className="pt-5">
+          <Col>
+            <Link to="/progress" style={linkStyles}>
+              <div className="d-flex justify-content-center">
+                <GraphUp size={125} />
+              </div>
+              <h1 className="text-md-center">Progress Tracker</h1>
+              <h5 className="text-md-center">Track personal best and how your work outs have been going</h5>
+            </Link>
+          </Col>
+          <Col>
+            <Link to="/favorite" style={linkStyles}>
+              <div className="d-flex justify-content-center">
+                <Image width={125} src="\images\heart.png" />
+              </div>
+              <h1 className="text-md-center">Favorite Workout</h1>
+              <h5 className="text-md-center">Track and update what your favorite workout is</h5>
+            </Link>
+          </Col>
+          <Col>
+            <Link to="/events" style={linkStyles}>
+              <div className="d-flex justify-content-center">
+                <CalendarEventFill size={125} />
+              </div>
+              <h1 className="text-md-center">Events</h1>
+              <h5 className="text-md-center">See what events are happening</h5>
+            </Link>
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
 
-    </Row>
-  </Container>
-);
+  return (
+    <Container className="align-items-center-center" id="middle">
+      <Row>
+        <Col>
+          <div className="d-flex justify-content-center">
+            <PeopleFill size={125} />
+          </div>
+          <h1 className="text-md-center"> Your friends</h1>
+          <h5 className="text-md-center">See who is online and working out</h5>
+        </Col>
+        <Col>
+          <div className="d-flex justify-content-center">
+            <Image width={125} className="pt-3 pb-3" src="/images/dumbbell_logo.png" />
+          </div>
+          <h1 className="text-md-center">Equipment</h1>
+          <h5 className="text-md-center">See what equipment is available in the gym</h5>
+        </Col>
+        <Col>
+          <div className="d-flex justify-content-center">
+            <PersonFill size={125} />
+          </div>
+          <h1 className="text-md-center">Profile</h1>
+          <h5 className="text-md-center">Edit and see your profile</h5>
+        </Col>
+      </Row>
+      <Row className="pt-5">
+        <Col>
+          <div className="d-flex justify-content-center">
+            <GraphUp size={125} />
+          </div>
+          <h1 className="text-md-center">Progress Tracker</h1>
+          <h5 className="text-md-center">Track personal best and how your work outs have been going</h5>
+        </Col>
+        <Col>
+          <div className="d-flex justify-content-center">
+            <Image width={125} className="pt-3" src="\images\heart.png" />
+          </div>
+          <h1 className="text-md-center">Favorite Workout</h1>
+          <h5 className="text-md-center">Track and update your favorite workouts</h5>
+        </Col>
+        <Col>
+          <div className="d-flex justify-content-center">
+            <CalendarEventFill size={125} />
+          </div>
+          <h1 className="text-md-center">Events</h1>
+          <h5 className="text-md-center">See what events are happening</h5>
+        </Col>
+      </Row>
+    </Container>
+  );
+
+};
 
 export default Landing;
