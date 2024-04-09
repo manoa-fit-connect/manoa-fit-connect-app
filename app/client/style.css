@@ -53,3 +53,12 @@ body .navbar {
 .navbar a.nav-link.active {
   color: var(--matr-navbar-text-color);
 }
+
+.pfp {
+    height: auto;
+    width: 200px;
+}
+
+.pfpText {
+    color: white;
+}
