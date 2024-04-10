@@ -9,5 +9,26 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultProfiles": [
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "age": 20,
+      "gender": "male",
+      "position": "undergraduate",
+      "level": "intermediate",
+      "roles": [ "partner", "spotter" ],
+      "goals": [ "strength training", "cardio", "weight loss"],
+      "styles": [ "powerlifting", "plyometrics", "running"],
+      "sports": [ "basketball", "soccer" ],
+      "hobbies": [ "video games", "hiking"],
+      "major": "computer science",
+      "image": "https://raw.githubusercontent.com/manoa-fit-connect/manoa-fit-connect.github.io/main/images/placeholder.png",
+      "availability": "",
+      "description": "",
+      "owner": "john@foo.com"
+    }
   ]
 }
