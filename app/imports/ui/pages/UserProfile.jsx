@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row, Table } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Profiles } from '../../api/profile/Profiles';
-import StuffItem from '../components/StuffItem';
+import Profile from '../components/Profile';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -40,7 +40,7 @@ const UserProfile = () => {
               </tr>
             </thead>
             <tbody>
-              {stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
+              {profiles.map((profile) => <Profile key={profile._id} profile={profile} />)}
             </tbody>
           </Table>
         </Col>
