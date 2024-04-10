@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 const PersonalRecords = ({ PRS }) => (
   <tr>
-    <td>{PRS.lift}</td>
+    <td>{PRS.exercise}</td>
     <td>{PRS.weight}</td>
-    <td>{PRS.reps}</td>
+    <td>{PRS.repsOrDist}</td>
     <td>{PRS.date}</td>
     <td>
       <Link to={`/edit/${PRS._id}`}>Edit</Link>
@@ -19,9 +19,9 @@ const PersonalRecords = ({ PRS }) => (
 // Require a document to be passed to this component.
 PersonalRecords.propTypes = {
   PRS: PropTypes.shape({
-    lift: PropTypes.string,
+    exercise: PropTypes.string,
     weight: PropTypes.number,
-    reps: PropTypes.number,
+    repsOrDist: PropTypes.string,
     date: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,

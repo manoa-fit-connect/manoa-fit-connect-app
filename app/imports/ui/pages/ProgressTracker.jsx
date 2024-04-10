@@ -10,25 +10,25 @@ import Workouts from '../components/Workouts';
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 
 const PRS = [{
-  lift: 'Bench', reps: '4', date: '3/25/2024', weight: '220',
+  exercise: 'Bench', repsOrDist: '4 reps', date: '3/25/2024', weight: '220',
 },
 {
-  lift: 'Squat', reps: '3', date: '4/6/2024', weight: '395',
+  exercise: 'Squat', repsOrDist: '3 reps', date: '4/6/2024', weight: '395',
 },
 {
-  lift: 'Deadlift', reps: '4', date: '3/25/2024', weight: '455',
+  exercise: 'Deadlift', repsOrDist: '4 reps', date: '3/25/2024', weight: '455',
 
 },
 ];
 
 const workouts = [{
-  name: 'Bench Day', rating: '3', date: '4/8/2024', difficulty: '4',
+  name: 'Bench Day', rating: '3', date: '4/8/2024', difficulty: '4', highlight: 'Hit 215 for 3 today on bench',
 },
 {
-  name: 'Squat Day', rating: '5', date: '4/6/2024', difficulty: '5',
+  name: 'Squat Day', rating: '5', date: '4/6/2024', difficulty: '5', highlight: 'Hit a new pr to on squat 395 for 3',
 },
 {
-  name: 'Deadlift Day', rating: '4', date: '4/2/2024', difficulty: '4',
+  name: 'Deadlift Day', rating: '4', date: '4/2/2024', difficulty: '4', highlight: 'Feeling more confident on deadlift hitting 435 for 4',
 
 },
 ];
@@ -66,7 +66,7 @@ const ProgressTracker = () => {
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>Lift</th>
+                <th>Lift/Exercise</th>
                 <th>Weight</th>
                 <th>Reps/Distance</th>
                 <th>Date</th>

@@ -9,21 +9,29 @@ const Workouts = ({ workout }) => (
   <Card>
     <Card.Title>
       <Row className="justify-content-center">
-        <Col className="text-center">
+        <Col className="text-center pt-2">
           {workout.name}
         </Col>
       </Row>
     </Card.Title>
     <Card.Body>
-      <Row>
-        {workout.date}
+      <Row className="pb-3">
+        <Col>
+          {workout.date}
+        </Col>
+        <Col>
+          Rating: {workout.rating}
+        </Col>
+        <Col>
+          Difficulty: {workout.difficulty}
+        </Col>
       </Row>
-      <Row>
-        Rating: {workout.rating}
+      <Row className="justify-content-center">
+        <Col className="text-center">
+          <h5>Highlight of the workout</h5>
+        </Col>
       </Row>
-      <Row>
-        Difficulty: {workout.difficulty}
-      </Row>
+      {workout.highlight}
       <Row>
         <Link to={`/edit/${workout._id}`}>Edit</Link>
       </Row>
@@ -38,6 +46,7 @@ Workouts.propTypes = {
     rating: PropTypes.number,
     difficulty: PropTypes.number,
     date: PropTypes.string,
+    highlight: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
 };
