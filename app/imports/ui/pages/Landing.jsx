@@ -39,7 +39,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/profile" style={linkStyles}>
+            <Link to="/userprofile" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <PersonFill size={125} />
               </div>
