@@ -54,3 +54,20 @@ body .navbar {
 .navbar a.nav-link.active {
   color: var(--matr-navbar-highlight-text);
 }
+
+.custom-submit-field input {
+  width: 100% !important;
+}
+
+.no-underline {
+  text-decoration: none !important;
+}
+
+.pfp {
+    height: auto;
+    width: 200px;
+}
+
+.pfpText {
+    color: white;
+}
