@@ -6,6 +6,7 @@
   --matr-navbar-bg: darkgreen;
   --matr-navbar-bg-rgb: 1, 50, 32;
   --matr-navbar-text-color: white;
+  --matr-navbar-highlight-text: #959595;
 }
 
 /* Change bootstrap variable values.
@@ -51,7 +52,7 @@ body .navbar {
 }
 
 .navbar a.nav-link.active {
-  color: var(--matr-navbar-text-color);
+  color: var(--matr-navbar-highlight-text);
 }
 
 .custom-submit-field input {

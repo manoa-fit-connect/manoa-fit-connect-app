@@ -39,12 +39,12 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/Profile" style={linkStyles}>
+            <Link to="/userprofile" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <PersonFill size={125} />
               </div>
               <h1 className="text-md-center">Profile</h1>
-              <h5 className="text-md-center">Edit and see your profile</h5>
+              <h5 className="text-md-center">View or edit your profile</h5>
             </Link>
           </Col>
         </Row>
@@ -88,7 +88,7 @@ const Landing = () => {
           <div className="d-flex justify-content-center">
             <PeopleFill size={125} />
           </div>
-          <h1 className="text-md-center"> Your friends</h1>
+          <h1 className="text-md-center">Your friends</h1>
           <h5 className="text-md-center">See who is online and working out</h5>
         </Col>
         <Col>
@@ -103,7 +103,7 @@ const Landing = () => {
             <PersonFill size={125} />
           </div>
           <h1 className="text-md-center">Profile</h1>
-          <h5 className="text-md-center">Edit and see your profile</h5>
+          <h5 className="text-md-center">View or edit your profile</h5>
         </Col>
       </Row>
       <Row className="pt-5">
