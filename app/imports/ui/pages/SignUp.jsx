@@ -48,19 +48,25 @@ const SignUp = ({ location }) => {
           </Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)}>
             <Card>
-              <Card.Body>
-                <TextField name="email" placeholder="E-mail address" />
-                <TextField name="password" placeholder="Password" type="password" />
+              <Card.Title>
+                <Col className="text-center mt-4">
+                  <h2>Register</h2>
+                </Col>
+              </Card.Title>
+              <Card.Body className="w-100">
+                <TextField id="signup-form-email" name="email" placeholder="E-mail address" />
+                <TextField id="signup-form-password" name="password" placeholder="Password" type="password" />
                 <ErrorsField />
-                <SubmitField />
+                <Col className="text-center col-12">
+                  <SubmitField id="signin-form-submit" className="w-100 custom-submit-field" />
+                </Col>
+                <div className="text-center mt-4">
+                  <h5>Already have an account?</h5>
+                  <Link to="/signin" className="w-100 mt-2 no-underline">Login Now</Link>
+                </div>
               </Card.Body>
             </Card>
           </AutoForm>
-          <Alert variant="light">
-            Already have an account? Login
-            {' '}
-            <Link to="/signin">here</Link>
-          </Alert>
           {error === '' ? (
             ''
           ) : (
