@@ -1,17 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Card, Image } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const Profile = ({ profile }) => (
-  <tr>
-    <td>{profile.firstName}</td>
-    <td>{profile.level}</td>
-    <td>{profile.styles}</td>
-    <td>
-      <Link to={`/edit/${profile._id}`}>Edit</Link>
-    </td>
-  </tr>
+  <Card className="h-100">
+    <Card.Header>
+      <Image width={75} src={profile.image} />
+      <Card.Title>{profile.firstName} {profile.lastName}</Card.Title>
+      <Card.Subtitle>{profile.level}, {profile.styles}</Card.Subtitle>
+    </Card.Header>
+    <Card.Body>
+      <Card.Text>{profile.availability}</Card.Text>
+      <Card.Text>{profile.description}</Card.Text>
+      <Link to={`/editprofile/${profile._id}`}>Edit</Link>
+    </Card.Body>
+  </Card>
 );
 
 // Require a document to be passed to this component.

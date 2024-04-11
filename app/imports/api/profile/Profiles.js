@@ -17,27 +17,27 @@ class ProfilesCollection {
       age: String,
       gender: {
         type: String,
-        allowedValues: ['Female', 'Male', 'Transgender', 'Non-binary', 'Other', 'None', 'Prefer not to say'],
+        // allowedValues: ['Female', 'Male', 'Transgender', 'Non-binary', 'Other', 'None', 'Prefer not to say'],
       },
       position: {
         type: String,
-        allowedValues: ['Undergraduate', 'Postgraduate', 'Faculty/Staff'],
+        // allowedValues: ['Undergraduate', 'Postgraduate', 'Faculty/Staff'],
       },
       level: {
         type: String,
-        allowedValues: ['Beginner', 'Intermediate', 'Advanced'],
+        // allowedValues: ['Beginner', 'Intermediate', 'Advanced'],
       },
       roles: {
         type: String,
-        allowedValues: ['Partner', 'Spotter', 'Mentor', 'Mentee', 'Motivator (will hype you up)', 'Motivatee (would like to be hyped up)'],
+        // allowedValues: ['Partner', 'Spotter', 'Mentor', 'Mentee', 'Motivator (will hype you up)', 'Motivatee (would like to be hyped up)'],
       },
       goals: {
         type: String,
-        allowedValues: ['strength', 'cardio', 'weight loss', 'exercise', 'explosiveness', 'agility', 'speed', 'endurance', 'wellness', 'flexibility'],
+        // allowedValues: ['strength', 'cardio', 'weight loss', 'exercise', 'explosiveness', 'agility', 'speed', 'endurance', 'wellness', 'flexibility'],
       },
       styles: {
         type: String,
-        allowedValues: ['weightlifting', 'olympic weightlifting', 'powerlifting', 'bodybuilding', 'calisthenics', 'plyometrics', 'circuit training', 'high-intensity interval training', 'yoga'],
+        // allowedValues: ['weightlifting', 'olympic weightlifting', 'powerlifting', 'bodybuilding', 'calisthenics', 'plyometrics', 'circuit training', 'high-intensity interval training', 'yoga'],
       },
       sports: String,
       hobbies: String,
