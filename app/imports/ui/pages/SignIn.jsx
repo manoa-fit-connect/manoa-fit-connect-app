@@ -44,29 +44,40 @@ const SignIn = () => {
     <Container id="signin-page" className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center">
-            <h2>Login to your account</h2>
-          </Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)}>
             <Card>
-              <Card.Body>
+              <Card.Title>
+                <Col className="text-center mt-4">
+                  <h2>Login</h2>
+                </Col>
+              </Card.Title>
+              <Card.Body className="w-100">
                 <TextField id="signin-form-email" name="email" placeholder="E-mail address" />
                 <TextField id="signin-form-password" name="password" placeholder="Password" type="password" />
                 <ErrorsField />
-                <SubmitField id="signin-form-submit" />
+                <Col className="text-center col-12">
+                  <SubmitField id="signin-form-submit" className="w-100 custom-submit-field" />
+                </Col>
+                <div className="text-center mt-4">
+                  <h5>Don&apos;t have an account?</h5>
+                  <Link to="/signup" className="w-100 mt-2 no-underline">Register Now</Link>
+                </div>
               </Card.Body>
             </Card>
           </AutoForm>
-          <Alert variant="light">
-            <Link to="/signup">Click here to Register</Link>
-          </Alert>
           {error === '' ? (
             ''
           ) : (
-            <Alert variant="danger">
-              <Alert.Heading>Login was not successful</Alert.Heading>
-              {error}
-            </Alert>
+            <Col className="text-center mt-1">
+              <Alert variant="danger">
+                <Col className="text-center mt-1">
+                  <Alert.Heading>Login was not successful!</Alert.Heading>
+                </Col>
+                <Col className="text-center mt-4">
+                  {error}!
+                </Col>
+              </Alert>
+            </Col>
           )}
         </Col>
       </Row>

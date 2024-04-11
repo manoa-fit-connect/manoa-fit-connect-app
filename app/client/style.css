@@ -53,3 +53,11 @@ body .navbar {
 .navbar a.nav-link.active {
   color: var(--matr-navbar-text-color);
 }
+
+.custom-submit-field input {
+  width: 100% !important;
+}
+
+.no-underline {
+  text-decoration: none !important;
+}
