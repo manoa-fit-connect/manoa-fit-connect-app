@@ -61,3 +61,12 @@ body .navbar {
 .no-underline {
   text-decoration: none !important;
 }
+
+.pfp {
+    height: auto;
+    width: 200px;
+}
+
+.pfpText {
+    color: white;
+}
