@@ -59,7 +59,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/Favorite" style={linkStyles}>
+            <Link to="/favorite" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <Image width={125} src="\images\heart.png" />
               </div>

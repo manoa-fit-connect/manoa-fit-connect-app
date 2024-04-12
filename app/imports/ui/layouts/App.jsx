@@ -20,7 +20,11 @@ import ProfileUser from '../pages/ProfileUser';
 import ProfileCreate from '../pages/ProfileCreate';
 import ProfileEdit from '../pages/ProfileEdit';
 import ProgressTracker from '../pages/ProgressTracker';
+import Friends from '../pages/Friends';
 import EquipmentItem from '../pages/EquipmentItem';
+import FavoriteWorkout from '../pages/FavoriteWorkout';
+import Event from '../pages/Event';
+import AboutUs from '../pages/AboutUs';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -43,11 +47,15 @@ const App = () => {
           <Route path="/userprofile" element={<ProtectedRoute><ProfileUser /></ProtectedRoute>} />
           <Route path="/createprofile" element={<ProtectedRoute><ProfileCreate /></ProtectedRoute>} />
           <Route path="/editprofile" element={<ProtectedRoute><ProfileEdit /></ProtectedRoute>} />
+          <Route path="/friends" element={<ProtectedRoute><Friends /></ProtectedRoute>} />
           <Route path="/Progress" element={<ProtectedRoute><ProgressTracker /></ProtectedRoute>} />
           <Route path="/equipment" element={<ProtectedRoute><EquipmentItem /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
+          <Route path="/Events" element={<ProtectedRoute><Event /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
+          <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
+          <Route path="/favorite" element={<ProtectedRoute><FavoriteWorkout /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
