@@ -21,7 +21,7 @@ import ProfileCreate from '../pages/ProfileCreate';
 import ProfileEdit from '../pages/ProfileEdit';
 import ProgressTracker from '../pages/ProgressTracker';
 import Friends from '../pages/Friends';
-
+import EquipmentItem from '../pages/EquipmentItem';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {
@@ -45,6 +45,7 @@ const App = () => {
           <Route path="/editprofile" element={<ProtectedRoute><ProfileEdit /></ProtectedRoute>} />
           <Route path="/friends" element={<ProtectedRoute><Friends /></ProtectedRoute>} />
           <Route path="/Progress" element={<ProtectedRoute><ProgressTracker /></ProtectedRoute>} />
+          <Route path="/equipment" element={<ProtectedRoute><EquipmentItem /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
