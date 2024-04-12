@@ -8,7 +8,8 @@ const AboutUs = () => (
       <Col>
         <h1 className="pfpText">About Us</h1>
         <p className="pfpText">We are a group of students looking to help other students with finding someone with a partner. This project allows students to work together and accomplish
-        fitness goals. </p>
+          fitness goals.
+        </p>
       </Col>
       <hr />
       <Col xs={2} />
