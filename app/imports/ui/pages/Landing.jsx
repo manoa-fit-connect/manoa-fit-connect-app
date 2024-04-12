@@ -30,7 +30,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/Equipment" style={linkStyles}>
+            <Link to="/equipment" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <Image width={125} className="pt-3 pb-3" src="\images\dumbbell_logo.png" />
               </div>

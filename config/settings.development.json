@@ -30,5 +30,48 @@
       "description": "Legs, Chest, Back",
       "owner": "john@foo.com"
     }
+  ],
+
+  "defaultEquipments": [
+    {
+      "equipmentName": "Treadmill",
+      "equipmentLocation": "2nd Floor",
+      "equipmentTag": "Cardio",
+      "equipmentImage": "blank",
+      "equipmentDescription": "You run real fast or real slow",
+      "owner": "admin@foo.com"
+    },
+    {
+      "equipmentName": "Dumbbells",
+      "equipmentLocation": "2nd Floor",
+      "equipmentTag": "Weights",
+      "equipmentImage": "blank",
+      "equipmentDescription": "Pick up heavy put down heavy",
+      "owner": "admin@foo.com"
+    },
+    {
+      "equipmentName": "Squat Rack",
+      "equipmentLocation": "1st Floor",
+      "equipmentTag": "Lower Body",
+      "equipmentImage": "blank",
+      "equipmentDescription": "strength training",
+      "owner": "admin@foo.com"
+    },
+    {
+      "equipmentName": "Rowing Machine",
+      "equipmentLocation": "2nd Floor",
+      "equipmentTag": "Back",
+      "equipmentImage": "blank",
+      "equipmentDescription": "strength training",
+      "owner": "admin@foo.com"
+    },
+    {
+      "equipmentName": "Cable Machine",
+      "equipmentLocation": "1st Floor",
+      "equipmentTag": "Upper Body",
+      "equipmentImage": "blank",
+      "equipmentDescription": "Pull thing and your strong",
+      "owner": "admin@foo.com"
+    }
   ]
 }
