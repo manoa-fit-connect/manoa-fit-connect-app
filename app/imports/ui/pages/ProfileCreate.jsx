@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, LongTextField, NumField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -11,19 +11,41 @@ import { Profiles } from '../../api/profile/Profiles';
 const formSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
-  age: String,
-  gender: String,
-  position: String,
+  image: String,
+  age: {
+    type: Number,
+    optional: true,
+  },
+  gender: {
+    type: String,
+    optional: true,
+  },
+  position: {
+    type: String,
+    optional: true,
+  },
   level: String,
-  roles: String,
+  roles: {
+    type: Array,
+    optional: true,
+  },
+  'roles.$': String,
   goals: String,
   styles: String,
-  sports: String,
-  hobbies: String,
-  major: String,
-  image: String,
-  availability: String,
-  description: String,
+  sports: {
+    type: Array,
+    optional: true,
+  },
+  'sports.$': String,
+  hobbies: {
+    type: Array,
+    optional: true,
+  },
+  'hobbies.$': String,
+  major: {
+    type: String,
+    optional: true,
+  },
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -33,10 +55,10 @@ const ProfileCreate = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { firstName, lastName, age, gender, position, level, roles, goals, styles, sports, hobbies, major, image, availability, description } = data;
+    const { firstName, lastName, image, age, gender, position, level, roles, goals, styles, sports, hobbies, major } = data;
     const owner = Meteor.user().username;
     Profiles.collection.insert(
-      { firstName, lastName, age, gender, position, level, roles, goals, styles, sports, hobbies, major, image, availability, description, owner },
+      { firstName, lastName, image, age, gender, position, level, roles, goals, styles, sports, hobbies, major, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -83,8 +105,6 @@ const ProfileCreate = () => {
                   <Col><TextField name="major" /></Col>
                   <Col><TextField name="image" /></Col>
                 </Row>
-                <LongTextField name="availability" />
-                <LongTextField name="description" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>

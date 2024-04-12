@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The StuffsCollection. It encapsulates state and variable values for stuff.
+ * The ProfilesCollection. It encapsulates state and variable values for stuff.
  */
 class ProfilesCollection {
   constructor() {
@@ -14,37 +14,43 @@ class ProfilesCollection {
     this.schema = new SimpleSchema({
       firstName: String,
       lastName: String,
-      age: String,
+      image: String,
+      age: {
+        type: Number,
+        optional: true,
+      },
       gender: {
         type: String,
-        // allowedValues: ['Female', 'Male', 'Transgender', 'Non-binary', 'Other', 'None', 'Prefer not to say'],
+        optional: true,
       },
       position: {
         type: String,
-        // allowedValues: ['Undergraduate', 'Postgraduate', 'Faculty/Staff'],
+        optional: true,
       },
-      level: {
-        type: String,
-        // allowedValues: ['Beginner', 'Intermediate', 'Advanced'],
-      },
+      level: String,
       roles: {
-        type: String,
-        // allowedValues: ['Partner', 'Spotter', 'Mentor', 'Mentee', 'Motivator (will hype you up)', 'Motivatee (would like to be hyped up)'],
+        type: Array,
+        optional: true,
       },
-      goals: {
-        type: String,
-        // allowedValues: ['strength', 'cardio', 'weight loss', 'exercise', 'explosiveness', 'agility', 'speed', 'endurance', 'wellness', 'flexibility'],
+      'roles.$': String,
+      goals: Array,
+      'goals.$': String,
+      styles: Array,
+      'styles.$': String,
+      sports: {
+        type: Array,
+        optional: true,
       },
-      styles: {
-        type: String,
-        // allowedValues: ['weightlifting', 'olympic weightlifting', 'powerlifting', 'bodybuilding', 'calisthenics', 'plyometrics', 'circuit training', 'high-intensity interval training', 'yoga'],
+      'sports.$': String,
+      hobbies: {
+        type: Array,
+        optional: true,
       },
-      sports: String,
-      hobbies: String,
-      major: String,
-      image: String,
-      availability: String,
-      description: String,
+      'hobbies.$': String,
+      major: {
+        type: String,
+        optional: true,
+      },
       owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
@@ -56,7 +62,7 @@ class ProfilesCollection {
 }
 
 /**
- * The singleton instance of the StuffsCollection.
+ * The singleton instance of the ProfilesCollection.
  * @type {ProfilesCollection}
  */
 export const Profiles = new ProfilesCollection();
