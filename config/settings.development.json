@@ -37,7 +37,7 @@
       "equipmentName": "Treadmill",
       "equipmentLocation": "1st Floor",
       "equipmentTag": "Cardio Lower Body",
-      "equipmentImage": "blank",
+      "equipmentImage": "images/heart.png",
       "equipmentDescription": "A treadmill is a staple piece of cardio equipment that simulates walking, jogging, or running indoors. It's excellent for improving cardiovascular health and burning calories.",
       "owner": "admin@foo.com"
     },

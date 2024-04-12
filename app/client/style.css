@@ -71,3 +71,39 @@ body .navbar {
 .pfpText {
     color: white;
 }
+
+.equipment-card {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.equipment-header {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.equipment-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.equipment-details {
+  padding-left: 20px;
+}
+
+.equipment-name {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+
+.equipment-tag {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.equipment-location,
+.equipment-description {
+  margin-top: 10px;
+}
+
