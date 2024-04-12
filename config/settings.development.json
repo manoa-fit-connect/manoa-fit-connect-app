@@ -36,7 +36,7 @@
     {
       "equipmentName": "Treadmill",
       "equipmentLocation": "1st Floor",
-      "equipmentTag": ["Cardio", "Lower Body"],
+      "equipmentTag": "Cardio Lower Body",
       "equipmentImage": "blank",
       "equipmentDescription": "A treadmill is a staple piece of cardio equipment that simulates walking, jogging, or running indoors. It's excellent for improving cardiovascular health and burning calories.",
       "owner": "admin@foo.com"
@@ -44,7 +44,7 @@
     {
       "equipmentName": "Elliptical Machine",
       "equipmentLocation": "1st Floor",
-      "equipmentTag": ["Cardio", "Full Body"],
+      "equipmentTag": "Cardio Full Body",
       "equipmentImage": "blank",
       "equipmentDescription": "An elliptical machine provides a low-impact cardiovascular workout while engaging both the upper and lower body.",
       "owner": "admin@foo.com"
@@ -52,7 +52,7 @@
     {
       "equipmentName": "Stationary Bicycle",
       "equipmentLocation": "1st Floor",
-      "equipmentTag": ["Cardio", "Lower Body"],
+      "equipmentTag": "Cardio Lower Body",
       "equipmentImage": "blank",
       "equipmentDescription": "Stationary bikes offer a seated cardiovascular workout primarily targeting the lower body muscles.",
       "owner": "admin@foo.com"
@@ -60,7 +60,7 @@
     {
       "equipmentName": "Rowing Machine",
       "equipmentLocation": "1st Floor",
-      "equipmentTag": ["Cardio", "Full Body"],
+      "equipmentTag": "Cardio Full Body",
       "equipmentImage": "blank",
       "equipmentDescription": "A rowing machine provides a full-body cardiovascular workout while emphasizing the muscles in the back, arms, and legs.",
       "owner": "admin@foo.com"
@@ -68,7 +68,7 @@
     {
       "equipmentName": "Stair Climber",
       "equipmentLocation": "1st Floor",
-      "equipmentTag": ["Cardio", "Lower Body"],
+      "equipmentTag": "Cardio Lower Body",
       "equipmentImage": "blank",
       "equipmentDescription": "The stair climber simulates climbing stairs and provides an intense lower body workout while also engaging the cardiovascular system.",
       "owner": "admin@foo.com"
@@ -76,7 +76,7 @@
     {
       "equipmentName": "Leg Press Machine",
       "equipmentLocation": "1st Floor",
-      "equipmentTag": ["Strength", "Lower Body"],
+      "equipmentTag": "Strength Lower Body",
       "equipmentImage": "blank",
       "equipmentDescription": "The leg press machine targets the muscles of the lower body, including the quadriceps, hamstrings, and glutes.",
       "owner": "admin@foo.com"
@@ -84,7 +84,7 @@
     {
       "equipmentName": "Chest Press Machine",
       "equipmentLocation": "1st Floor",
-      "equipmentTag": ["Strength", "Upper Body"],
+      "equipmentTag": "Strength Upper Body",
       "equipmentImage": "blank",
       "equipmentDescription": "The chest press machine is a strength training equipment that primarily targets the muscles of the chest (pectoralis major), shoulders (anterior deltoids), and triceps.",
       "owner": "admin@foo.com"
@@ -92,7 +92,7 @@
     {
       "equipmentName": "Lat Pulldown Machine",
       "equipmentLocation": "1st Floor",
-      "equipmentTag": ["Strength", "Upper Body"],
+      "equipmentTag": "Strength Upper Body",
       "equipmentImage": "blank",
       "equipmentDescription": "The lat pulldown machine is designed to strengthen the muscles of the upper back, particularly the latissimus dorsi (lats), as well as the biceps and forearms.",
       "owner": "admin@foo.com"
@@ -100,7 +100,7 @@
     {
       "equipmentName": "Cable Crossover Machine",
       "equipmentLocation": "1st Floor",
-      "equipmentTag": ["Strength", "Upper Body"],
+      "equipmentTag": "Strength Upper Body",
       "equipmentImage": "blank",
       "equipmentDescription": "The cable crossover machine is a versatile piece of equipment for targeting various muscles in the upper body, including the chest, shoulders, and arms.",
       "owner": "admin@foo.com"
@@ -108,7 +108,7 @@
     {
       "equipmentName": "Smith Machine",
       "equipmentLocation": "1st Floor",
-      "equipmentTag": ["Strength", "Full Body"],
+      "equipmentTag": "Strength Full Body",
       "equipmentImage": "blank",
       "equipmentDescription": "The Smith machine is a versatile piece of equipment that allows for a wide range of exercises targeting various muscle groups, including chest, shoulders, legs, and more.",
       "owner": "admin@foo.com"
