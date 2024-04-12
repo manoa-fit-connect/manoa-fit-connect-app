@@ -2,10 +2,10 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row, Table } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Stuffs } from '../../api/stuff/Stuff';
 import PersonalRecords from '../components/PersonalRecords';
 import LoadingSpinner from '../components/LoadingSpinner';
-import Workouts from '../components/Workouts';
+import Workout from '../components/Workout';
+import { Workouts } from '../../api/Workouts/Workout';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 
@@ -21,30 +21,19 @@ const PRS = [{
 },
 ];
 
-const workouts = [{
-  name: 'Bench Day', rating: '3', date: '4/8/2024', difficulty: '4', highlight: 'Hit 215 for 3 today on bench',
-},
-{
-  name: 'Squat Day', rating: '5', date: '4/6/2024', difficulty: '5', highlight: 'Hit a new pr to on squat 395 for 3',
-},
-{
-  name: 'Deadlift Day', rating: '4', date: '4/2/2024', difficulty: '4', highlight: 'Feeling more confident on deadlift hitting 435 for 4',
-
-},
-];
 const ProgressTracker = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, stuffs } = useTracker(() => {
+  const { ready, workouts } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.
-    const subscription = Meteor.subscribe(Stuffs.userPublicationName);
+    const subscription = Meteor.subscribe(Workouts.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
     // Get the Stuff documents
-    const stuffItems = Stuffs.collection.find({}).fetch();
+    const workoutItems = Workouts.collection.find({}).fetch();
     return {
-      stuffs: stuffItems,
+      workouts: workoutItems,
       ready: rdy,
     };
   }, []);
@@ -55,7 +44,7 @@ const ProgressTracker = () => {
           <h2>Previous Workouts</h2>
         </Col>
         <Row>
-          {workouts.map((workout, index) => <Col key={index}><Workouts workout={workout} /></Col>)}
+          {workouts.map((session) => <Col key={session._id}><Workout workout={session} /></Col>)}
         </Row>
       </Row>
       <Row className="justify-content-center">

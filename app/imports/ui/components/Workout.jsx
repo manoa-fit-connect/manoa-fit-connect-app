@@ -5,7 +5,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ProgressTracker.jsx. */
 
-const Workouts = ({ workout }) => (
+const Workout = ({ workout }) => (
   <Card>
     <Card.Title>
       <Row className="justify-content-center">
@@ -40,7 +40,7 @@ const Workouts = ({ workout }) => (
 );
 
 // Require a document to be passed to this component.
-Workouts.propTypes = {
+Workout.propTypes = {
   workout: PropTypes.shape({
     name: PropTypes.string,
     rating: PropTypes.number,
@@ -51,4 +51,4 @@ Workouts.propTypes = {
   }).isRequired,
 };
 
-export default Workouts;
+export default Workout;
