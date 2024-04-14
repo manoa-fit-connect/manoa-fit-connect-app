@@ -3,6 +3,7 @@ import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Profiles } from '../../api/profile/Profiles';
 import { Equipments } from '../../api/equipment/Equipments';
 import { Workouts } from '../../api/Workouts/Workout';
+import { PRS } from '../../api/PRS/prs';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
@@ -56,5 +57,18 @@ if (Workouts.collection.find().count() === 0) {
   if (Meteor.settings.defaultWorkouts) {
     console.log('Creating default workouts.');
     Meteor.settings.defaultWorkouts.forEach(workout => addWorkouts(workout));
+  }
+}
+
+const addPRS = (PR) => {
+  console.log(`  Adding: ${PR.exercise} (${PR.owner})`);
+  PRS.collection.insert(PR);
+};
+
+// Initialize the StuffsCollection if empty.
+if (PRS.collection.find().count() === 0) {
+  if (Meteor.settings.defaultPRS) {
+    console.log('Creating default PRS.');
+    Meteor.settings.defaultPRS.forEach(PR => addPRS(PR));
   }
 }

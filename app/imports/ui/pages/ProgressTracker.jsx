@@ -6,38 +6,23 @@ import PersonalRecords from '../components/PersonalRecords';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Workout from '../components/Workout';
 import { Workouts } from '../../api/Workouts/Workout';
-
-/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-
-const PRS = [{
-  exercise: 'Bench', repsOrDist: '4 reps', date: '3/25/2024', weight: '220',
-},
-{
-  exercise: 'Squat', repsOrDist: '3 reps', date: '4/6/2024', weight: '395',
-},
-{
-  exercise: 'Deadlift', repsOrDist: '4 reps', date: '3/25/2024', weight: '455',
-
-},
-];
+import { PRS } from '../../api/PRS/prs';
 
 const ProgressTracker = () => {
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, workouts } = useTracker(() => {
-    // Note that this subscription will get cleaned up
-    // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
+  const { ready, workouts, prs } = useTracker(() => {
     const subscription = Meteor.subscribe(Workouts.userPublicationName);
-    // Determine if the subscription is ready
-    const rdy = subscription.ready();
-    // Get the Stuff documents
+    const subscription2 = Meteor.subscribe(PRS.userPublicationName);
+    const rdy = subscription.ready() && subscription2.ready();
     const workoutItems = Workouts.collection.find({}).fetch();
+    const prItems = PRS.collection.find({}).fetch();
     return {
-      workouts: workoutItems,
       ready: rdy,
+      workouts: workoutItems,
+      prs: prItems,
     };
   }, []);
-  return (ready ? (
+
+  return ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col className="text-center" id="middle">
@@ -63,13 +48,13 @@ const ProgressTracker = () => {
               </tr>
             </thead>
             <tbody>
-              {PRS.map((PR, index) => <PersonalRecords key={index} PRS={PR} />)}
+              {prs.map((pr) => <PersonalRecords key={pr._id} PRS={pr} />)}
             </tbody>
           </Table>
         </Col>
       </Row>
     </Container>
-  ) : <LoadingSpinner />);
+  ) : <LoadingSpinner />;
 };
 
 export default ProgressTracker;

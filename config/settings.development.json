@@ -139,5 +139,28 @@
       "owner": "admin@foo.com",
       "rating": 4
     }
+],
+  "defaultPRS" : [
+    {
+      "date": "3/25/2024",
+      "exercise": "Bench",
+      "repsOrDist": "4 reps",
+      "weight": 220,
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "4/6/2024",
+      "exercise": "Squat",
+      "owner": "john@foo.com",
+      "repsOrDist": "3 reps",
+      "weight": 395
+    },
+    {
+      "date": "3/25/2024",
+      "exercise": "Deadlift",
+      "repsOrDist": "4 reps",
+      "weight": 455,
+      "owner" : "admin@foo.com"
+    }
 ]
 }
