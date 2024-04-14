@@ -3,6 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Profiles } from '../../api/profile/Profiles';
 import { Equipments } from '../../api/equipment/Equipments';
+import { Workouts } from '../../api/Workouts/Workout';
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
 Meteor.publish(Stuffs.userPublicationName, function () {
@@ -56,6 +57,13 @@ Meteor.publish(Equipments.userPublicationName, function () {
 Meteor.publish(Equipments.publicationName, function () {
   if (this.userId) {
     return Equipments.collection.find();
+  }
+  return this.ready();
+});
+Meteor.publish(Workouts.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Workouts.collection.find({ owner: username });
   }
   return this.ready();
 });
