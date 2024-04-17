@@ -28,11 +28,11 @@ const ProgressTracker = () => {
         <Col className="text-center" id="middle">
           <h2>Previous Workouts</h2>
         </Col>
-        <Row>
+        <Row xs={1} md={2} lg={3} className="justify-content-center">
           {workouts.map((session) => <Col key={session._id}><Workout workout={session} /></Col>)}
         </Row>
       </Row>
-      <Row className="justify-content-center">
+      <Row className="justify-content-center p-2">
         <Col md={7}>
           <Col className="text-center" id="middle">
             <h2>Personal Records</h2>
