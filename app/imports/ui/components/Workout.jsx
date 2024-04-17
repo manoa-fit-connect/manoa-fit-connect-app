@@ -17,7 +17,7 @@ const Workout = ({ workout }) => (
     <Card.Body>
       <Row className="pb-3">
         <Col>
-          {workout.date}
+          <p className="fw-lighter">{workout.date.toLocaleDateString('en-US')}</p>
         </Col>
         <Col>
           Rating: {workout.rating}
@@ -45,7 +45,7 @@ Workout.propTypes = {
     name: PropTypes.string,
     rating: PropTypes.number,
     difficulty: PropTypes.number,
-    date: PropTypes.string,
+    date: Date,
     highlight: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
