@@ -25,6 +25,7 @@ import EquipmentItem from '../pages/EquipmentItem';
 import FavoriteWorkout from '../pages/FavoriteWorkout';
 import Event from '../pages/Event';
 import AboutUs from '../pages/AboutUs';
+import AddWorkout from '../pages/AddWorkout';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -50,7 +51,7 @@ const App = () => {
           <Route path="/friends" element={<ProtectedRoute><Friends /></ProtectedRoute>} />
           <Route path="/Progress" element={<ProtectedRoute><ProgressTracker /></ProtectedRoute>} />
           <Route path="/equipment" element={<ProtectedRoute><EquipmentItem /></ProtectedRoute>} />
-          <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
+          <Route path="/add" element={<ProtectedRoute><AddWorkout /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
           <Route path="/Events" element={<ProtectedRoute><Event /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />

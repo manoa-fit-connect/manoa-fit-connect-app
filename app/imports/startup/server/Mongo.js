@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Profiles } from '../../api/profile/Profiles';
 import { Equipments } from '../../api/equipment/Equipments';
-import { Workouts } from '../../api/Workouts/Workout';
 import { PRS } from '../../api/PRS/prs';
 /* eslint-disable no-console */
 
@@ -44,19 +43,6 @@ if (Equipments.collection.find().count() === 0) {
   if (Meteor.settings.defaultEquipments) {
     console.log('Creating default equipment.');
     Meteor.settings.defaultEquipments.forEach(equipment => addEquipment(equipment));
-  }
-}
-
-const addWorkouts = (workouts) => {
-  console.log(`  Adding: ${workouts.name} (${workouts.owner})`);
-  Workouts.collection.insert(workouts);
-};
-
-// Initialize the StuffsCollection if empty.
-if (Workouts.collection.find().count() === 0) {
-  if (Meteor.settings.defaultWorkouts) {
-    console.log('Creating default workouts.');
-    Meteor.settings.defaultWorkouts.forEach(workout => addWorkouts(workout));
   }
 }
 

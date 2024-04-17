@@ -13,7 +13,7 @@ class WorkoutsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
-      date: String,
+      date: Date,
       highlight: String,
       rating: Number,
       difficulty: Number,
