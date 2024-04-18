@@ -2,6 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row, Table } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
+import Button from 'react-bootstrap/Button';
 import PersonalRecords from '../components/PersonalRecords';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Workout from '../components/Workout';
@@ -26,6 +27,14 @@ const ProgressTracker = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col className="text-center" id="middle">
+          <Row className="justify-content-center">
+            <Col xs={5}>
+              <Button href="/addworkout">Add Workout</Button>
+            </Col>
+            <Col xs={5}>
+              <Button href="/addPR">Add PRS</Button>
+            </Col>
+          </Row>
           <h2>Previous Workouts</h2>
         </Col>
         <Row xs={1} md={2} lg={3} className="justify-content-center">
