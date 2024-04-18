@@ -9,7 +9,7 @@ const PersonalRecords = ({ PRS }) => (
     <td>{PRS.exercise}</td>
     <td>{PRS.weight}</td>
     <td>{PRS.repsOrDist}</td>
-    <td>{PRS.date}</td>
+    <td>{PRS.date.toLocaleDateString('en-US')}</td>
     <td>
       <Link to={`/edit/${PRS._id}`}>Edit</Link>
     </td>
@@ -22,7 +22,7 @@ PersonalRecords.propTypes = {
     exercise: PropTypes.string,
     weight: PropTypes.number,
     repsOrDist: PropTypes.string,
-    date: PropTypes.string,
+    date: Date,
     _id: PropTypes.string,
   }).isRequired,
 };

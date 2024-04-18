@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
@@ -26,6 +25,7 @@ import FavoriteWorkout from '../pages/FavoriteWorkout';
 import Event from '../pages/Event';
 import AboutUs from '../pages/AboutUs';
 import AddWorkout from '../pages/AddWorkout';
+import AddPRS from '../pages/AddPRS';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -51,7 +51,8 @@ const App = () => {
           <Route path="/friends" element={<ProtectedRoute><Friends /></ProtectedRoute>} />
           <Route path="/Progress" element={<ProtectedRoute><ProgressTracker /></ProtectedRoute>} />
           <Route path="/equipment" element={<ProtectedRoute><EquipmentItem /></ProtectedRoute>} />
-          <Route path="/add" element={<ProtectedRoute><AddWorkout /></ProtectedRoute>} />
+          <Route path="/addWorkout" element={<ProtectedRoute><AddWorkout /></ProtectedRoute>} />
+          <Route path="/addPR" element={<ProtectedRoute><AddPRS /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
           <Route path="/Events" element={<ProtectedRoute><Event /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
