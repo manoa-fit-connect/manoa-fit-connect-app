@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { CalendarEventFill, GraphUp, PeopleFill, PersonFill } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 /* A simple static component to render some text for the landing page. */
 const Landing = () => {
@@ -82,51 +83,20 @@ const Landing = () => {
   }
 
   return (
-    <Container className="align-items-center-center" id="middle">
-      <Row>
-        <Col>
-          <div className="d-flex justify-content-center">
-            <PeopleFill size={125} />
-          </div>
-          <h1 className="text-md-center">Your friends</h1>
-          <h5 className="text-md-center">See who is online and working out</h5>
+    <Container>
+      <Row className="justify-content-center">
+        <Col md={4}>
+          <Image src="/images/MFCLogo.png" className="w-100" />
         </Col>
-        <Col>
-          <div className="d-flex justify-content-center">
-            <Image width={125} className="pt-3 pb-3" src="/images/dumbbell_logo.png" />
-          </div>
-          <h1 className="text-md-center">Equipment</h1>
-          <h5 className="text-md-center">See what equipment is available in the gym</h5>
-        </Col>
-        <Col>
-          <div className="d-flex justify-content-center">
-            <PersonFill size={125} />
-          </div>
-          <h1 className="text-md-center">Profile</h1>
-          <h5 className="text-md-center">View or edit your profile</h5>
-        </Col>
-      </Row>
-      <Row className="pt-5">
-        <Col>
-          <div className="d-flex justify-content-center">
-            <GraphUp size={125} />
-          </div>
-          <h1 className="text-md-center">Progress Tracker</h1>
-          <h5 className="text-md-center">Track personal best and how your work outs have been going</h5>
-        </Col>
-        <Col>
-          <div className="d-flex justify-content-center">
-            <Image width={125} className="pt-3" src="\images\heart.png" />
-          </div>
-          <h1 className="text-md-center">Favorite Workout</h1>
-          <h5 className="text-md-center">Track and update your favorite workouts</h5>
-        </Col>
-        <Col>
-          <div className="d-flex justify-content-center">
-            <CalendarEventFill size={125} />
-          </div>
-          <h1 className="text-md-center">Events</h1>
-          <h5 className="text-md-center">See what events are happening</h5>
+        <Col md={4}>
+          <br /> <br />
+          <p className="pfpText">We are Manoa Fit Connect, a program intended to help students find partners to
+            go to the gym together.
+            Our goal is to reduce any hesitation for people to go to the gym, and make it fun. (if you guys want to
+            change this go ahead)
+          </p>
+          <Button href="/about" variant="success">About Us</Button>{' '}
+          <Button href="/signin" variant="success">Sign In</Button>{' '}
         </Col>
       </Row>
     </Container>
