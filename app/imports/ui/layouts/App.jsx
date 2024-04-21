@@ -26,7 +26,8 @@ import Event from '../pages/Event';
 import AboutUs from '../pages/AboutUs';
 import AddWorkout from '../pages/AddWorkout';
 import AddPRS from '../pages/AddPRS';
-
+import ListEquipment from '../pages/ListEquipment';
+import MapPage from '../pages/MapPage';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {
@@ -61,6 +62,8 @@ const App = () => {
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
+          <Route path="/listEquipment" element={<ListEquipment />} />
+          <Route path="/map" element={<MapPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

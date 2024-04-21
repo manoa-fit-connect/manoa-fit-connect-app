@@ -3,6 +3,7 @@ import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Profiles } from '../../api/profile/Profiles';
 import { Equipments } from '../../api/equipment/Equipments';
 import { PRS } from '../../api/PRS/prs';
+import { EquipmentItems } from '../../api/item/EquipmentItems';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
@@ -56,5 +57,17 @@ if (PRS.collection.find().count() === 0) {
   if (Meteor.settings.defaultPRS) {
     console.log('Creating default PRS.');
     Meteor.settings.defaultPRS.forEach(PR => addPRS(PR));
+  }
+}
+
+const addEquipmentItem = (item) => {
+  console.log(` Adding: ${item.itemName} (${item.owner})`);
+  EquipmentItems.collection.insert(item);
+};
+
+if (EquipmentItems.collection.find().count() === 0) {
+  if (Meteor.settings.defaultItems) {
+    console.log('Creating default Items.');
+    Meteor.settings.defaultItems.forEach(itemfound => addEquipmentItem(itemfound));
   }
 }
