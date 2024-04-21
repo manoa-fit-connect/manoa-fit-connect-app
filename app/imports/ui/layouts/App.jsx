@@ -28,6 +28,7 @@ import AddWorkout from '../pages/AddWorkout';
 import AddPRS from '../pages/AddPRS';
 import ListEquipment from '../pages/ListEquipment';
 import MapPage from '../pages/MapPage';
+import AddStuff from '../pages/AddStuff';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {
