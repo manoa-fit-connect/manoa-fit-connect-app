@@ -30,34 +30,33 @@ const MapPage = () => {
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
-    const circles = document.querySelectorAll('.circle');
-    circles.forEach((circle) => {
-      if (circle.dataset.id === item.id.toString()) {
-        circle.style.backgroundColor = 'green';
-      } else {
-        circle.style.backgroundColor = 'red';
-      }
-    });
   };
 
   return (
-    <Container fluid className="md-4">
+    <Container fluid>
       <Row className="flex-grow-1">
         <Col className="p-0">
-          <div className="map-container position-relative" style={{ height: 'calc(50vh - 1rem)' }}>
+          <div className="map-image-container d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
             <img
               src="https://cdn-hbjbh.nitrocdn.com/EUcURIgYaEBPqKnzFnPzsxbSgiKdYZcA/assets/images/optimized/rev-f0ee177/3dplans.com/wp-content/uploads/The-Mansfield-Level-5-1024x796.jpg"
               alt="Gym Map"
-              style={{ width: '100%', height: '100%' }}
+              style={{ width: '90%', height: '90%', borderRadius: '20px' }}
             />
             {items.map((item) => (
               <div
                 key={item.id}
                 className="circle position-absolute"
-                style={{ left: item.position.x + 'px', top: item.position.y + 'px', width: '20px', height: '20px', borderRadius: '50%', backgroundColor: selectedItem && selectedItem.id === item.id ? 'green' : 'red', cursor: 'pointer' }}
-                data-id={item.id}
+                style={{
+                  left: `${(item.position.x / 2048) * 100}%`,
+                  top: `${(item.position.y / 1592) * 100}%`,
+                  width: '20px',
+                  height: '20px',
+                  borderRadius: '50%',
+                  backgroundColor: selectedItem && selectedItem.id === item.id ? 'green' : 'red',
+                  cursor: 'pointer',
+                }}
                 onClick={() => handleItemClick(item)}
-              ></div>
+              />
             ))}
           </div>
         </Col>
