@@ -126,14 +126,8 @@ body .navbar {
   color: #343a40; /* Dark text color */
 }
 
-.circle {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
+
+
 
 .message-box {
   background: radial-gradient(#ff9a9e, #fad0c4);
