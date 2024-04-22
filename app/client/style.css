@@ -135,4 +135,33 @@ body .navbar {
   transform: translate(-50%, -50%);
 }
 
+.message-box {
+  background: radial-gradient(#ff9a9e, #fad0c4);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
+.message-box h2 {
+  color: #fff;
+}
+
+.message-box p {
+  color: #fff;
+  font-size: 18px;
+}
+
+.heart-fall {
+  position: fixed;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
