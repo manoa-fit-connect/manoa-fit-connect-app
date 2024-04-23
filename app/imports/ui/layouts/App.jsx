@@ -25,6 +25,7 @@ import Event from '../pages/Event';
 import AboutUs from '../pages/AboutUs';
 import AddWorkout from '../pages/AddWorkout';
 import AddPRS from '../pages/AddPRS';
+import EditPRS from '../pages/EditPRS';
 import ListEquipment from '../pages/ListEquipment';
 import MapPage from '../pages/MapPage';
 import AddStuff from '../pages/AddStuff';
@@ -56,6 +57,7 @@ const App = () => {
           <Route path="/equipment" element={<ProtectedRoute><EquipmentItem /></ProtectedRoute>} />
           <Route path="/addWorkout" element={<ProtectedRoute><AddWorkout /></ProtectedRoute>} />
           <Route path="/addPR" element={<ProtectedRoute><AddPRS /></ProtectedRoute>} />
+          <Route path="/editPR/:_id" element={<ProtectedRoute><EditPRS /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
           <Route path="/editWorkout/:_id" element={<ProtectedRoute><EditWorkout /></ProtectedRoute>} />
           <Route path="/Events" element={<ProtectedRoute><Event /></ProtectedRoute>} />
