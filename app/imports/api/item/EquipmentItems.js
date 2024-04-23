@@ -2,29 +2,30 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The StuffsCollection. It encapsulates state and variable values for stuff.
+ * The EquipmentItemsCollection. It encapsulates state and variable values for stuff.
  */
-class WorkoutsCollection {
+class EquipmentItemsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'WorkoutsCollection';
+    this.name = 'EquipmentItemsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      name: String,
-      date: Date,
-      highlight: String,
-      rating: {
-        type: Number,
-        allowedValues: [1, 2, 3, 4, 5],
+      itemName: String,
+      image: String,
+      category: {
+        type: Array,
+        defaultValue: ['Miscellaneous'],
       },
-      difficulty: {
-        type: Number,
-        allowedValues: [1, 2, 3, 4, 5],
+      'category.$': {
+        type: String,
+        allowedValues: ['Cardio', 'Strength', 'Flexibility', 'Other'],
       },
-      owner: String,
+      description: String,
+      locationFound: String,
     });
+
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
@@ -34,7 +35,7 @@ class WorkoutsCollection {
 }
 
 /**
- * The singleton instance of the StuffsCollection.
- * @type {WorkoutsCollection}
+ * The singleton instance of the EquipmentItemsCollection.
+ * @type {EquipmentItemsCollection}
  */
-export const Workouts = new WorkoutsCollection();
+export const EquipmentItems = new EquipmentItemsCollection();

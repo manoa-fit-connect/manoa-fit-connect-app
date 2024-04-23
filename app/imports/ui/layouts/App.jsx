@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
@@ -26,7 +25,11 @@ import Event from '../pages/Event';
 import AboutUs from '../pages/AboutUs';
 import AddWorkout from '../pages/AddWorkout';
 import AddPRS from '../pages/AddPRS';
-
+import ListEquipment from '../pages/ListEquipment';
+import MapPage from '../pages/MapPage';
+import AddStuff from '../pages/AddStuff';
+import WorkoutGenerator from '../pages/WorkoutGenerator';
+import EditWorkout from '../pages/EditWorkout';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {
@@ -53,14 +56,19 @@ const App = () => {
           <Route path="/equipment" element={<ProtectedRoute><EquipmentItem /></ProtectedRoute>} />
           <Route path="/addWorkout" element={<ProtectedRoute><AddWorkout /></ProtectedRoute>} />
           <Route path="/addPR" element={<ProtectedRoute><AddPRS /></ProtectedRoute>} />
-          <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
+          <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
+          <Route path="/editWorkout/:_id" element={<ProtectedRoute><EditWorkout /></ProtectedRoute>} />
           <Route path="/Events" element={<ProtectedRoute><Event /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
+          <Route path="/generator" element={<ProtectedRoute><WorkoutGenerator /></ProtectedRoute>} />
           <Route path="/favorite" element={<ProtectedRoute><FavoriteWorkout /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
+          <Route path="/listEquipment" element={<ListEquipment />} />
+          <Route path="/map" element={<MapPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

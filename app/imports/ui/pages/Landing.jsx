@@ -31,7 +31,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/equipment" style={linkStyles}>
+            <Link to="/listEquipment" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <Image width={125} className="pt-3 pb-3" src="\images\dumbbell_logo.png" />
               </div>
@@ -60,11 +60,11 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/favorite" style={linkStyles}>
+            <Link to="/generator" style={linkStyles}>
               <div className="d-flex justify-content-center">
                 <Image width={125} src="\images\heart.png" />
               </div>
-              <h1 className="text-md-center">Favorite Workout</h1>
+              <h1 className="text-md-center">Workout Generator</h1>
               <h5 className="text-md-center">Track and update what your favorite workout is</h5>
             </Link>
           </Col>

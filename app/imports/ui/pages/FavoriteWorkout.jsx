@@ -11,6 +11,8 @@ const FavoriteWorkout = () => {
     type: '',
     duration: '',
   });
+  const [randomWorkout, setRandomWorkout] = useState('');
+  const [spinning, setSpinning] = useState(false);
 
   // Function to handle changes in the input fields
   const handleInputChange = (event) => {
@@ -44,40 +46,19 @@ const FavoriteWorkout = () => {
     setFavoriteWorkouts(updatedWorkouts);
   };
 
+  // Default list of workouts
+  const defaultWorkouts = ['Push-ups', 'Squats', 'Plank', 'Lunges', 'Burpees', 'Jumping Jacks', 'Mountain Climbers', 'Crunches', 'Leg Raises'];
+
   // Function to generate a random workout
-  const generateRandomWorkout = async () => {
-    try {
-      // Arrays for random workout data
-      const exercises = ['Push-ups', 'Squats', 'Plank', 'Lunges', 'Burpees', 'Jumping Jacks', 'Mountain Climbers', 'Crunches', 'Leg Raises'];
-      const sets = ['1 set', '2 sets', '3 sets', '4 sets', '5 sets'];
-      const reps = ['5 reps', '8 reps', '10 reps', '12 reps', '15 reps'];
-      const restPeriods = ['30 seconds rest', '1 minute rest', '2 minutes rest', '3 minutes rest', '5 minutes rest'];
-      const motivationalNames = ['Super Strength', 'Beast Mode', 'Power Surge', 'Warrior Workout', 'Heroic Hustle', 'Mighty Moves', 'Champion Challenge', 'Epic Endurance', 'Legendary Lifts'];
-
-      // Function to randomly select an item from an array
-      const randomItem = (array) => array[Math.floor(Math.random() * array.length)];
-
-      // Generate random workout information
-      const randomExercises = [];
-      for (let i = 0; i < 3; i++) {
-        const exercise = randomItem(exercises);
-        const set = randomItem(sets);
-        const rep = randomItem(reps);
-        const restPeriod = randomItem(restPeriods);
-        const motivationalName = randomItem(motivationalNames);
-        randomExercises.push(`${motivationalName}: ${exercise}: ${set}, ${rep}, ${restPeriod}`);
-      }
-
-      // Construct the workout description
-      const randomWorkoutDescription = `Random Workout! '
-${randomExercises.join('\n')}`;
-
-      // Add the generated workout to the favorite workouts list
-      setFavoriteWorkouts([...favoriteWorkouts, { name: 'Random Workout', type: 'Random', duration: 'Unknown', description: randomWorkoutDescription }]);
-    } catch (error) {
-      console.error('Error generating workout:', error);
-    }
+  const generateRandomWorkout = () => {
+    setSpinning(true);
+    const randomWorkoutIndex = Math.floor(Math.random() * defaultWorkouts.length);
+    setTimeout(() => {
+      setRandomWorkout(defaultWorkouts[randomWorkoutIndex]);
+      setSpinning(false);
+    }, 2000);
   };
+
   return (
     <div className="container mt-4">
       <Card>
@@ -97,7 +78,9 @@ ${randomExercises.join('\n')}`;
               <Form.Control type="text" name="duration" value={newWorkout.duration} onChange={handleInputChange} placeholder="E.g., 30 minutes" />
             </Form.Group>
             <Button variant="primary" onClick={addWorkout}>Add Workout</Button>
-            <Button variant="secondary" className="ml-2" onClick={generateRandomWorkout}>Generate Random Workout</Button>
+            <Button variant="secondary" className="ml-2" onClick={generateRandomWorkout} disabled={spinning}>
+              {spinning ? 'Spinning...' : 'Generate Random Workout'}
+            </Button>
           </Form>
           <hr />
           <h5>Your Favorite Workouts:</h5>
@@ -105,7 +88,6 @@ ${randomExercises.join('\n')}`;
             {favoriteWorkouts.map((workout, index) => (
               <li key={index}>
                 <strong>{workout.name}</strong> - {workout.type}, {workout.duration}
-                <div>{workout.description}</div>
                 <Button variant="danger" size="sm" className="ml-2" onClick={() => removeWorkout(index)}>Remove</Button>
                 <Button variant={workout.isFavorite ? 'warning' : 'secondary'} size="sm" className="ml-2" onClick={() => toggleFavorite(index)}>
                   {workout.isFavorite ? 'Unfavorite' : 'Favorite'}
@@ -113,6 +95,12 @@ ${randomExercises.join('\n')}`;
               </li>
             ))}
           </ul>
+          {randomWorkout && (
+            <div className="mt-4">
+              <h5>Random Workout:</h5>
+              <p>{randomWorkout}</p>
+            </div>
+          )}
         </Card.Body>
       </Card>
     </div>
