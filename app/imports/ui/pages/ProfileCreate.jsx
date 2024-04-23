@@ -1,52 +1,46 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
+import Form from 'react-bootstrap/Form';
 import { Profiles } from '../../api/profile/Profiles';
 
 // Create a schema to specify the structure of the data to appear in the form.
-const formSchema = new SimpleSchema({
-  firstName: String,
-  lastName: String,
-  image: String,
-  age: {
-    type: Number,
-    optional: true,
+const formSchema = new SimpleSchema(
+  {
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
+    image: { type: String, required: true },
+    status: { type: String, required: true },
+    level: { type: String, required: true },
+    goals: { type: String, required: true, custom() {
+      if (!this.value || this.value.length < 1) {
+        return 'required';
+      }
+    } },
+    styles: { type: String, required: true, custom() {
+      if (!this.value || this.value.length < 1) {
+        return 'required';
+      }
+    } },
   },
-  gender: {
-    type: String,
-    optional: true,
+  {
+    clean: {
+      autoConvert: true,
+      extendAutoValueContext: {},
+      filter: false,
+      getAutoValues: true,
+      removeEmptyStrings: true,
+      removeNullsFromArrays: true,
+      trimStrings: true,
+    },
+    humanizeAutoLabels: true,
+    requiredByDefault: false,
   },
-  position: {
-    type: String,
-    optional: true,
-  },
-  level: String,
-  roles: {
-    type: Array,
-    optional: true,
-  },
-  'roles.$': String,
-  goals: String,
-  styles: String,
-  sports: {
-    type: Array,
-    optional: true,
-  },
-  'sports.$': String,
-  hobbies: {
-    type: Array,
-    optional: true,
-  },
-  'hobbies.$': String,
-  major: {
-    type: String,
-    optional: true,
-  },
-});
+);
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
@@ -55,10 +49,10 @@ const ProfileCreate = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { firstName, lastName, image, age, gender, position, level, roles, goals, styles, sports, hobbies, major } = data;
+    const { firstName, lastName, image, status, level, goals, styles } = data;
     const owner = Meteor.user().username;
     Profiles.collection.insert(
-      { firstName, lastName, image, age, gender, position, level, roles, goals, styles, sports, hobbies, major, owner },
+      { firstName, lastName, image, status, level, goals, styles, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -81,29 +75,40 @@ const ProfileCreate = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="firstName" /></Col>
-                  <Col><TextField name="lastName" /></Col>
+                  <Col><TextField name="firstName" label="First Name" /></Col>
+                  <Col><TextField name="lastName" label="Last Name" /></Col>
+                  <Col><TextField name="image" label="Image URL" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="age" /></Col>
-                  <Col><TextField name="gender" /></Col>
-                  <Col><TextField name="position" /></Col>
-                </Row>
-                <Row>
-                  <Col><TextField name="level" /></Col>
-                  <Col><TextField name="roles" /></Col>
+                  <Col>
+                    <Form.Group controlId="status" className="mb-0">
+                      <Form.Label className="mb-0">University Status</Form.Label>
+                      <Form.Select name="status">
+                        <option value="">Select Status</option>
+                        <option value="Undergraduate Student">Undergraduate Student</option>
+                        <option value="Graduate Student">Graduate Student</option>
+                        <option value="Faculty/Staff">Faculty/Staff</option>
+                      </Form.Select>
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Form.Group controlId="level" className="mb-0">
+                      <Form.Label className="mb-0">Proficiency Level</Form.Label>
+                      <Form.Select name="level">
+                        <option value="">Select Level</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Novice">Novice</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="Expert">Expert</option>
+                      </Form.Select>
+                    </Form.Group>
+
+                  </Col>
                 </Row>
                 <Row>
                   <Col><TextField name="goals" /></Col>
                   <Col><TextField name="styles" /></Col>
-                </Row>
-                <Row>
-                  <Col><TextField name="sports" /></Col>
-                  <Col><TextField name="hobbies" /></Col>
-                </Row>
-                <Row>
-                  <Col><TextField name="major" /></Col>
-                  <Col><TextField name="image" /></Col>
                 </Row>
                 <SubmitField value="Submit" />
                 <ErrorsField />

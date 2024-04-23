@@ -15,19 +15,11 @@
     {
       "firstName": "John",
       "lastName": "Doe",
-      "age": 20,
-      "gender": "male",
-      "position": "undergraduate",
+      "image": "https://raw.githubusercontent.com/manoa-fit-connect/manoa-fit-connect.github.io/main/images/placeholder.png",
+      "status": "undergraduate",
       "level": "intermediate",
-      "roles": "partner",
       "goals": "strength training",
       "styles": "powerlifting",
-      "sports": "basketball",
-      "hobbies": "video games",
-      "major": "computer science",
-      "image": "https://raw.githubusercontent.com/manoa-fit-connect/manoa-fit-connect.github.io/main/images/placeholder.png",
-      "availability": "MWF 1pm-2:30pm",
-      "description": "Legs, Chest, Back",
       "owner": "john@foo.com"
     }
   ],
