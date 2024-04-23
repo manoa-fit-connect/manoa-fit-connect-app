@@ -41,9 +41,17 @@ const EditPRS = () => {
   // On successful submit, insert the data.
   const submit = (data) => {
     const { exercise, weight, date, owner } = data;
-    PRS.collection.update(_id, { $set: { exercise, weight, date, owner } }, (error) => (error ?
-      swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success')));
+    PRS.collection.update(_id, { $set: { exercise, weight, date, owner } }, (error) => {
+      if (error) {
+        swal('Error', error.message, 'error');
+      } else {
+        swal('Success', 'Personal Record updated successfully', 'success').then((value) => {
+          if (value) {
+            window.location.href = '/progress';
+          }
+        });
+      }
+    });
   };
 
   return (
