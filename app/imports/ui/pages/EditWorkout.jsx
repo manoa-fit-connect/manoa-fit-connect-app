@@ -42,10 +42,10 @@ const EditWorkout = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center"><h2>Edit Workout</h2></Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
             <Card>
               <Card.Body>
+                <Col className="text-center"><h2>Edit Workout</h2></Col>
                 <TextField name="name" />
                 <DateField name="date" type="date" />
                 <SelectField name="rating" />
