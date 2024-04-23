@@ -126,7 +126,7 @@
       "itemName": "Stationary Bicycle",
       "category": "Cardio",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/stationbike.jpeg",
       "description": "Stationary bikes offer a seated cardiovascular workout primarily targeting the lower body muscles."
     },
     {
@@ -147,14 +147,14 @@
       "itemName": "Leg Press Machine",
       "category": "Strength",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/legpress.jpeg",
       "description": "The leg press machine targets the muscles of the lower body, including the quadriceps, hamstrings, and glutes."
     },
     {
       "itemName": "Chest Press Machine",
       "category": "Strength",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/chestpress.jpeg",
       "description": "The chest press machine is a strength training equipment that primarily targets the muscles of the chest (pectoralis major), shoulders (anterior deltoids), and triceps."
     },
     {
@@ -168,7 +168,7 @@
       "itemName": "Cable Crossover Machine",
       "category": "Strength",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/cablecross.jpeg",
       "description": "The cable crossover machine is a versatile piece of equipment for targeting various muscles in the upper body, including the chest, shoulders, and arms."
     },
     {
