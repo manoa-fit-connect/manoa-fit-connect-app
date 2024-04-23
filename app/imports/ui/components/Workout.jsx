@@ -17,7 +17,7 @@ const Workout = ({ workout }) => (
     <Card.Body>
       <Row className="pb-3">
         <Col>
-          <p className="fw-lighter">{workout.date.toLocaleDateString('en-US')}</p>
+          <p className="fw-lighter">{workout.date.toLocaleDateString('en-US', { timeZone: 'GMT', day: 'numeric', month: 'numeric', year: 'numeric' })}</p>
         </Col>
         <Col>
           Rating: {workout.rating}
@@ -33,7 +33,7 @@ const Workout = ({ workout }) => (
       </Row>
       {workout.highlight}
       <Row>
-        <Link to={`/edit/${workout._id}`}>Edit</Link>
+        <Link to={`/editWorkout/${workout._id}`}>Edit</Link>
       </Row>
     </Card.Body>
   </Card>
@@ -45,7 +45,7 @@ Workout.propTypes = {
     name: PropTypes.string,
     rating: PropTypes.number,
     difficulty: PropTypes.number,
-    date: Date,
+    date: PropTypes.instanceOf(Date),
     highlight: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,

@@ -15,8 +15,14 @@ class WorkoutsCollection {
       name: String,
       date: Date,
       highlight: String,
-      rating: Number,
-      difficulty: Number,
+      rating: {
+        type: Number,
+        allowedValues: [1, 2, 3, 4, 5],
+      },
+      difficulty: {
+        type: Number,
+        allowedValues: [1, 2, 3, 4, 5],
+      },
       owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
@@ -30,6 +29,7 @@ import ListEquipment from '../pages/ListEquipment';
 import MapPage from '../pages/MapPage';
 import AddStuff from '../pages/AddStuff';
 import WorkoutGenerator from '../pages/WorkoutGenerator';
+import EditWorkout from '../pages/EditWorkout';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {
@@ -57,7 +57,7 @@ const App = () => {
           <Route path="/addWorkout" element={<ProtectedRoute><AddWorkout /></ProtectedRoute>} />
           <Route path="/addPR" element={<ProtectedRoute><AddPRS /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
-          <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
+          <Route path="/editWorkout/:_id" element={<ProtectedRoute><EditWorkout /></ProtectedRoute>} />
           <Route path="/Events" element={<ProtectedRoute><Event /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
