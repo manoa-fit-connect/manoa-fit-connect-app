@@ -119,7 +119,7 @@
       "itemName": "Elliptical Machine",
       "category": "Cardio",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/elliptical.jpeg",
       "description": "An elliptical machine provides a low-impact cardiovascular workout while engaging both the upper and lower body."
     },
     {
@@ -133,14 +133,14 @@
       "itemName": "Rowing Machine",
       "category": "Cardio",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/rowing.jpeg",
       "description": "A rowing machine provides a full-body cardiovascular workout while emphasizing the muscles in the back, arms, and legs."
     },
     {
       "itemName": "Stair Climber",
       "category": "Cardio",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/stair.jpeg",
       "description": "The stair climber simulates climbing stairs and provides an intense lower body workout while also engaging the cardiovascular system."
     },
     {
@@ -161,7 +161,7 @@
       "itemName": "Lat Pulldown Machine",
       "category": "Strength",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/lat.jpeg",
       "description": "The lat pulldown machine is designed to strengthen the muscles of the upper back, particularly the latissimus dorsi (lats), as well as the biceps and forearms."
     },
     {
@@ -175,42 +175,42 @@
       "itemName": "Smith Machine",
       "category": "Strength",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/smith.jpeg",
       "description": "The Smith machine is a versatile piece of equipment that allows for a wide range of exercises targeting various muscle groups, including chest, shoulders, legs, and more."
     },
     {
       "itemName": "Basketball Court",
       "category": "Other",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/basketball.jpeg",
       "description": "The basketball court is a sports surface designed for playing basketball, typically consisting of a rectangular floor with a hoop at each end."
     },
     {
       "itemName": "Indoor Track",
       "category": "Other",
       "locationFound": "2nd Floor",
-      "image": "images/heart.png",
+      "image": "images/indoor.jpeg",
       "description": "An indoor track is a circular or oval-shaped track located inside a building, used primarily for running and other track and field events."
     },
     {
       "itemName": "Treadmill",
       "category": "Cardio",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/treadmill.jpeg",
       "description": "A treadmill is a cardio machine used for walking, running, or climbing while remaining in the same place."
     },
     {
       "itemName": "Dumbbells",
       "category": "Strength",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/dumbells.jpeg",
       "description": "Dumbbells are free weights used in strength training, typically consisting of a handle with weights attached at each end."
     },
     {
       "itemName": "Yoga Mats",
       "category": "Other",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/yoga.jpeg",
       "description": "Yoga mats are used for yoga, Pilates, and other floor exercises to provide cushioning and traction."
     },
     {
@@ -224,42 +224,42 @@
       "itemName": "Yoga Blocks",
       "category": "Flexibility",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/block.jpeg",
       "description": "Yoga blocks are used to provide support and stability in yoga poses, helping to improve flexibility and alignment."
     },
     {
       "itemName": "Foam Roller",
       "category": "Flexibility",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/foam.jpeg",
       "description": "A foam roller is a self-massage tool used to release muscle tightness and improve flexibility and range of motion."
     },
     {
       "itemName": "Stretching Strap",
       "category": "Flexibility",
       "locationFound": "2nd Floor",
-      "image": "images/heart.png",
+      "image": "images/stretch.jpeg",
       "description": "A stretching strap is used to assist in stretching exercises, helping to increase flexibility and improve range of motion."
     },
     {
       "itemName": "Pilates Ring",
       "category": "Flexibility",
       "locationFound": "2nd Floor",
-      "image": "images/heart.png",
+      "image": "images/pilates.jpeg",
       "description": "A Pilates ring, also known as a magic circle, is a flexible ring used in Pilates exercises to add resistance and improve flexibility and muscle tone."
     },
     {
       "itemName": "Balance Ball",
       "category": "Flexibility",
       "locationFound": "1st Floor",
-      "image": "images/heart.png",
+      "image": "images/balance.jpeg",
       "description": "A balance ball, also known as a stability ball, is used for stability, balance, and flexibility exercises to improve core strength and posture."
     },
     {
       "itemName": "Resistance Bands",
       "category": "Flexibility",
       "locationFound": "2nd Floor",
-      "image": "images/heart.png",
+      "image": "images/resistance.jpeg",
       "description": "Resistance bands are elastic bands used for stretching, strengthening, and flexibility exercises to target various muscle groups."
     }
   ]
