@@ -9,7 +9,7 @@ const PersonalRecords = ({ PRS }) => (
     <td>{PRS.exercise}</td>
     <td>{PRS.weight}</td>
     <td>{PRS.repsOrDist}</td>
-    <td>{PRS.date.toLocaleDateString('en-US')}</td>
+    <td>{PRS.date.toLocaleDateString('en-US', { timeZone: 'GMT', day: 'numeric', month: 'numeric', year: 'numeric' })}</td>
     <td>
       <Link to={`/editPR/${PRS._id}`} id="EditPR-Page">Edit</Link>
     </td>
