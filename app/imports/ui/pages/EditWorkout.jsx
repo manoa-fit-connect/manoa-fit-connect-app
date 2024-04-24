@@ -24,6 +24,9 @@ const EditWorkout = () => {
     const rdy = subscription.ready();
     // Get the document
     const document = Workouts.collection.findOne(_id);
+    if (document && typeof document.date === 'string') {
+      document.date = new Date(document.date);
+    }
     return {
       doc: document,
       ready: rdy,
