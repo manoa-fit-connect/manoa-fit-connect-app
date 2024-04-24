@@ -13,21 +13,25 @@ class ProfilesCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema(
       {
-        firstName: { type: String, required: true },
-        lastName: { type: String, required: true },
-        image: { type: String, required: true },
-        status: { type: String, required: true },
-        level: { type: String, required: true },
-        goals: { type: String, required: true, custom() {
-          if (!this.value || this.value.length < 1) {
-            return 'required';
-          }
-        } },
-        styles: { type: String, required: true, custom() {
-          if (!this.value || this.value.length < 1) {
-            return 'required';
-          }
-        } },
+        firstName: String,
+        lastName: String,
+        image: String,
+        status: {
+          type: String,
+          allowedValues: ['Undergraduate Student', 'Graduate Student', 'Faculty/Staff'],
+        },
+        level: {
+          type: String,
+          allowedValues: ['Beginner', 'Novice', 'Intermediate', 'Advanced', 'Expert'],
+        },
+        goals: {
+          type: String,
+          allowedValues: ['Strength', 'Cardio', 'Weight Loss', 'Exercise'],
+        },
+        styles: {
+          type: String,
+          allowedValues: ['Weight Lifting', 'Powerlifting', 'Olympic Weightlifting', 'Bodybuilding', 'Calisthenics', 'Plyometrics', 'Aerobic Exercise', 'HIIT', 'Circuit Training', 'Sports'],
+        },
         owner: { type: String },
       },
       {
@@ -41,7 +45,6 @@ class ProfilesCollection {
           trimStrings: true,
         },
         humanizeAutoLabels: true,
-        requiredByDefault: false,
       },
     );
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

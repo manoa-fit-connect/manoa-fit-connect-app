@@ -5,27 +5,30 @@ import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
-import Form from 'react-bootstrap/Form';
 import { Profiles } from '../../api/profile/Profiles';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema(
   {
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    image: { type: String, required: true },
-    status: { type: String, required: true },
-    level: { type: String, required: true },
-    goals: { type: String, required: true, custom() {
-      if (!this.value || this.value.length < 1) {
-        return 'required';
-      }
-    } },
-    styles: { type: String, required: true, custom() {
-      if (!this.value || this.value.length < 1) {
-        return 'required';
-      }
-    } },
+    firstName: String,
+    lastName: String,
+    image: String,
+    status: {
+      type: String,
+      allowedValues: ['Undergraduate Student', 'Graduate Student', 'Faculty/Staff'],
+    },
+    level: {
+      type: String,
+      allowedValues: ['Beginner', 'Novice', 'Intermediate', 'Advanced', 'Expert'],
+    },
+    goals: {
+      type: String,
+      allowedValues: ['Strength', 'Cardio', 'Weight Loss', 'Exercise'],
+    },
+    styles: {
+      type: String,
+      allowedValues: ['Weight Lifting', 'Powerlifting', 'Olympic Weightlifting', 'Bodybuilding', 'Calisthenics', 'Plyometrics', 'Aerobic Exercise', 'HIIT', 'Circuit Training', 'Sports'],
+    },
   },
   {
     clean: {
@@ -38,7 +41,6 @@ const formSchema = new SimpleSchema(
       trimStrings: true,
     },
     humanizeAutoLabels: true,
-    requiredByDefault: false,
   },
 );
 
@@ -81,34 +83,19 @@ const ProfileCreate = () => {
                 </Row>
                 <Row>
                   <Col>
-                    <Form.Group controlId="status" className="mb-0">
-                      <Form.Label className="mb-0">University Status</Form.Label>
-                      <Form.Select name="status">
-                        <option value="">Select Status</option>
-                        <option value="Undergraduate Student">Undergraduate Student</option>
-                        <option value="Graduate Student">Graduate Student</option>
-                        <option value="Faculty/Staff">Faculty/Staff</option>
-                      </Form.Select>
-                    </Form.Group>
+                    <SelectField name="status" label="University Status" />
                   </Col>
                   <Col>
-                    <Form.Group controlId="level" className="mb-0">
-                      <Form.Label className="mb-0">Proficiency Level</Form.Label>
-                      <Form.Select name="level">
-                        <option value="">Select Level</option>
-                        <option value="Beginner">Beginner</option>
-                        <option value="Novice">Novice</option>
-                        <option value="Intermediate">Intermediate</option>
-                        <option value="Advanced">Advanced</option>
-                        <option value="Expert">Expert</option>
-                      </Form.Select>
-                    </Form.Group>
-
+                    <SelectField name="level" label="Proficiency Level" />
                   </Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="goals" /></Col>
-                  <Col><TextField name="styles" /></Col>
+                  <Col>
+                    <SelectField name="goals" label="Fitness Goals" />
+                  </Col>
+                  <Col>
+                    <SelectField name="styles" label="Workout Styles" />
+                  </Col>
                 </Row>
                 <SubmitField value="Submit" />
                 <ErrorsField />
