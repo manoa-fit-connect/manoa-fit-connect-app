@@ -19,29 +19,22 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/* Renders the AddStuff page for adding a document. */
 const EditPRS = () => {
-  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const { _id } = useParams();
-  // console.log('EditStuff', _id);
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
-    // Get access to Stuff documents.
     const subscription = Meteor.subscribe(PRS.userPublicationName);
-    // Determine if the subscription is ready
-    const rdy = subscription.ready();
-    // Get the document
     const document = PRS.collection.findOne(_id);
+    if (document && typeof document.date === 'string') {
+      document.date = new Date(document.date);
+    }
     return {
       doc: document,
-      ready: rdy,
+      ready: subscription.ready(),
     };
   }, [_id]);
-  // console.log('EditStuff', doc, ready);
-  // On successful submit, insert the data.
+
   const submit = (data) => {
-    const { exercise, weight, date, owner } = data;
-    PRS.collection.update(_id, { $set: { exercise, weight, date, owner } }, (error) => {
+    PRS.collection.update(_id, { $set: data }, (error) => {
       if (error) {
         swal('Error', error.message, 'error');
       } else {
@@ -54,17 +47,19 @@ const EditPRS = () => {
     });
   };
 
+  if (!ready) return <div>Loading...</div>;
+
   return (
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
+          <AutoForm schema={bridge} onSubmit={submit} model={doc}>
             <Card>
               <Card.Body>
                 <Col className="text-center"><h2>Edit PR</h2></Col>
                 <TextField name="exercise" />
-                <NumField name="weight" decimal={null} />
-                <NumField name="repsOrDist" decimal={null} />
+                <NumField name="weight" decimal={false} />
+                <NumField name="repsOrDist" decimal={false} />
                 <DateField name="date" type="date" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
