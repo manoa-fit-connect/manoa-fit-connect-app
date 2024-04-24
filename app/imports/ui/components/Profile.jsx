@@ -22,7 +22,7 @@ const Profile = ({ profile }) => (
     <Card.Body>
       <Card.Text>Availability: MTWRF 12-1:30pm</Card.Text>
       <Card.Text>Routine: Chest, Legs, Shoulders, Back, Arms and Legs</Card.Text>
-      <Link to={`/editprofile/${profile._id}`}>Edit</Link>
+      <Link to={`/editprofile/${profile._id}`} id="EditProfile-Page">Edit</Link>
     </Card.Body>
   </Card>
 );

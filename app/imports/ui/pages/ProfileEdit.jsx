@@ -39,7 +39,7 @@ const ProfileEdit = () => {
   };
 
   return ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="EditProfile-Page">
       <Row className="justify-content-center">
         <Col xs={10}>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>

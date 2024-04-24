@@ -56,7 +56,7 @@ const Event = () => {
   ));
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4" id="Events-Page">
       <Card>
         <Card.Body>
           <Card.Title>Upcoming Events</Card.Title>

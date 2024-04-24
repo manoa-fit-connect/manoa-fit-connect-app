@@ -493,7 +493,7 @@ const FavoriteWorkout = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4" id="Generator-Page">
       <Card>
         <Card.Body>
           <Card.Title>Workout Generator</Card.Title>
