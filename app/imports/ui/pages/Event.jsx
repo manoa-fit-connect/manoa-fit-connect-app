@@ -45,7 +45,7 @@ const Event = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4" id="Events-Page">
       <Card>
         <Card.Body>
           <Card.Title>Workout Events</Card.Title>

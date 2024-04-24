@@ -11,7 +11,7 @@ const PersonalRecords = ({ PRS }) => (
     <td>{PRS.repsOrDist}</td>
     <td>{PRS.date.toLocaleDateString('en-US')}</td>
     <td>
-      <Link to={`/editPR/${PRS._id}`}>Edit</Link>
+      <Link to={`/editPR/${PRS._id}`} id="EditPR-Page">Edit</Link>
     </td>
   </tr>
 );

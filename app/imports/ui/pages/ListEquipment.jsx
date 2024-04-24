@@ -44,7 +44,7 @@ const ListEquipment = () => {
 
   return (
     ready ? (
-      <Container className="py-3">
+      <Container className="py-3" id="Equipment-Page">
         <Row className="justify-content-center">
           <Col>
             <Col className="text-center">

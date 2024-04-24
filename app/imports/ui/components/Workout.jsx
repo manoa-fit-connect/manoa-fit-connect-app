@@ -33,7 +33,7 @@ const Workout = ({ workout }) => (
       </Row>
       {workout.highlight}
       <Row>
-        <Link to={`/editWorkout/${workout._id}`}>Edit</Link>
+        <Link to={`/editWorkout/${workout._id}`} id="EditWorkout-Page">Edit</Link>
       </Row>
     </Card.Body>
   </Card>
