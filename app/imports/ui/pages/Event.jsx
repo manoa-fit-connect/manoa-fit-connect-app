@@ -31,21 +31,44 @@ const Event = () => {
     const updatedEvents = [...events];
     updatedEvents.splice(index, 1);
     setEvents(updatedEvents);
+  };  
+
+  const months = ['January 2024', 'February 2024', 'March 2024', 'April 2024', 'May 2024', 'June 2024', 'July 2024', 'August 2024', 'September 2024', 'October 2024', 'November 2024', 'December 2024'];
+  const [displayMonthIndex, setDisplayMonthIndex] = useState(new Date().getMonth());
+  const filteredEvents = events.filter(event => new Date(event.date).getMonth() === displayMonthIndex);
+
+  const prevMonth = () => {
+    const newMonthIndex = (displayMonthIndex - 1 + 12) % 12;
+    setDisplayMonthIndex(newMonthIndex);
   };
 
-  // Render events as boxes
-  const renderEventBoxes = () => {
-    return events.map((event, index) => (
-      <div key={index} className="event-box">
-        <div className="event-date">{event.date}</div>
-        <div className="event-title">{event.title}</div>
-        <Button variant="outline-danger" size="sm" className="mt-2" onClick={() => removeEvent(index)}>Remove</Button>
-      </div>
-    ));
+  const nextMonth = () => {
+    const newMonthIndex = (displayMonthIndex + 1 + 12) % 12;
+    setDisplayMonthIndex(newMonthIndex);
   };
+
+  const renderEventBoxes = () => filteredEvents.map((event, index) => (
+    <div key={index} className="event-box">
+      <div className="event-date">{event.date}</div>
+      <div className="event-title">{event.title}</div>
+      <Button variant="outline-danger" size="sm" className="mt-2" onClick={() => removeEvent(index)}>Remove</Button>
+    </div>
+  ));
 
   return (
     <div className="container mt-4">
+      <Card>
+        <Card.Body>
+          <Card.Title>Upcoming Events</Card.Title>
+          <h1>{months[displayMonthIndex]}</h1>
+          <Button onClick={prevMonth} className="me-1">Previous</Button>
+          <Button onClick={nextMonth}>Next</Button>
+          <div className="event-container">
+            {renderEventBoxes()}
+          </div>
+        </Card.Body>
+      </Card>
+      <br />
       <Card>
         <Card.Body>
           <Card.Title>Workout Events</Card.Title>
@@ -60,9 +83,7 @@ const Event = () => {
             </Form.Group>
             <Button variant="primary" onClick={addEvent}>Add Event</Button>
           </Form>
-          <div className="event-container">
-            {renderEventBoxes()}
-          </div>
+
         </Card.Body>
       </Card>
     </div>
