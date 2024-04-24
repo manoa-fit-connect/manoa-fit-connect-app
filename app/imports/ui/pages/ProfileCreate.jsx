@@ -59,7 +59,7 @@ const ProfileCreate = () => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Item added successfully', 'success');
+          swal('Success', 'Profile Created', 'success');
           formRef.reset();
         }
       },
