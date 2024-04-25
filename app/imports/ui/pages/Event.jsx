@@ -31,11 +31,10 @@ const Event = () => {
     const updatedEvents = [...events];
     updatedEvents.splice(index, 1);
     setEvents(updatedEvents);
-  };  
-
+  };
   const months = ['January 2024', 'February 2024', 'March 2024', 'April 2024', 'May 2024', 'June 2024', 'July 2024', 'August 2024', 'September 2024', 'October 2024', 'November 2024', 'December 2024'];
   const [displayMonthIndex, setDisplayMonthIndex] = useState(new Date().getMonth());
-  const filteredEvents = events.filter(event => new Date(event.date).getMonth() === displayMonthIndex);
+  const filteredEvents = events.filter(event => new Date(event.date).getMonth() + 1 === displayMonthIndex);
 
   const prevMonth = () => {
     const newMonthIndex = (displayMonthIndex - 1 + 12) % 12;
