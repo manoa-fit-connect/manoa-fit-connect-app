@@ -19,7 +19,7 @@
 body {
   --bs-dark: var(--matr-navbar-bg);
   --bs-dark-rgb: var(--matr-navbar-bg-rgb);
-  background: fixed center url("https://w0.peakpx.com/wallpaper/851/985/HD-wallpaper-hawaii-rainbow-warriors-american-football-team-green-background-hawaii-rainbow-warriors-logo-grunge-art-ncaa-american-football-usa-hawaii-rainbow-warriors-emblem.jpg");
+  background: url('/images/UHBackground.jpg');
   background-size: cover;
 }
 #middle{
