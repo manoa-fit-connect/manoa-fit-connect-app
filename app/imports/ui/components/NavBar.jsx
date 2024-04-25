@@ -15,7 +15,7 @@ const NavBar = () => {
   return (
     <Navbar bg="dark" expand="lg">
       <Container>
-        <Navbar.Brand as={NavLink} to="/">
+        <Navbar.Brand as={NavLink} to="/" id="Home-Page">
           <Row>
             <Col>
               <Image roundedCircle src="/images/MFCLogo.png" width="100px" />

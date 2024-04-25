@@ -78,7 +78,7 @@ const Friends = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <Container className="py-3">
+    <Container className="py-3" id="Friends-Page">
       <Row>
         {currentFriends.map(friend => (
           <Col xs={12} md={4} key={friend._id}>

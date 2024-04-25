@@ -20,9 +20,9 @@ const Landing = () => {
   if (currentUser) {
     return (
       <Container className="align-items-center-center" id="middle">
-        <Row>
+        <Row id="landing-page">
           <Col>
-            <Link to="/Friends" style={linkStyles}>
+            <Link to="/Friends" style={linkStyles} id="Friends-Page">
               <div className="d-flex justify-content-center">
                 <PeopleFill size={125} />
               </div>
@@ -31,7 +31,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/listEquipment" style={linkStyles}>
+            <Link to="/listEquipment" style={linkStyles} id="Equipment-Page">
               <div className="d-flex justify-content-center">
                 <Image width={125} className="pt-3 pb-3" src="\images\dumbbell_logo.png" />
               </div>
@@ -40,7 +40,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/userprofile" style={linkStyles}>
+            <Link to="/userprofile" style={linkStyles} id="Profile-Page">
               <div className="d-flex justify-content-center">
                 <PersonFill size={125} />
               </div>
@@ -51,7 +51,7 @@ const Landing = () => {
         </Row>
         <Row className="pt-5">
           <Col>
-            <Link to="/Progress" style={linkStyles}>
+            <Link to="/Progress" style={linkStyles} id="Progress-Page">
               <div className="d-flex justify-content-center">
                 <GraphUp size={125} />
               </div>
@@ -60,7 +60,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/generator" style={linkStyles}>
+            <Link to="/generator" style={linkStyles} id="Generator-Page">
               <div className="d-flex justify-content-center">
                 <Image width={125} src="\images\heart.png" />
               </div>
@@ -69,7 +69,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/Events" style={linkStyles}>
+            <Link to="/Events" style={linkStyles} id="Events-Page">
               <div className="d-flex justify-content-center">
                 <CalendarEventFill size={125} />
               </div>
@@ -83,7 +83,7 @@ const Landing = () => {
   }
 
   return (
-    <Container>
+    <Container id="landing-page">
       <Row className="justify-content-center">
         <Col md={4}>
           <Image src="/images/MFCLogo.png" className="w-100" />

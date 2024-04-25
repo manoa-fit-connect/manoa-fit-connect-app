@@ -14,12 +14,10 @@ const SignOut = () => {
     setTimeout(() => setShowHearts(false), 10000); // Hide hearts after 10 seconds
   };
 
-  const getRandomPosition = () => {
-    return {
-      left: Math.random() * window.innerWidth,
-      animationDuration: `${Math.random() * 15 + 5}s`, // Random duration between 5 to 20 seconds (slower)
-    };
-  };
+  const getRandomPosition = () => ({
+    left: Math.random() * window.innerWidth,
+    animationDuration: `${Math.random() * 15 + 5}s`, // Random duration between 5 to 20 seconds (slower)
+  });
 
   const renderHearts = () => {
     const hearts = [];
@@ -31,7 +29,7 @@ const SignOut = () => {
           alt="heart"
           className="heart-fall"
           style={{ ...getRandomPosition(), width: '80px', height: 'auto' }} // Adjust size here
-        />
+        />,
       );
     }
     return hearts;

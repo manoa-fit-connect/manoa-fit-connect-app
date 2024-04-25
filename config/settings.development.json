@@ -262,5 +262,55 @@
       "image": "images/resistance.jpeg",
       "description": "Resistance bands are elastic bands used for stretching, strengthening, and flexibility exercises to target various muscle groups."
     }
+  ],
+  "defaultWorkouts": [
+    {
+      "date": "4/8/2024",
+      "difficulty": 4,
+      "highlight": "Hit 215 for 3 today on bench",
+      "name": "Bench Day",
+      "owner": "john@foo.com",
+      "rating": 3
+    },
+    {
+      "date": "4/6/2024",
+      "difficulty": 5,
+      "highlight": "Hit a new pr to on squat 395 for 3",
+      "name": "Squat Day",
+      "owner": "john@foo.com",
+      "rating": 5
+    },
+    {
+      "date": "4/2/2024",
+      "difficulty": 4,
+      "highlight": "Feeling more confident on deadlift hitting 435 for 4",
+      "name": "Deadlift Day",
+      "owner": "admin@foo.com",
+      "rating": 4
+    }
+  ],
+  "defaultPRS" : [
+    {
+      "date": "3/25/2024",
+      "exercise": "Bench",
+      "repsOrDist": "4 reps",
+      "weight": 220,
+      "owner": "john@foo.com"
+    },
+    {
+      "date": "4/6/2024",
+      "exercise": "Squat",
+      "owner": "john@foo.com",
+      "repsOrDist": "3 reps",
+      "weight": 395
+    },
+    {
+      "date": "3/25/2024",
+      "exercise": "Deadlift",
+      "repsOrDist": "4 reps",
+      "weight": 455,
+      "owner" : "admin@foo.com"
+    }
   ]
+
 }

@@ -24,15 +24,15 @@ const ProgressTracker = () => {
   }, []);
 
   return ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="Progress-Page">
       <Row className="justify-content-center">
         <Col className="text-center" id="middle">
           <Row className="justify-content-center">
             <Col xs={5}>
-              <Button href="/addworkout">Add Workout</Button>
+              <Button href="/addworkout" id="AddWorkout-Page">Add Workout</Button>
             </Col>
             <Col xs={5}>
-              <Button href="/addPR">Add PRS</Button>
+              <Button href="/addPR" id="AddPR-Page">Add PRS</Button>
             </Col>
           </Row>
           <h2>Previous Workouts</h2>
