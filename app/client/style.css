@@ -159,3 +159,7 @@ body .navbar {
     transform: translateY(100vh);
   }
 }
+
+.trans-black-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+}

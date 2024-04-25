@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Image, Row, Col } from 'react-bootstrap';
 
 const AboutUs = () => (
-  <Container>
+  <Container className="trans-black-bg">
     <Row>
       <Col xs={1} />
       <Col>

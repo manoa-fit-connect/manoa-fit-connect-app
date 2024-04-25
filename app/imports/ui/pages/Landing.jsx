@@ -83,7 +83,7 @@ const Landing = () => {
   }
 
   return (
-    <Container id="landing-page">
+    <div id="landing-page">
       <Row className="justify-content-center">
         <Col md={4}>
           <Image src="/images/MFCLogo.png" className="w-100" />
@@ -99,7 +99,7 @@ const Landing = () => {
           <Button href="/signin" variant="success">Sign In</Button>{' '}
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 
 };
