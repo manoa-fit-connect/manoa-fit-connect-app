@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -8,45 +8,41 @@ import SimpleSchema from 'simpl-schema';
 import { Profiles } from '../../api/profile/Profiles';
 
 // Create a schema to specify the structure of the data to appear in the form.
-const formSchema = new SimpleSchema({
-  firstName: String,
-  lastName: String,
-  image: String,
-  age: {
-    type: Number,
-    optional: true,
+const formSchema = new SimpleSchema(
+  {
+    firstName: String,
+    lastName: String,
+    image: String,
+    status: {
+      type: String,
+      allowedValues: ['Undergraduate Student', 'Graduate Student', 'Faculty/Staff'],
+    },
+    level: {
+      type: String,
+      allowedValues: ['Beginner', 'Novice', 'Intermediate', 'Advanced', 'Expert'],
+    },
+    goals: {
+      type: String,
+      allowedValues: ['Strength', 'Cardio', 'Weight Loss', 'Exercise'],
+    },
+    styles: {
+      type: String,
+      allowedValues: ['Weight Lifting', 'Powerlifting', 'Olympic Weightlifting', 'Bodybuilding', 'Calisthenics', 'Plyometrics', 'Aerobic Exercise', 'HIIT', 'Circuit Training', 'Sports'],
+    },
   },
-  gender: {
-    type: String,
-    optional: true,
+  {
+    clean: {
+      autoConvert: true,
+      extendAutoValueContext: {},
+      filter: false,
+      getAutoValues: true,
+      removeEmptyStrings: true,
+      removeNullsFromArrays: true,
+      trimStrings: true,
+    },
+    humanizeAutoLabels: true,
   },
-  position: {
-    type: String,
-    optional: true,
-  },
-  level: String,
-  roles: {
-    type: Array,
-    optional: true,
-  },
-  'roles.$': String,
-  goals: String,
-  styles: String,
-  sports: {
-    type: Array,
-    optional: true,
-  },
-  'sports.$': String,
-  hobbies: {
-    type: Array,
-    optional: true,
-  },
-  'hobbies.$': String,
-  major: {
-    type: String,
-    optional: true,
-  },
-});
+);
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
@@ -55,15 +51,15 @@ const ProfileCreate = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { firstName, lastName, image, age, gender, position, level, roles, goals, styles, sports, hobbies, major } = data;
+    const { firstName, lastName, image, status, level, goals, styles } = data;
     const owner = Meteor.user().username;
     Profiles.collection.insert(
-      { firstName, lastName, image, age, gender, position, level, roles, goals, styles, sports, hobbies, major, owner },
+      { firstName, lastName, image, status, level, goals, styles, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Item added successfully', 'success');
+          swal('Success', 'Profile Created', 'success');
           formRef.reset();
         }
       },
@@ -81,29 +77,25 @@ const ProfileCreate = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="firstName" /></Col>
-                  <Col><TextField name="lastName" /></Col>
+                  <Col><TextField name="firstName" label="First Name" /></Col>
+                  <Col><TextField name="lastName" label="Last Name" /></Col>
+                  <Col><TextField name="image" label="Image URL" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="age" /></Col>
-                  <Col><TextField name="gender" /></Col>
-                  <Col><TextField name="position" /></Col>
+                  <Col>
+                    <SelectField name="status" label="University Status" />
+                  </Col>
+                  <Col>
+                    <SelectField name="level" label="Proficiency Level" />
+                  </Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="level" /></Col>
-                  <Col><TextField name="roles" /></Col>
-                </Row>
-                <Row>
-                  <Col><TextField name="goals" /></Col>
-                  <Col><TextField name="styles" /></Col>
-                </Row>
-                <Row>
-                  <Col><TextField name="sports" /></Col>
-                  <Col><TextField name="hobbies" /></Col>
-                </Row>
-                <Row>
-                  <Col><TextField name="major" /></Col>
-                  <Col><TextField name="image" /></Col>
+                  <Col>
+                    <SelectField name="goals" label="Fitness Goals" />
+                  </Col>
+                  <Col>
+                    <SelectField name="styles" label="Workout Styles" />
+                  </Col>
                 </Row>
                 <SubmitField value="Submit" />
                 <ErrorsField />

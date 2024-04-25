@@ -30,34 +30,16 @@ const Profile = ({ profile }) => (
 // Require a document to be passed to this component.
 Profile.propTypes = {
   profile: PropTypes.shape({
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
-    age: PropTypes.number,
-    gender: PropTypes.string,
-    position: PropTypes.string,
-    level: PropTypes.string.isRequired,
-    roles: PropTypes.arrayOf(PropTypes.string),
-    goals: PropTypes.arrayOf(PropTypes.string).isRequired,
-    styles: PropTypes.arrayOf(PropTypes.string).isRequired,
-    sports: PropTypes.arrayOf(PropTypes.string),
-    hobbies: PropTypes.arrayOf(PropTypes.string),
-    major: PropTypes.string,
-    image: PropTypes.string.isRequired,
-    owner: PropTypes.string.isRequired,
-    _id: PropTypes.string.isRequired,
-  }),
-};
-
-Profile.defaultProps = {
-  profile: {
-    gender: '',
-    age: 0,
-    position: '',
-    roles: [],
-    sports: [],
-    hobbies: [],
-    major: '',
-  },
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    image: PropTypes.string,
+    status: PropTypes.string,
+    level: PropTypes.string,
+    goals: PropTypes.string,
+    styles: PropTypes.string,
+    owner: PropTypes.string,
+    _id: PropTypes.string,
+  }).isRequired,
 };
 
 export default Profile;

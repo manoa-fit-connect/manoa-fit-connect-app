@@ -11,48 +11,42 @@ class ProfilesCollection {
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
-    this.schema = new SimpleSchema({
-      firstName: String,
-      lastName: String,
-      image: String,
-      age: {
-        type: Number,
-        optional: true,
+    this.schema = new SimpleSchema(
+      {
+        firstName: String,
+        lastName: String,
+        image: String,
+        status: {
+          type: String,
+          allowedValues: ['Undergraduate Student', 'Graduate Student', 'Faculty/Staff'],
+        },
+        level: {
+          type: String,
+          allowedValues: ['Beginner', 'Novice', 'Intermediate', 'Advanced', 'Expert'],
+        },
+        goals: {
+          type: String,
+          allowedValues: ['Strength', 'Cardio', 'Weight Loss', 'Exercise'],
+        },
+        styles: {
+          type: String,
+          allowedValues: ['Weight Lifting', 'Powerlifting', 'Olympic Weightlifting', 'Bodybuilding', 'Calisthenics', 'Plyometrics', 'Aerobic Exercise', 'HIIT', 'Circuit Training', 'Sports'],
+        },
+        owner: { type: String },
       },
-      gender: {
-        type: String,
-        optional: true,
+      {
+        clean: {
+          autoConvert: true,
+          extendAutoValueContext: {},
+          filter: false,
+          getAutoValues: true,
+          removeEmptyStrings: true,
+          removeNullsFromArrays: true,
+          trimStrings: true,
+        },
+        humanizeAutoLabels: true,
       },
-      position: {
-        type: String,
-        optional: true,
-      },
-      level: String,
-      roles: {
-        type: Array,
-        optional: true,
-      },
-      'roles.$': String,
-      goals: Array,
-      'goals.$': String,
-      styles: Array,
-      'styles.$': String,
-      sports: {
-        type: Array,
-        optional: true,
-      },
-      'sports.$': String,
-      hobbies: {
-        type: Array,
-        optional: true,
-      },
-      'hobbies.$': String,
-      major: {
-        type: String,
-        optional: true,
-      },
-      owner: String,
-    });
+    );
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions
