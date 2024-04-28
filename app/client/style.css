@@ -20,7 +20,7 @@ body {
   --bs-dark: var(--matr-navbar-bg);
   --bs-dark-rgb: var(--matr-navbar-bg-rgb);
   background: url('/images/UHBackground.jpg');
-  background-size: cover;
+  background-size: 100%;
 }
 #middle{
   color: white;
