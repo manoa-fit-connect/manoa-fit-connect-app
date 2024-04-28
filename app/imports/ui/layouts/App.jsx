@@ -19,7 +19,6 @@ import ProfileCreate from '../pages/ProfileCreate';
 import ProfileEdit from '../pages/ProfileEdit';
 import ProgressTracker from '../pages/ProgressTracker';
 import Friends from '../pages/Friends';
-import FavoriteWorkout from '../pages/FavoriteWorkout';
 import Event from '../pages/Event';
 import AboutUs from '../pages/AboutUs';
 import AddWorkout from '../pages/AddWorkout';
@@ -62,7 +61,6 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
           <Route path="/generator" element={<ProtectedRoute><WorkoutGenerator /></ProtectedRoute>} />
-          <Route path="/favorite" element={<ProtectedRoute><FavoriteWorkout /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
