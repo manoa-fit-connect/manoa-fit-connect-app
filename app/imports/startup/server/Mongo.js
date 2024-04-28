@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Profiles } from '../../api/profile/Profiles';
-import { Equipments } from '../../api/equipment/Equipments';
 import { PRS } from '../../api/PRS/prs';
 import { EquipmentItems } from '../../api/item/EquipmentItems';
 import { Workouts } from '../../api/Workouts/Workout';
@@ -32,19 +31,6 @@ if (Profiles.collection.find().count() === 0) {
   if (Meteor.settings.defaultProfiles) {
     console.log('Creating default profile.');
     Meteor.settings.defaultProfiles.forEach(profile => addProfile(profile));
-  }
-}
-
-// Initialize the database with a default equipment document.
-const addEquipment = (equipment) => {
-  console.log(`  Adding: ${equipment.equipmentName} (${equipment.equipmentName})`);
-  Equipments.collection.insert(equipment);
-};
-// Initialize the EquipmentsCollection if empty.
-if (Equipments.collection.find().count() === 0) {
-  if (Meteor.settings.defaultEquipments) {
-    console.log('Creating default equipment.');
-    Meteor.settings.defaultEquipments.forEach(equipment => addEquipment(equipment));
   }
 }
 

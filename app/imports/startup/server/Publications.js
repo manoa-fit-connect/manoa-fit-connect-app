@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Profiles } from '../../api/profile/Profiles';
-import { Equipments } from '../../api/equipment/Equipments';
 import { Workouts } from '../../api/Workouts/Workout';
 import { PRS } from '../../api/PRS/prs';
 import { EquipmentItems } from '../../api/item/EquipmentItems';
@@ -46,22 +45,7 @@ Meteor.publish(Profiles.adminPublicationName, function () {
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
-Meteor.publish(Equipments.userPublicationName, function () {
-  if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Equipments.collection.find({ equipmentName: username });
-  }
-  return this.ready();
-});
 
-// Admin-level publication.
-// If logged in and with admin role, then publish all documents from all users. Otherwise, publish nothing.
-Meteor.publish(Equipments.publicationName, function () {
-  if (this.userId) {
-    return Equipments.collection.find();
-  }
-  return this.ready();
-});
 Meteor.publish(Workouts.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
