@@ -426,7 +426,7 @@ const workouts = [
   },
 ];
 
-const FavoriteWorkout = () => {
+const WorkoutGenerator = () => {
   const [location, setLocation] = useState('home');
   const [muscleGroup, setMuscleGroup] = useState('upper body');
   const [time, setTime] = useState('15 min');
@@ -493,112 +493,116 @@ const FavoriteWorkout = () => {
   };
 
   return (
-    <div className="container mt-4" id="Generator-Page">
-      <Card>
-        <Card.Body>
-          <Card.Title>Workout Generator</Card.Title>
-          <Form>
-            <Form.Group controlId="formLocation">
-              <Form.Label>Location</Form.Label>
-              <Form.Control as="select" value={location} onChange={(e) => setLocation(e.target.value)}>
-                <option value="home">Home</option>
-                <option value="gym">Gym</option>
-                <option value="outdoor">Outdoor</option>
-              </Form.Control>
-            </Form.Group>
-            <Form.Group controlId="formMuscleGroup">
-              <Form.Label>Muscle Group</Form.Label>
-              <Form.Control as="select" value={muscleGroup} onChange={(e) => setMuscleGroup(e.target.value)}>
-                <option value="upper body">Upper Body</option>
-                <option value="lower body">Lower Body</option>
-                <option value="abs">Abs</option>
-                <option value="full body">Full Body</option>
-                <option value="stretching">Stretching</option>
-              </Form.Control>
-            </Form.Group>
-            <Form.Group controlId="formTime">
-              <Form.Label>Total Time</Form.Label>
-              <Form.Control as="select" value={time} onChange={(e) => setTime(e.target.value)}>
-                <option value="15 min">15 min</option>
-                <option value="30 min">30 min</option>
-                <option value="45 min">45 min</option>
-                <option value="1 hour">1 hour</option>
-              </Form.Control>
-            </Form.Group>
-          </Form>
-          <Button variant="secondary" className="mb-3" onClick={generateRandomWorkout}>Generate Workout</Button>
-          {generatedWorkout && (
-            <div>
-              <h5>Generated Workout:</h5>
-              <p>Location: {generatedWorkout.location}</p>
-              <p>Difficulty: {generatedWorkout.difficulty}</p>
-              <p>Time: {generatedWorkout.time}</p>
-              <p>Muscle Group: {generatedWorkout.muscleGroup}</p>
-              <p>Exercises:</p>
-              <ul>
-                {generatedWorkout.exercises.map((exercise, index) => (
-                  <li key={index}>{exercise}</li>
-                ))}
-              </ul>
-              <Button variant="primary" onClick={addToFavorites}>Add to Favorites</Button>
-            </div>
-          )}
-        </Card.Body>
-      </Card>
-
-      {/* Favorites Section */}
-      <Card className="mt-4">
-        <Card.Body>
-          <Card.Title>Favorites</Card.Title>
-          {favoriteWorkouts.length === 0 ? (
-            <p>No favorite workouts yet.</p>
-          ) : (
-            <ul>
-              {favoriteWorkouts.map((workout, index) => (
-                <li key={index}>
-                  <div>
-                    <strong>{workout.location} - {workout.muscleGroup} - {workout.time}</strong>
-                    <Button variant="danger" onClick={() => removeFromFavorites(index)} className="ml-2">Delete</Button>
-                  </div>
+    <div className="container mt-4">
+      <div className="row">
+        <div className="col-md-6">
+          <Card>
+            <Card.Body>
+              <Card.Title>Workout Generator</Card.Title>
+              <Form>
+                <Form.Group controlId="formLocation">
+                  <Form.Label>Location</Form.Label>
+                  <Form.Control as="select" value={location} onChange={(e) => setLocation(e.target.value)}>
+                    <option value="home">Home</option>
+                    <option value="gym">Gym</option>
+                    <option value="outdoor">Outdoor</option>
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group controlId="formMuscleGroup">
+                  <Form.Label>Muscle Group</Form.Label>
+                  <Form.Control as="select" value={muscleGroup} onChange={(e) => setMuscleGroup(e.target.value)}>
+                    <option value="upper body">Upper Body</option>
+                    <option value="lower body">Lower Body</option>
+                    <option value="abs">Abs</option>
+                    <option value="full body">Full Body</option>
+                    <option value="stretching">Stretching</option>
+                  </Form.Control>
+                </Form.Group>
+                <Form.Group controlId="formTime">
+                  <Form.Label>Total Time</Form.Label>
+                  <Form.Control as="select" value={time} onChange={(e) => setTime(e.target.value)}>
+                    <option value="15 min">15 min</option>
+                    <option value="30 min">30 min</option>
+                    <option value="45 min">45 min</option>
+                    <option value="1 hour">1 hour</option>
+                  </Form.Control>
+                </Form.Group>
+              </Form>
+              <Button variant="secondary" className="mb-3" onClick={generateRandomWorkout}>Generate Workout</Button>
+              {generatedWorkout && (
+                <div>
+                  <h5>Generated Workout:</h5>
+                  <p>Location: {generatedWorkout.location}</p>
+                  <p>Difficulty: {generatedWorkout.difficulty}</p>
+                  <p>Time: {generatedWorkout.time}</p>
+                  <p>Muscle Group: {generatedWorkout.muscleGroup}</p>
+                  <p>Exercises:</p>
                   <ul>
-                    {workout.exercises.map((exercise, index) => (
+                    {generatedWorkout.exercises.map((exercise, index) => (
                       <li key={index}>{exercise}</li>
                     ))}
                   </ul>
-                </li>
-              ))}
-            </ul>
-          )}
-        </Card.Body>
-      </Card>
-
-      {/* Custom Workout Section */}
-      <Card className="mt-4">
-        <Card.Body>
-          <Card.Title>Add Custom Workout</Card.Title>
-          <Form>
-            <Form.Group controlId="customLocation">
-              <Form.Label>Location</Form.Label>
-              <Form.Control type="text" value={customLocation} onChange={(e) => setCustomLocation(e.target.value)} />
-            </Form.Group>
-            <Form.Group controlId="customMuscleGroup">
-              <Form.Label>Muscle Group</Form.Label>
-              <Form.Control type="text" value={customMuscleGroup} onChange={(e) => setCustomMuscleGroup(e.target.value)} />
-            </Form.Group>
-            <Form.Group controlId="customTime">
-              <Form.Label>Total Time</Form.Label>
-              <Form.Control type="text" value={customTime} onChange={(e) => setCustomTime(e.target.value)} />
-            </Form.Group>
-            <Form.Group controlId="customExercises">
-              <Form.Label>Exercises (separated by comma)</Form.Label>
-              <Form.Control type="text" value={customExercises} onChange={(e) => setCustomExercises(e.target.value.split(','))} />
-            </Form.Group>
-            <Button variant="primary" onClick={addCustomWorkout}>Add Custom Workout</Button>
-          </Form>
-        </Card.Body>
-      </Card>
+                  <Button variant="primary" onClick={addToFavorites}>
+                    <span role="img" aria-label="heart">❤️</span> Add to Favorites
+                  </Button>
+                </div>
+              )}
+            </Card.Body>
+          </Card>
+        </div>
+        <div className="col-md-6">
+          <Card>
+            <Card.Body>
+              <Card.Title>Favorites</Card.Title>
+              {favoriteWorkouts.length === 0 ? (
+                <p>No favorite workouts yet.</p>
+              ) : (
+                <ul>
+                  {favoriteWorkouts.map((workout, index) => (
+                    <li key={index}>
+                      <div>
+                        <strong>{workout.location} - {workout.muscleGroup} - {workout.time}</strong>
+                        <Button variant="danger" onClick={() => removeFromFavorites(index)} className="ml-2">Delete</Button>
+                      </div>
+                      <ul>
+                        {workout.exercises.map((exercise, index) => (
+                          <li key={index}>{exercise}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </Card.Body>
+          </Card>
+          <Card className="mt-4">
+            <Card.Body>
+              <Card.Title>Add Custom Workout</Card.Title>
+              <Form>
+                <Form.Group controlId="customLocation">
+                  <Form.Label>Location</Form.Label>
+                  <Form.Control type="text" value={customLocation} onChange={(e) => setCustomLocation(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId="customMuscleGroup">
+                  <Form.Label>Muscle Group</Form.Label>
+                  <Form.Control type="text" value={customMuscleGroup} onChange={(e) => setCustomMuscleGroup(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId="customTime">
+                  <Form.Label>Total Time</Form.Label>
+                  <Form.Control type="text" value={customTime} onChange={(e) => setCustomTime(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId="customExercises">
+                  <Form.Label>Exercises (separated by comma)</Form.Label>
+                  <Form.Control type="text" value={customExercises} onChange={(e) => setCustomExercises(e.target.value.split(','))} />
+                </Form.Group>
+                <Button variant="primary" onClick={addCustomWorkout}>Add Custom Workout</Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default FavoriteWorkout;
+export default WorkoutGenerator;
