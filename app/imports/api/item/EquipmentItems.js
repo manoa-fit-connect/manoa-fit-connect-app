@@ -20,7 +20,7 @@ class EquipmentItemsCollection {
       },
       'category.$': {
         type: String,
-        allowedValues: ['Cardio', 'Strength', 'Flexibility', 'Other'],
+        allowedValues: ['Cardio', 'Strength', 'Flexibility', 'Sports Equipment', 'Other'],
       },
       description: String,
       locationFound: String,

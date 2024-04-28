@@ -64,6 +64,7 @@ const ListEquipment = () => {
                   <option value="Cardio">Cardio</option>
                   <option value="Strength">Strength</option>
                   <option value="Flexibility">Flexibility</option>
+                  <option value="Sports Equipment">Sports Equipment</option>
                   <option value="Other">Other</option>
                 </Form.Control>
               </Form.Group>
