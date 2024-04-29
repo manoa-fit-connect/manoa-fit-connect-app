@@ -16,25 +16,24 @@ const NavBar = () => {
     <Navbar bg="dark" expand="lg">
       <Container>
         <Navbar.Brand as={NavLink} to="/" id="Home-Page">
-          <Row>
-            <Col>
-              <Image roundedCircle src="/images/MFCLogo.png" width="100px" />
+          <Row className="align-items-center">
+            <Col xs="auto">
+              <Image roundedCircle src="/images/MFCLogo.png" width="150px"/>
             </Col>
-            <Col className="pt-4">
-              <h2>Manoa Fit Connect</h2>
+            <Col xs="auto" className="pt-3">
+              <h4 className="mb-0">Manoa Fit Connect</h4>
             </Col>
           </Row>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-start">
+          <Nav className="me-auto justify-content-start ms-auto">
             {currentUser ? ([
-              <Nav.Link id="my-profile-nav" as={NavLink} to="/userprofile" key="user-profile">My Profile</Nav.Link>,
-              <Nav.Link id="progress-tracker-nav" as={NavLink} to="/progress" key="progress">Progress Tracker</Nav.Link>,
-              <Nav.Link id="friends-nav" as={NavLink} to="/friends" key="friends">Friends</Nav.Link>,
-              <Nav.Link id="list-equipment-nav" as={NavLink} to="/listEquipment" key="listEquipment">Equipment</Nav.Link>,
-              <Nav.Link id="about-us-nav" as={NavLink} to="/about" key="about">About Us</Nav.Link>,
-              <Nav.Link id="generator-nav" as={NavLink} to="/generator" key="generator">Generator</Nav.Link>,
+              <Nav.Link id="my-profile-nav" as={NavLink} to="/userprofile" key="user-profile" className="me-3">My Profile</Nav.Link>,
+              <Nav.Link id="progress-tracker-nav" as={NavLink} to="/progress" key="progress" className="me-3">Progress Tracker</Nav.Link>,
+              <Nav.Link id="friends-nav" as={NavLink} to="/friends" key="friends" className="me-3">Friends</Nav.Link>,
+              <Nav.Link id="list-equipment-nav" as={NavLink} to="/listEquipment" key="listEquipment" className="me-3">Equipment</Nav.Link>,
+              <Nav.Link id="generator-nav" as={NavLink} to="/generator" key="generator" className="me-3">Generator</Nav.Link>,
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
