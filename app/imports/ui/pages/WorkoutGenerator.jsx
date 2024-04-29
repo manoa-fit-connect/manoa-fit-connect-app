@@ -493,16 +493,16 @@ const WorkoutGenerator = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4" style={{ fontFamily: 'Trirong, serif' }}>
       <div className="row">
         <div className="col-md-6">
-          <Card>
+          <Card style={{ fontFamily: 'Trirong, serif' }}>
             <Card.Body>
               <Card.Title>Workout Generator</Card.Title>
               <Form>
                 <Form.Group controlId="formLocation">
                   <Form.Label>Location</Form.Label>
-                  <Form.Control as="select" value={location} onChange={(e) => setLocation(e.target.value)}>
+                  <Form.Control as="select" value={location} onChange={(e) => setLocation(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}>
                     <option value="home">Home</option>
                     <option value="gym">Gym</option>
                     <option value="outdoor">Outdoor</option>
@@ -510,7 +510,7 @@ const WorkoutGenerator = () => {
                 </Form.Group>
                 <Form.Group controlId="formMuscleGroup">
                   <Form.Label>Muscle Group</Form.Label>
-                  <Form.Control as="select" value={muscleGroup} onChange={(e) => setMuscleGroup(e.target.value)}>
+                  <Form.Control as="select" value={muscleGroup} onChange={(e) => setMuscleGroup(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}>
                     <option value="upper body">Upper Body</option>
                     <option value="lower body">Lower Body</option>
                     <option value="abs">Abs</option>
@@ -520,7 +520,7 @@ const WorkoutGenerator = () => {
                 </Form.Group>
                 <Form.Group controlId="formTime">
                   <Form.Label>Total Time</Form.Label>
-                  <Form.Control as="select" value={time} onChange={(e) => setTime(e.target.value)}>
+                  <Form.Control as="select" value={time} onChange={(e) => setTime(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}>
                     <option value="15 min">15 min</option>
                     <option value="30 min">30 min</option>
                     <option value="45 min">45 min</option>
@@ -530,7 +530,7 @@ const WorkoutGenerator = () => {
               </Form>
               <Button variant="secondary" className="mb-3" onClick={generateRandomWorkout}>Generate Workout</Button>
               {generatedWorkout && (
-                <div>
+                <div style={{ fontFamily: 'Trirong, serif' }}>
                   <h5>Generated Workout:</h5>
                   <p>Location: {generatedWorkout.location}</p>
                   <p>Difficulty: {generatedWorkout.difficulty}</p>
@@ -551,7 +551,7 @@ const WorkoutGenerator = () => {
           </Card>
         </div>
         <div className="col-md-6">
-          <Card>
+          <Card style={{ fontFamily: 'Trirong, serif' }}>
             <Card.Body>
               <Card.Title>Favorites</Card.Title>
               {favoriteWorkouts.length === 0 ? (
@@ -575,25 +575,25 @@ const WorkoutGenerator = () => {
               )}
             </Card.Body>
           </Card>
-          <Card className="mt-4">
+          <Card className="mt-4" style={{ fontFamily: 'Trirong, serif' }}>
             <Card.Body>
               <Card.Title>Add Custom Workout</Card.Title>
               <Form>
                 <Form.Group controlId="customLocation">
                   <Form.Label>Location</Form.Label>
-                  <Form.Control type="text" value={customLocation} onChange={(e) => setCustomLocation(e.target.value)} />
+                  <Form.Control type="text" value={customLocation} onChange={(e) => setCustomLocation(e.target.value)} style={{ fontFamily: 'Trirong, serif' }} />
                 </Form.Group>
                 <Form.Group controlId="customMuscleGroup">
                   <Form.Label>Muscle Group</Form.Label>
-                  <Form.Control type="text" value={customMuscleGroup} onChange={(e) => setCustomMuscleGroup(e.target.value)} />
+                  <Form.Control type="text" value={customMuscleGroup} onChange={(e) => setCustomMuscleGroup(e.target.value)} style={{ fontFamily: 'Trirong, serif' }} />
                 </Form.Group>
                 <Form.Group controlId="customTime">
                   <Form.Label>Total Time</Form.Label>
-                  <Form.Control type="text" value={customTime} onChange={(e) => setCustomTime(e.target.value)} />
+                  <Form.Control type="text" value={customTime} onChange={(e) => setCustomTime(e.target.value)} style={{ fontFamily: 'Trirong, serif' }} />
                 </Form.Group>
                 <Form.Group controlId="customExercises">
                   <Form.Label>Exercises (separated by comma)</Form.Label>
-                  <Form.Control type="text" value={customExercises} onChange={(e) => setCustomExercises(e.target.value.split(','))} />
+                  <Form.Control type="text" value={customExercises} onChange={(e) => setCustomExercises(e.target.value.split(','))} style={{ fontFamily: 'Trirong, serif' }} />
                 </Form.Group>
                 <Button variant="primary" onClick={addCustomWorkout}>Add Custom Workout</Button>
               </Form>
