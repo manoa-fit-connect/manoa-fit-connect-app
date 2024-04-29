@@ -425,6 +425,12 @@ const workouts = [
     exercises: ['Leg Stretch', 'Arm Stretch', 'Back Stretch'],
   },
 ];
+const exerciseInstructions = {
+  'Push-ups': 'Start in a plank position with your hands shoulder-width apart. Lower your body until your chest nearly touches the floor. Push back up to the starting position.',
+  'Bicep Curls': 'Stand with dumbbells in each hand, palms facing forward. Curl the weights while keeping your upper arms stationary. Lower the weights back to starting position.',
+  'Tricep Dips': 'Sit on a chair with your hands gripping the edge. Lift your body off the chair and lower yourself until your elbows are at a 90-degree angle. Push back up to starting position.',
+  // Add instructions for other exercises...
+};
 
 const WorkoutGenerator = () => {
   const [location, setLocation] = useState('home');
@@ -539,7 +545,9 @@ const WorkoutGenerator = () => {
                   <p>Exercises:</p>
                   <ul>
                     {generatedWorkout.exercises.map((exercise, index) => (
-                      <li key={index}>{exercise}</li>
+                      <li key={index}>
+                        <strong>{exercise}</strong>: {exerciseInstructions[exercise]}
+                      </li>
                     ))}
                   </ul>
                   <Button variant="primary" onClick={addToFavorites}>
@@ -552,30 +560,6 @@ const WorkoutGenerator = () => {
         </div>
         <div className="col-md-6">
           <Card style={{ fontFamily: 'Trirong, serif' }}>
-            <Card.Body>
-              <Card.Title>Favorites</Card.Title>
-              {favoriteWorkouts.length === 0 ? (
-                <p>No favorite workouts yet.</p>
-              ) : (
-                <ul>
-                  {favoriteWorkouts.map((workout, index) => (
-                    <li key={index}>
-                      <div>
-                        <strong>{workout.location} - {workout.muscleGroup} - {workout.time}</strong>
-                        <Button variant="danger" onClick={() => removeFromFavorites(index)} className="ml-2">Delete</Button>
-                      </div>
-                      <ul>
-                        {workout.exercises.map((exercise, index) => (
-                          <li key={index}>{exercise}</li>
-                        ))}
-                      </ul>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </Card.Body>
-          </Card>
-          <Card className="mt-4" style={{ fontFamily: 'Trirong, serif' }}>
             <Card.Body>
               <Card.Title>Add Custom Workout</Card.Title>
               <Form>
@@ -592,11 +576,35 @@ const WorkoutGenerator = () => {
                   <Form.Control type="text" value={customTime} onChange={(e) => setCustomTime(e.target.value)} style={{ fontFamily: 'Trirong, serif' }} />
                 </Form.Group>
                 <Form.Group controlId="customExercises">
-                  <Form.Label>Exercises (separated by comma)</Form.Label>
-                  <Form.Control type="text" value={customExercises} onChange={(e) => setCustomExercises(e.target.value.split(','))} style={{ fontFamily: 'Trirong, serif' }} />
+                  <Form.Label>Exercises (comma-separated)</Form.Label>
+                  <Form.Control type="text" value={customExercises.join(',')} onChange={(e) => setCustomExercises(e.target.value.split(','))} style={{ fontFamily: 'Trirong, serif' }} />
                 </Form.Group>
-                <Button variant="primary" onClick={addCustomWorkout}>Add Custom Workout</Button>
               </Form>
+              <Button variant="primary" onClick={addCustomWorkout}>Add Custom Workout</Button>
+            </Card.Body>
+          </Card>
+          <Card className="mt-3" style={{ fontFamily: 'Trirong, serif' }}>
+            <Card.Body>
+              <Card.Title>Favorite Workouts</Card.Title>
+              <ul>
+                {favoriteWorkouts.map((workout, index) => (
+                  <li key={index}>
+                    <p>Location: {workout.location}</p>
+                    <p>Difficulty: {workout.difficulty}</p>
+                    <p>Time: {workout.time}</p>
+                    <p>Muscle Group: {workout.muscleGroup}</p>
+                    <p>Exercises:</p>
+                    <ul>
+                      {workout.exercises.map((exercise, index) => (
+                        <li key={index}>
+                          <strong>{exercise}</strong>: {exerciseInstructions[exercise]}
+                        </li>
+                      ))}
+                    </ul>
+                    <Button variant="danger" onClick={() => removeFromFavorites(index)}>Remove</Button>
+                  </li>
+                ))}
+              </ul>
             </Card.Body>
           </Card>
         </div>
