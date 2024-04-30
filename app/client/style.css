@@ -104,8 +104,8 @@ body .navbar {
 
 .equipment-image {
   width: 100%;
-  height: 300px; /* Set a fixed height for all images */
-  object-fit: cover;
+  height: 320px; /* Set a fixed height for all images */
+  object-fit: contain;
   border-radius: 10px;
 }
 
