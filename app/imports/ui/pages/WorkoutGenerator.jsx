@@ -499,114 +499,145 @@ const WorkoutGenerator = () => {
   };
 
   return (
-    <div className="container mt-4" style={{ fontFamily: 'Trirong, serif' }}>
-      <div className="row">
-        <div className="col-md-6">
-          <Card style={{ fontFamily: 'Trirong, serif' }}>
-            <Card.Body>
-              <Card.Title>Workout Generator</Card.Title>
-              <Form>
-                <Form.Group controlId="formLocation">
-                  <Form.Label>Location</Form.Label>
-                  <Form.Control as="select" value={location} onChange={(e) => setLocation(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}>
-                    <option value="home">Home</option>
-                    <option value="gym">Gym</option>
-                    <option value="outdoor">Outdoor</option>
-                  </Form.Control>
-                </Form.Group>
-                <Form.Group controlId="formMuscleGroup">
-                  <Form.Label>Muscle Group</Form.Label>
-                  <Form.Control as="select" value={muscleGroup} onChange={(e) => setMuscleGroup(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}>
-                    <option value="upper body">Upper Body</option>
-                    <option value="lower body">Lower Body</option>
-                    <option value="abs">Abs</option>
-                    <option value="full body">Full Body</option>
-                    <option value="stretching">Stretching</option>
-                  </Form.Control>
-                </Form.Group>
-                <Form.Group controlId="formTime">
-                  <Form.Label>Total Time</Form.Label>
-                  <Form.Control as="select" value={time} onChange={(e) => setTime(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}>
-                    <option value="15 min">15 min</option>
-                    <option value="30 min">30 min</option>
-                    <option value="45 min">45 min</option>
-                    <option value="1 hour">1 hour</option>
-                  </Form.Control>
-                </Form.Group>
-              </Form>
-              <Button variant="secondary" className="mb-3" onClick={generateRandomWorkout}>Generate Workout</Button>
-              {generatedWorkout && (
-                <div style={{ fontFamily: 'Trirong, serif' }}>
-                  <h5>Generated Workout:</h5>
-                  <p>Location: {generatedWorkout.location}</p>
-                  <p>Difficulty: {generatedWorkout.difficulty}</p>
-                  <p>Time: {generatedWorkout.time}</p>
-                  <p>Muscle Group: {generatedWorkout.muscleGroup}</p>
-                  <p>Exercises:</p>
-                  <ul>
-                    {generatedWorkout.exercises.map((exercise, index) => (
-                      <li key={index}>
-                        <strong>{exercise}</strong>: {exerciseInstructions[exercise]}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button variant="primary" onClick={addToFavorites}>
-                    <span role="img" aria-label="heart">❤️</span> Add to Favorites
-                  </Button>
-                </div>
-              )}
-            </Card.Body>
-          </Card>
-        </div>
-        <div className="col-md-6">
-          <Card style={{ fontFamily: 'Trirong, serif' }}>
-            <Card.Body>
-              <Card.Title>Add Custom Workout</Card.Title>
-              <Form>
-                <Form.Group controlId="customLocation">
-                  <Form.Label>Location</Form.Label>
-                  <Form.Control type="text" value={customLocation} onChange={(e) => setCustomLocation(e.target.value)} style={{ fontFamily: 'Trirong, serif' }} />
-                </Form.Group>
-                <Form.Group controlId="customMuscleGroup">
-                  <Form.Label>Muscle Group</Form.Label>
-                  <Form.Control type="text" value={customMuscleGroup} onChange={(e) => setCustomMuscleGroup(e.target.value)} style={{ fontFamily: 'Trirong, serif' }} />
-                </Form.Group>
-                <Form.Group controlId="customTime">
-                  <Form.Label>Total Time</Form.Label>
-                  <Form.Control type="text" value={customTime} onChange={(e) => setCustomTime(e.target.value)} style={{ fontFamily: 'Trirong, serif' }} />
-                </Form.Group>
-                <Form.Group controlId="customExercises">
-                  <Form.Label>Exercises (comma-separated)</Form.Label>
-                  <Form.Control type="text" value={customExercises.join(',')} onChange={(e) => setCustomExercises(e.target.value.split(','))} style={{ fontFamily: 'Trirong, serif' }} />
-                </Form.Group>
-              </Form>
-              <Button variant="primary" onClick={addCustomWorkout}>Add Custom Workout</Button>
-            </Card.Body>
-          </Card>
-          <Card className="mt-3" style={{ fontFamily: 'Trirong, serif' }}>
-            <Card.Body>
-              <Card.Title>Favorite Workouts</Card.Title>
-              <ul>
-                {favoriteWorkouts.map((workout, index) => (
-                  <li key={index}>
-                    <p>Location: {workout.location}</p>
-                    <p>Difficulty: {workout.difficulty}</p>
-                    <p>Time: {workout.time}</p>
-                    <p>Muscle Group: {workout.muscleGroup}</p>
+    <div>
+      <div className="mt-3" style={{
+        maxWidth: '600px',
+        margin: 'auto',
+        padding: '20px',
+        borderRadius: '10px',
+        backgroundColor: '#333',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+      }}>
+        <h1 style={{
+          fontFamily: 'Trirong, serif',
+          color: 'white',
+          fontSize: '30px',
+          textAlign: 'center',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
+        }}>Workout Generator</h1>
+        <p style={{
+          fontFamily: 'Trirong, serif',
+          color: 'white',
+          fontSize: '18px',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
+        }}>
+          Welcome to the Workout Generator! This tool helps you create personalized workout
+          routines based on your preferences. You can generate a random workout or add your custom exercises. Your favorite workouts are
+          also saved here for easy access!
+        </p>
+      </div>
+      <div className="container mt-4" style={{ fontFamily: 'Trirong, serif' }}>
+        <div className="row">
+          <div className="col-md-6">
+            <Card style={{ fontFamily: 'Trirong, serif' }}>
+              <Card.Body>
+                <Card.Title>Workout Generator</Card.Title>
+                <Form>
+                  <Form.Group controlId="formLocation">
+                    <Form.Label>Location</Form.Label>
+                    <Form.Control as="select" value={location} onChange={(e) => setLocation(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}>
+                      <option value="home">Home</option>
+                      <option value="gym">Gym</option>
+                      <option value="outdoor">Outdoor</option>
+                    </Form.Control>
+                  </Form.Group>
+                  <Form.Group controlId="formMuscleGroup">
+                    <Form.Label>Muscle Group</Form.Label>
+                    <Form.Control as="select" value={muscleGroup} onChange={(e) => setMuscleGroup(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}>
+                      <option value="upper body">Upper Body</option>
+                      <option value="lower body">Lower Body</option>
+                      <option value="abs">Abs</option>
+                      <option value="full body">Full Body</option>
+                      <option value="stretching">Stretching</option>
+                    </Form.Control>
+                  </Form.Group>
+                  <Form.Group controlId="formTime">
+                    <Form.Label>Total Time</Form.Label>
+                    <Form.Control as="select" value={time} onChange={(e) => setTime(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}>
+                      <option value="15 min">15 min</option>
+                      <option value="30 min">30 min</option>
+                      <option value="45 min">45 min</option>
+                      <option value="1 hour">1 hour</option>
+                    </Form.Control>
+                  </Form.Group>
+                </Form>
+                <Button variant="secondary" className="mb-3" onClick={generateRandomWorkout}>Generate Workout</Button>
+                {generatedWorkout && (
+                  <div style={{ fontFamily: 'Trirong, serif' }}>
+                    <h5>Generated Workout:</h5>
+                    <p>Location: {generatedWorkout.location}</p>
+                    <p>Difficulty: {generatedWorkout.difficulty}</p>
+                    <p>Time: {generatedWorkout.time}</p>
+                    <p>Muscle Group: {generatedWorkout.muscleGroup}</p>
                     <p>Exercises:</p>
                     <ul>
-                      {workout.exercises.map((exercise, index) => (
+                      {generatedWorkout.exercises.map((exercise, index) => (
                         <li key={index}>
                           <strong>{exercise}</strong>: {exerciseInstructions[exercise]}
                         </li>
                       ))}
                     </ul>
-                    <Button variant="danger" onClick={() => removeFromFavorites(index)}>Remove</Button>
-                  </li>
-                ))}
-              </ul>
-            </Card.Body>
-          </Card>
+                    <Button variant="primary" onClick={addToFavorites}>
+                      <span role="img" aria-label="heart">❤️</span> Add to Favorites
+                    </Button>
+                  </div>
+                )}
+              </Card.Body>
+            </Card>
+            <Card className="mt-3" style={{ fontFamily: 'Trirong, serif' }}>
+              <Card.Body>
+                <Card.Title>Add Custom Workout</Card.Title>
+                <Form>
+                  <Form.Group controlId="customLocation">
+                    <Form.Label>Location</Form.Label>
+                    <Form.Control type="text" value={customLocation} onChange={(e) => setCustomLocation(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}/>
+                  </Form.Group>
+                  <Form.Group controlId="customMuscleGroup">
+                    <Form.Label>Muscle Group</Form.Label>
+                    <Form.Control type="text" value={customMuscleGroup} onChange={(e) => setCustomMuscleGroup(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}/>
+                  </Form.Group>
+                  <Form.Group controlId="customTime">
+                    <Form.Label>Total Time</Form.Label>
+                    <Form.Control type="text" value={customTime} onChange={(e) => setCustomTime(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}/>
+                  </Form.Group>
+                  <Form.Group controlId="customExercises">
+                    <Form.Label>Exercises (comma-separated)</Form.Label>
+                    <Form.Control type="text" value={customExercises.join(',')} onChange={(e) => setCustomExercises(e.target.value.split(','))} style={{ fontFamily: 'Trirong, serif' }}/>
+                  </Form.Group>
+                </Form>
+                <Button variant="primary" onClick={addCustomWorkout}>Add Custom Workout</Button>
+              </Card.Body>
+            </Card>
+          </div>
+          <div className="col-md-6">
+            <div>
+              <Card style={{ fontFamily: 'Trirong, serif' }}>
+                <Card.Body>
+                  <Card.Title>Favorite Workouts</Card.Title>
+                  <ul>
+                    {favoriteWorkouts.map((workout, index) => (
+                      <li key={index}>
+                        <p>Location: {workout.location}</p>
+                        <p>Difficulty: {workout.difficulty}</p>
+                        <p>Time: {workout.time}</p>
+                        <p>Muscle Group: {workout.muscleGroup}</p>
+                        <p>Exercises:</p>
+                        <ul>
+                          {workout.exercises.map((exercise, index) => (
+                            <li key={index}>
+                              <strong>{exercise}</strong>: {exerciseInstructions[exercise]}
+                            </li>
+                          ))}
+                        </ul>
+                        <Button className="mt-3" variant="danger" onClick={() => removeFromFavorites(index)}>Remove</Button>
+                        <hr style={{ margin: '20px 0', borderTop: '1px solid red' }}/>
+                      </li>
+                    ))}
+                  </ul>
+                </Card.Body>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
     </div>
