@@ -211,7 +211,7 @@
       "itemName": "Jump Rope",
       "category": "Cardio",
       "locationFound": "1st Floor",
-      "image": "images/rope.jpeg",
+      "image": "images/jump.jpeg",
       "description": "A jump rope is a simple and effective cardio tool for improving coordination, agility, and cardiovascular health."
     },
     {
@@ -312,8 +312,6 @@
       "image": "images/curl.jpeg",
       "description": "The seated leg curl machine targets the hamstrings, promoting knee flexion against resistance for strength and muscle development."
     },
-
-
     {
       "itemName": "Tricep Rope Attachment",
       "category": "Other",
