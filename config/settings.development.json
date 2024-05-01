@@ -30,6 +30,20 @@
       "image": "images/elliptical.jpeg",
       "time": "30 minutes",
       "description": "Includes a set of cardio exercises for a quick workout."
+    },
+    {
+      "name": "Cool Workout 2",
+      "category": "Strength",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Includes a set of cardio exercises for a quick workout."
+    },
+    {
+      "name": "Cool Workout 3",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Includes a set of cardio exercises for a quick workout."
     }
   ],
   "defaultItems": [
