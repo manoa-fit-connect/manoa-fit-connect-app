@@ -18,7 +18,7 @@ const NavBar = () => {
         <Navbar.Brand as={NavLink} to="/" id="Home-Page">
           <Row className="align-items-center">
             <Col xs="auto">
-              <Image roundedCircle src="/images/MFCLogo.png" width="150px"/>
+              <Image roundedCircle src="/images/MFCLogo.png" width="150px" />
             </Col>
             <Col xs="auto" className="pt-3">
               <h4 className="mb-0">Manoa Fit Connect</h4>

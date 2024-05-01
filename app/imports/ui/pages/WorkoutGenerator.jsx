@@ -500,27 +500,33 @@ const WorkoutGenerator = () => {
 
   return (
     <div>
-      <div className="mt-3" style={{
-        maxWidth: '600px',
-        margin: 'auto',
-        padding: '20px',
-        borderRadius: '10px',
-        backgroundColor: '#333',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-      }}>
+      <div
+        className="mt-3"
+        style={{
+          maxWidth: '600px',
+          margin: 'auto',
+          padding: '20px',
+          borderRadius: '10px',
+          backgroundColor: '#333',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        }}
+      >
         <h1 style={{
           fontFamily: 'Trirong, serif',
           color: 'white',
           fontSize: '30px',
           textAlign: 'center',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
-        }}>Workout Generator</h1>
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
+        }}
+        >Workout Generator
+        </h1>
         <p style={{
           fontFamily: 'Trirong, serif',
           color: 'white',
           fontSize: '18px',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
-        }}>
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
+        }}
+        >
           Welcome to the Workout Generator! This tool helps you create personalized workout
           routines based on your preferences. You can generate a random workout or add your custom exercises. Your favorite workouts are
           also saved here for easy access!
@@ -590,19 +596,19 @@ const WorkoutGenerator = () => {
                 <Form>
                   <Form.Group controlId="customLocation">
                     <Form.Label>Location</Form.Label>
-                    <Form.Control type="text" value={customLocation} onChange={(e) => setCustomLocation(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}/>
+                    <Form.Control type="text" value={customLocation} onChange={(e) => setCustomLocation(e.target.value)} style={{ fontFamily: 'Trirong, serif' }} />
                   </Form.Group>
                   <Form.Group controlId="customMuscleGroup">
                     <Form.Label>Muscle Group</Form.Label>
-                    <Form.Control type="text" value={customMuscleGroup} onChange={(e) => setCustomMuscleGroup(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}/>
+                    <Form.Control type="text" value={customMuscleGroup} onChange={(e) => setCustomMuscleGroup(e.target.value)} style={{ fontFamily: 'Trirong, serif' }} />
                   </Form.Group>
                   <Form.Group controlId="customTime">
                     <Form.Label>Total Time</Form.Label>
-                    <Form.Control type="text" value={customTime} onChange={(e) => setCustomTime(e.target.value)} style={{ fontFamily: 'Trirong, serif' }}/>
+                    <Form.Control type="text" value={customTime} onChange={(e) => setCustomTime(e.target.value)} style={{ fontFamily: 'Trirong, serif' }} />
                   </Form.Group>
                   <Form.Group controlId="customExercises">
                     <Form.Label>Exercises (comma-separated)</Form.Label>
-                    <Form.Control type="text" value={customExercises.join(',')} onChange={(e) => setCustomExercises(e.target.value.split(','))} style={{ fontFamily: 'Trirong, serif' }}/>
+                    <Form.Control type="text" value={customExercises.join(',')} onChange={(e) => setCustomExercises(e.target.value.split(','))} style={{ fontFamily: 'Trirong, serif' }} />
                   </Form.Group>
                 </Form>
                 <Button variant="primary" onClick={addCustomWorkout}>Add Custom Workout</Button>
@@ -630,7 +636,7 @@ const WorkoutGenerator = () => {
                           ))}
                         </ul>
                         <Button className="mt-3" variant="danger" onClick={() => removeFromFavorites(index)}>Remove</Button>
-                        <hr style={{ margin: '20px 0', borderTop: '1px solid red' }}/>
+                        <hr style={{ margin: '20px 0', borderTop: '1px solid red' }} />
                       </li>
                     ))}
                   </ul>

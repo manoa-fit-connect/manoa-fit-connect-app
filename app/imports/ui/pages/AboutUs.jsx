@@ -7,7 +7,9 @@ const AboutUs = () => (
       <Col xs={1} />
       <Col>
         <h1 className="pfpText">About Us</h1>
-        <p className="pfpText">We are a group of ICS students hoping to help other college students feel more comfortable about fitness. We have developed an app for our campus gym that provides information about gym equipment, workouts, and connects individuals to workout buddies with similar interests. We would love for you to try our app!</p>
+        <p className="pfpText">We are a group of ICS students hoping to help other college students feel more comfortable about fitness.
+          We have developed an app for our campus gym that provides information about gym equipment, workouts, and connects individuals to workout buddies with similar interests. We would love for you to try our app!
+        </p>
       </Col>
     </Row>
     <Row className="mb-5">
@@ -17,7 +19,10 @@ const AboutUs = () => (
         <Image src="images/victoria.png" className="pfp" />
       </Col>
       <Col md={5}>
-        <p className="pfpText">I am currently a Junior at UH Manoa, studying Computer Science. I have worked on independent projects but this is my first time working with a team to develop a website or application. I am looking forward to applying the skills I have learned in team setting to make a functional and user friendly application.</p>
+        <p className="pfpText">I am currently a Junior at UH Manoa, studying Computer Science.
+          I have worked on independent projects but this is my first time working with a team to develop a website or application.
+          I am looking forward to applying the skills I have learned in team setting to make a functional and user friendly application.
+        </p>
       </Col>
     </Row>
     <Row className="mb-5">
@@ -38,7 +43,9 @@ const AboutUs = () => (
         <Image src="images/hayden.png" className="pfp" />
       </Col>
       <Col md={5}>
-        <p className="pfpText">I am currently a Junior at UH Manoa, studying Computer Science. I have worked on independent projects but on a team making a website or application. I am looking forward to applying the skills I have learned in a team to make a good website or application.</p>
+        <p className="pfpText">I am currently a Junior at UH Manoa, studying Computer Science.
+          I have worked on independent projects but on a team making a website or application. I am looking forward to applying the skills I have learned in a team to make a good website or application.
+        </p>
       </Col>
     </Row>
     <Row className="mb-5">
@@ -48,7 +55,9 @@ const AboutUs = () => (
         <Image src="images/brandon.png" className="pfp" />
       </Col>
       <Col md={5}>
-        <p className="pfpText">I am a Junior at UH Manoa, double majoring in both Computer Science and German. I have experience doing many team based activities and working on many different projects. I am excited to learn more, and use what I learn into my future career.</p>
+        <p className="pfpText">I am a Junior at UH Manoa, double majoring in both Computer Science and German.
+          I have experience doing many team based activities and working on many different projects. I am excited to learn more, and use what I learn into my future career.
+        </p>
       </Col>
     </Row>
     <Row className="mb-5">
@@ -58,7 +67,7 @@ const AboutUs = () => (
         <Image src="images/sidney.png" className="pfp" />
       </Col>
       <Col md={5}>
-        <p className="pfpText">I'm currently a junior majoring in Computer Science at UH Manoa. My experience includes small, individual-based projects and I'm excited to apply what I've learned towards this team-based application.</p>
+        <p className="pfpText">I&apos;m currently a junior majoring in Computer Science at UH Manoa. My experience includes small, individual-based projects and I&apos;m excited to apply what I&apos;ve learned towards this team-based application.</p>
       </Col>
     </Row>
   </Container>
