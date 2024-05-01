@@ -46,34 +46,41 @@ const ListGenerator = () => {
   };
 
   const handleRandomWorkout = () => {
-    const randomIndex = Math.floor(Math.random() * workouts.length);
-    setRandomWorkout(workouts[randomIndex]);
+    if (workouts.length > 0) {
+      const randomIndex = Math.floor(Math.random() * workouts.length);
+      setRandomWorkout(workouts[randomIndex]);
+    } else {
+      setRandomWorkout({ name: "Press Me!", description: "No workouts found. Press to generate a random workout." });
+    }
   };
 
   return (
     ready ? (
       <Container className="py-3" id="Generator-Page">
-        <Col className="text-center">
-          <h2 style={{ color: 'white', fontSize: '2.5rem' }}>Workouts</h2>
-        </Col>
-        <Row className="mt-3">
-          <Col md={4}>
+        <Row className="justify-content-center">
+          <Col xs={12} md={3} className="order-md-last mb-4">
+            <Button variant="primary" onClick={handleRandomWorkout} className="mb-3">
+              Generate Random Workout
+            </Button>
             {randomWorkout && (
-              <Card bg="danger" text="white" className="mb-4">
+              <Card bg="danger" text="white">
                 <Card.Body>
                   <Card.Title>{randomWorkout.name}</Card.Title>
                   <Card.Text>
-                    <strong>Category:</strong> {randomWorkout.category}<br />
-                    <strong>Time:</strong> {randomWorkout.time}<br />
-                    <strong>Description:</strong> {randomWorkout.description}
+                    {randomWorkout.description}
                   </Card.Text>
                 </Card.Body>
               </Card>
             )}
           </Col>
-          <Col md={8}>
-            <Form className="g-4 text-center">
-              <Form.Group controlId="category" className="text-center mb-4">
+          <Col xs={12} md={9}>
+            <Row className="mb-4">
+              <Col className="text-center">
+                <h2 style={{ color: 'white', fontSize: '2.5rem' }}>Workouts</h2>
+              </Col>
+            </Row>
+            <Form className="g-4 text-center mb-4">
+              <Form.Group controlId="category">
                 <Form.Label style={{ color: 'white', fontWeight: 'bold', display: 'block' }}>Select a category</Form.Label>
                 <Form.Control
                   as="select"
@@ -92,7 +99,7 @@ const ListGenerator = () => {
                   <option value="Abs">Abs</option>
                 </Form.Control>
               </Form.Group>
-              <Form.Group controlId="time" className="text-center mb-4">
+              <Form.Group controlId="time">
                 <Form.Label style={{ color: 'white', fontWeight: 'bold', display: 'block' }}>Select time</Form.Label>
                 <Form.Control
                   as="select"
@@ -108,7 +115,7 @@ const ListGenerator = () => {
                   <option value="60 minutes">60 minutes</option>
                 </Form.Control>
               </Form.Group>
-              <Form.Group controlId="search" className="text-center mb-4">
+              <Form.Group controlId="search">
                 <Form.Label style={{ color: 'white', fontWeight: 'bold', display: 'block' }}>Search by description</Form.Label>
                 <Form.Control
                   type="text"
@@ -120,16 +127,20 @@ const ListGenerator = () => {
                 />
               </Form.Group>
             </Form>
+
+            <Row xs={1} md={2} lg={3} className="g-4">
+              {workouts.map((workout, index) => (
+                <Col key={index}>
+                  <GeneratorItem workout={workout} />
+                </Col>
+              ))}
+            </Row>
           </Col>
         </Row>
-
-        <Row xs={1} md={2} lg={3} className="g-4">
-          {workouts.map((workout, index) => (<Col key={index}><GeneratorItem workout={workout} /></Col>))}
-        </Row>
       </Container>
-    ) :
-      <LoadingSpinner />
+    ) : <LoadingSpinner />
   );
 };
 
 export default ListGenerator;
+
