@@ -5,6 +5,7 @@ import { Profiles } from '../../api/profile/Profiles';
 import { Workouts } from '../../api/Workouts/Workout';
 import { PRS } from '../../api/PRS/prs';
 import { EquipmentItems } from '../../api/item/EquipmentItems';
+import { GeneratorItems } from '../../api/generator/GeneratorItems';
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise, publish nothing.
 Meteor.publish(Stuffs.userPublicationName, function () {
@@ -74,6 +75,13 @@ Meteor.publish(null, function () {
 Meteor.publish(EquipmentItems.userPublicationName, function () {
   if (this.userId) {
     return EquipmentItems.collection.find({});
+  }
+  return this.ready();
+});
+
+Meteor.publish(GeneratorItems.userPublicationName, function () {
+  if (this.userId) {
+    return GeneratorItems.collection.find({});
   }
   return this.ready();
 });

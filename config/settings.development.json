@@ -23,7 +23,15 @@
       "owner": "john@foo.com"
     }
   ],
-
+  "defaultGenerator": [
+    {
+      "name": "Cool Workout 1",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Includes a set of cardio exercises for a quick workout."
+    }
+  ],
   "defaultItems": [
     {
       "itemName": "Elliptical Machine",
