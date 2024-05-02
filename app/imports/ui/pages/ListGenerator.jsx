@@ -50,7 +50,7 @@ const ListGenerator = () => {
       const randomIndex = Math.floor(Math.random() * workouts.length);
       setRandomWorkout(workouts[randomIndex]);
     } else {
-      setRandomWorkout({ name: "Press Me!", description: "No workouts found. Press to generate a random workout." });
+      setRandomWorkout({ name: 'Press Me!', description: 'No workouts found. Press to generate a random workout.' });
     }
   };
 
@@ -93,7 +93,7 @@ const ListGenerator = () => {
                   <option value="Cardio">Cardio</option>
                   <option value="Strength">Strength</option>
                   <option value="Flexibility">Flexibility</option>
-                  <option value="Warm-up">Warm-up</option>
+                  <option value="Warm-Up">Warm-up</option>
                   <option value="Upper Body">Upper Body</option>
                   <option value="Lower Body">Lower Body</option>
                   <option value="Abs">Abs</option>
@@ -143,4 +143,3 @@ const ListGenerator = () => {
 };
 
 export default ListGenerator;
-

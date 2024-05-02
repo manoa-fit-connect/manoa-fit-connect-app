@@ -12,7 +12,7 @@ class GeneratorItemsCollection {
       name: String,
       category: {
         type: String,
-        allowedValues: ['Strength', 'Cardio', 'Flexibility', 'Warm-up', 'Upper Body', 'Lower Body', 'Abs'],
+        allowedValues: ['Strength', 'Cardio', 'Flexibility', 'Warm-Up', 'Upper Body', 'Lower Body', 'Abs'],
       },
       image: String,
       time: {

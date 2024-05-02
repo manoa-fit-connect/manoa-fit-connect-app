@@ -25,25 +25,501 @@
   ],
   "defaultGenerator": [
     {
-      "name": "Cool Workout 1",
+      "name": "Treadmill Intervals",
       "category": "Cardio",
       "image": "images/elliptical.jpeg",
       "time": "30 minutes",
-      "description": "Includes a set of cardio exercises for a quick workout."
+      "description": "Start with a 5-minute warm-up jog, then alternate between 1 minute of sprinting and 2 minutes of walking for 20 minutes. Finish with a 5-minute cooldown walk."
     },
     {
-      "name": "Cool Workout 2",
+      "name": "Stair Climber Challenge",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Alternate between 2 minutes of stair climbing at a moderate pace and 1 minute of high-intensity climbing for 30 minutes. Then, do 10 sets of 30-second sprints with 1-minute rest intervals."
+    },
+    {
+      "name": "Elliptical Circuit",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Start with 10 minutes on the elliptical at a moderate pace. Then, complete 3 rounds of: 10 minutes on the elliptical, 10 lunges (each leg), 10 push-ups, 10 squats, and 10 bicycle crunches. Finish with 10 minutes on the elliptical."
+    },
+    {
+      "name": "Rowing Pyramid",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Start with 5 minutes of rowing at a moderate pace. Then, do 1 minute at high intensity, 1 minute at moderate intensity, 2 minutes high, 2 minutes moderate, and continue up to 5 minutes high, then go back down the pyramid. Finish with a 5-minute cooldown."
+    },
+    {
+      "name": "Cycle HIIT",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Warm up for 5 minutes, then do 10 sets of 30-second sprints followed by 1 minute of recovery. Finish with a 5-minute cooldown."
+    },
+    {
+      "name": "Jump Rope Circuit",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Do 3 rounds of: 1 minute of jump rope, 20 mountain climbers, 20 jumping jacks, 10 burpees, and 10 push-ups. Rest for 1 minute between rounds."
+    },
+    {
+      "name": "HIIT Treadmill",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Warm up for 10 minutes. Then, alternate between 1 minute of sprinting and 2 minutes of jogging for 30 minutes. Finish with a 5-minute cooldown."
+    },
+    {
+      "name": "Step Aerobics",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Follow along with a step aerobics routine for 60 minutes, including combinations of steps, kicks, and arm movements to keep your heart rate up."
+    },
+    {
+      "name": "Stationary Bike Challenge",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Start with a 10-minute warm-up. Then, alternate between 3 minutes of moderate cycling and 2 minutes of high-intensity cycling for 30 minutes. Finish with a 5-minute cooldown."
+    },
+    {
+      "name": "Sled Push and Pull",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Push a sled for 25 yards, then immediately pull it back to the starting position. Repeat for 15 minutes. Then, do 10 rounds of 30 seconds of sled pushes followed by 30 seconds of rest."
+    },
+    {
+      "name": "Quick Cardio Blast",
+      "category": "Cardio",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Start with 3 minutes of brisk walking or jogging to warm up. Then, do 1 minute of high knees, 1 minute of jumping jacks, and 1 minute of burpees. Repeat this circuit 3 times. Finish with a 2-minute cooldown walk."
+    },
+    {
+      "name": "Outdoor Circuit",
+      "category": "Strength",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Perform each exercise for 1 minute, then rest for 30 seconds before moving to the next exercise. Repeat the circuit 3 times. 1. Push-ups - 10 reps 2. Bodyweight squats - 15 reps 3. Lunges - 10 reps each leg 4. Pull-ups or inverted rows - 8 reps 5. Plank - Hold for 1 minute."
+    },
+    {
+      "name": "Full Body HIIT",
+      "category": "Strength",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Perform each exercise for 45 seconds, then rest for 15 seconds before moving to the next exercise. Repeat the circuit 3 times. 1. Burpees 2. Dumbbell Thrusters 3. Renegade Rows 4. Jumping Lunges 5. Russian Twists with Dumbbell"
+    },
+    {
+      "name": "Gym Strength Blast",
       "category": "Strength",
       "image": "images/elliptical.jpeg",
       "time": "30 minutes",
-      "description": "Includes a set of cardio exercises for a quick workout."
+      "description": "Complete 3 sets of each exercise with 10-12 reps per set. Rest for 1 minute between sets. 1. Barbell Squats 2. Deadlifts 3. Bench Press 4. Bent-over Rows 5. Overhead Press"
     },
     {
-      "name": "Cool Workout 3",
-      "category": "Cardio",
+      "name": "Leg Day Burnout",
+      "category": "Strength",
       "image": "images/elliptical.jpeg",
       "time": "30 minutes",
-      "description": "Includes a set of cardio exercises for a quick workout."
+      "description": "Perform 4 sets of each exercise with 12-15 reps per set. Rest for 1 minute between sets. 1. Leg Press 2. Romanian Deadlifts 3. Leg Extensions 4. Walking Lunges with Dumbbells 5. Calf Raises"
+    },
+    {
+      "name": "Outdoor Strength Challenge",
+      "category": "Strength",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Complete 5 rounds of the following circuit. Rest for 2 minutes between rounds. 1. Push-ups - 15 reps 2. Pull-ups or Chin-ups - 10 reps 3. Dips - 15 reps 4. Jump Squats - 20 reps 5. Plank - Hold for 1 minute"
+    },
+    {
+      "name": "Total Body Pump",
+      "category": "Strength",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Perform each exercise for 3 sets with 10-12 reps per set. Rest for 1 minute between sets. 1. Barbell Squats 2. Dumbbell Bench Press 3. Pull-ups or Lat Pulldowns 4. Lunges with Dumbbells 5. Tricep Dips"
+    },
+    {
+      "name": "Gym Strength Endurance",
+      "category": "Strength",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Complete 4 sets of each exercise with 15-20 reps per set. Rest for 1-2 minutes between sets. 1. Leg Press 2. Chest Press Machine 3. Lat Pulldown Machine 4. Leg Curl Machine 5. Cable Rows"
+    },
+    {
+      "name": "Outdoor Full Body Burn",
+      "category": "Strength",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Perform each exercise for 1 minute, then rest for 30 seconds before moving to the next exercise. Repeat the circuit 5 times. 1. Push-ups 2. Jump Squats 3. Bent-over Rows with Dumbbells 4. Walking Lunges with Dumbbells 5. Plank"
+    },
+    {
+      "name": "Strength and Cardio Combo",
+      "category": "Strength",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Alternate between strength exercises and cardio intervals. Perform 3 sets of each strength exercise with 12-15 reps per set. For cardio, perform 5 minutes of high-intensity intervals between strength sets. 1. Barbell Deadlifts 2. Jumping Jacks 3. Dumbbell Shoulder Press 4. Mountain Climbers 5. Bent-over Rows"
+    },
+    {
+      "name": "Gym Machine Circuit",
+      "category": "Strength",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Move from one machine to the next without resting. Complete 3 sets of 12-15 reps on each machine. Rest for 1 minute between sets. 1. Leg Press Machine 2. Chest Press Machine 3. Seated Row Machine 4. Leg Curl Machine 5. Shoulder Press Machine"
+    },
+    {
+      "name": "Morning Stretch Routine",
+      "category": "Flexibility",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Start with a standing forward bend for 30 seconds, then move into a downward dog pose for 1 minute. Next, do a seated forward bend for 45 seconds. Repeat these exercises for a total of 15 minutes."
+    },
+    {
+      "name": "Full Body Stretch",
+      "category": "Flexibility",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Begin with neck stretches, side stretches, and arm circles. Move on to hamstring stretches, quadriceps stretches, and calf stretches. Finish with a spinal twist and a deep breathing exercise. Repeat for a total of 15 minutes."
+    },
+    {
+      "name": "Gym Stretch Routine",
+      "category": "Flexibility",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Start with a 5-minute warm-up on the elliptical machine. Then, perform dynamic stretches such as leg swings, arm swings, and torso twists for 10 minutes. Follow with static stretches targeting major muscle groups for 15 minutes. Finish with a cooldown on the elliptical machine for 5 minutes."
+    },
+    {
+      "name": "Evening Yoga Flow",
+      "category": "Flexibility",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Begin with sun salutations to warm up the body. Move through a series of standing and seated poses including warrior, triangle, and pigeon pose. Focus on deep breathing and relaxation. Finish with a 5-minute savasana."
+    },
+    {
+      "name": "Flexibility Circuit Training",
+      "category": "Flexibility",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Perform a circuit of dynamic stretches such as high knees, butt kicks, leg swings, and arm circles for 20 minutes. Follow with static stretches targeting all major muscle groups for 20 minutes. Finish with 5 minutes of foam rolling."
+    },
+    {
+      "name": "Stretching for Runners",
+      "category": "Flexibility",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Start with a 10-minute warm-up jog. Then, perform dynamic stretches including leg swings, hip circles, and lunges for 20 minutes. Follow with static stretches focusing on calves, hamstrings, quads, and glutes for 20 minutes."
+    },
+    {
+      "name": "Deep Stretch Yoga",
+      "category": "Flexibility",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Begin with gentle warm-up poses like cat-cow and child's pose. Move through a series of deep stretches including seated forward bends, pigeon pose, and seated spinal twists. Hold each pose for 1-2 minutes. Finish with a 10-minute savasana."
+    },
+    {
+      "name": "Power Stretch",
+      "category": "Flexibility",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Start with a 10-minute warm-up on the elliptical machine. Then, perform dynamic stretches such as leg swings, arm circles, and torso twists for 20 minutes. Follow with a series of yoga poses including downward dog, warrior, and bridge pose. Hold each pose for 30 seconds to 1 minute. Finish with a cooldown on the elliptical machine for 10 minutes."
+    },
+    {
+      "name": "Total Body Flexibility Workout",
+      "category": "Flexibility",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Begin with a 10-minute warm-up of light cardio. Then, move through a series of dynamic stretches targeting the upper body, lower body, and core for 30 minutes. Follow with 20 minutes of static stretches holding each stretch for 30-60 seconds. Finish with 10 minutes of foam rolling."
+    },
+    {
+      "name": "Yin Yoga for Relaxation",
+      "category": "Flexibility",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Start with deep breathing exercises to calm the mind. Move through a series of yin yoga poses including butterfly, dragon, and sleeping swan. Hold each pose for 3-5 minutes, focusing on relaxation and releasing tension. Finish with a 10-minute guided meditation."
+    },
+    {
+      "name": "Morning Mobility Routine",
+      "category": "Warm-Up",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Start with 30 seconds of arm circles, then do 10 bodyweight squats. Follow with 10 lunges on each leg and 20 seconds of jumping jacks. Repeat this circuit for 15 minutes."
+    },
+    {
+      "name": "Dynamic Stretching Warm-Up",
+      "category": "Warm-Up",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Begin with 10 leg swings on each leg, then do 10 hip circles. Next, perform 10 arm swings and 10 shoulder circles. Repeat these exercises for 15 minutes."
+    },
+    {
+      "name": "Gym Equipment Warm-Up",
+      "category": "Warm-Up",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Start with a 5-minute brisk walk on the treadmill, then do 10 minutes of cycling. Follow with 10 minutes on the elliptical machine. Finish with 5 minutes of dynamic stretching."
+    },
+    {
+      "name": "Full Body Warm-Up Circuit",
+      "category": "Warm-Up",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Perform 10 bodyweight squats, 10 push-ups, and 10 lunges on each leg. Then, do 20 seconds of high knees and 20 seconds of butt kicks. Repeat this circuit for 30 minutes."
+    },
+    {
+      "name": "Outdoor Jogging Warm-Up",
+      "category": "Warm-Up",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Start with a 10-minute jog at an easy pace. Then, perform dynamic stretches including leg swings, arm circles, and torso twists for 15 minutes. Follow with a 15-minute brisk walk."
+    },
+    {
+      "name": "Pre-Workout Stretching Routine",
+      "category": "Warm-Up",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Begin with 10 minutes of light cardio such as jumping jacks or jogging in place. Then, do 10 minutes of dynamic stretches focusing on major muscle groups. Finish with 25 minutes of foam rolling and static stretching."
+    },
+    {
+      "name": "Dynamic Warm-Up for Runners",
+      "category": "Warm-Up",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Start with a 10-minute jog at an easy pace. Then, perform leg swings, walking lunges, and high knees for 20 minutes. Follow with 20 minutes of foam rolling and mobility exercises. Finish with a 10-minute cool-down jog."
+    },
+    {
+      "name": "Gym Warm-Up Routine",
+      "category": "Warm-Up",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Begin with 10 minutes on the treadmill at a moderate pace. Then, do 15 minutes of dynamic stretching including arm swings, leg swings, and hip circles. Follow with 20 minutes of light resistance training focusing on major muscle groups. Finish with 15 minutes of cooldown and static stretching."
+    },
+    {
+      "name": "Outdoor Circuit Warm-Up",
+      "category": "Warm-Up",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Perform a circuit of exercises including jogging, jumping jacks, bodyweight squats, lunges, and push-ups. Do each exercise for 1 minute with 30 seconds rest in between. Repeat the circuit for 60 minutes."
+    },
+    {
+      "name": "Total Body Activation Warm-Up",
+      "category": "Warm-Up",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Start with 10 minutes of brisk walking or jogging. Then, do dynamic stretches such as arm swings, leg swings, and trunk twists for 20 minutes. Follow with 20 minutes of foam rolling and mobility exercises targeting all major muscle groups. Finish with a 10-minute cool-down jog."
+    },
+    {
+      "name": "Upper Body Circuit",
+      "category": "Upper Body",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Perform 10 reps of bench press, followed by 10 reps of bent-over rows. Then, do 10 reps of shoulder presses and 10 reps of bicep curls. Repeat this circuit for 15 minutes."
+    },
+    {
+      "name": "Quick Upper Body Blast",
+      "category": "Upper Body",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Start with 10 push-ups, then do 10 tricep dips on a bench. Follow with 10 lateral raises and 10 front raises. Repeat for 15 minutes."
+    },
+    {
+      "name": "Upper Body Strength",
+      "category": "Upper Body",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Perform 3 sets of 10 reps each of lat pulldowns, chest flies, and overhead tricep extensions. Follow with 3 sets of 10 reps of bicep curls and shoulder shrugs. Rest 1 minute between sets."
+    },
+    {
+      "name": "Upper Body Burn",
+      "category": "Upper Body",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Start with 10 reps of barbell bench press, then do 10 reps of seated rows. Follow with 10 reps of military press and 10 reps of hammer curls. Repeat for 30 minutes."
+    },
+    {
+      "name": "Upper Body Pump",
+      "category": "Upper Body",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Perform 4 sets of 12 reps each of incline dumbbell press, cable rows, and lateral raises. Follow with 4 sets of 12 reps each of tricep pushdowns and bicep curls. Rest 1 minute between sets."
+    },
+    {
+      "name": "Upper Body Strength and Conditioning",
+      "category": "Upper Body",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Start with 5 minutes of rowing machine warm-up. Then, perform 3 sets of 12 reps each of bench press, pull-ups, and shoulder press. Follow with 3 sets of 12 reps each of tricep dips and bicep curls. Finish with 5 minutes of battle ropes."
+    },
+    {
+      "name": "Upper Body Blast",
+      "category": "Upper Body",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Perform 5 sets of 10 reps each of barbell bench press, lat pulldowns, and military press. Follow with 5 sets of 10 reps each of dumbbell rows, lateral raises, and tricep pushdowns. Rest 1-2 minutes between sets."
+    },
+    {
+      "name": "Full Upper Body Workout",
+      "category": "Upper Body",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Start with 10 minutes of warm-up on the elliptical machine. Then, perform 4 sets of 12 reps each of chest press, bent-over rows, and shoulder press. Follow with 4 sets of 12 reps each of bicep curls and tricep extensions. Finish with 10 minutes of cooldown and stretching."
+    },
+    {
+      "name": "Upper Body Strength and Endurance",
+      "category": "Upper Body",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Perform 5 sets of 10 reps each of incline bench press, seated cable rows, and Arnold press. Follow with 5 sets of 10 reps each of preacher curls and tricep kickbacks. Finish with 20 minutes of rowing machine cardio."
+    },
+    {
+      "name": "Upper Body Superset Challenge",
+      "category": "Upper Body",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Superset bench press with bent-over rows for 4 sets of 12 reps each. Then, superset shoulder press with pull-ups for 4 sets of 12 reps each. Follow with superset tricep pushdowns with bicep curls for 4 sets of 12 reps each. Rest 1-2 minutes between supersets."
+    },
+    {
+      "name": "Lower Body Burn",
+      "category": "Lower Body",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Perform 10 reps of squats with a barbell, followed by 10 reps of leg press. Then, do 10 reps of lunges on each leg and 10 reps of calf raises. Repeat this circuit for 15 minutes."
+    },
+    {
+      "name": "Quick Lower Body Blast",
+      "category": "Lower Body",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Start with 10 reps of goblet squats, then do 10 reps of Romanian deadlifts. Follow with 10 reps of leg curls and 10 reps of leg extensions. Repeat for 15 minutes."
+    },
+    {
+      "name": "Leg Day Strength",
+      "category": "Lower Body",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Perform 3 sets of 12 reps each of barbell squats, leg press, and Romanian deadlifts. Follow with 3 sets of 12 reps each of leg curls and calf raises. Rest 1 minute between sets."
+    },
+    {
+      "name": "Lower Body Pump",
+      "category": "Lower Body",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Start with 10 reps of hack squats, then do 10 reps of seated leg curls. Follow with 10 reps of standing calf raises and 10 reps of seated calf raises. Repeat for 30 minutes."
+    },
+    {
+      "name": "Lower Body Strength and Stability",
+      "category": "Lower Body",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Perform 4 sets of 12 reps each of front squats, walking lunges, and hamstring curls. Follow with 4 sets of 12 reps each of calf raises and step-ups. Rest 1 minute between sets."
+    },
+    {
+      "name": "Lower Body Sculpt",
+      "category": "Lower Body",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Start with 10 reps of barbell hip thrusts, then do 10 reps of Bulgarian split squats on each leg. Follow with 10 reps of seated leg extensions and 10 reps of standing calf raises. Repeat for 45 minutes."
+    },
+    {
+      "name": "Leg Day Intensity",
+      "category": "Lower Body",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Perform 5 sets of 10 reps each of squats, deadlifts, and lunges on each leg. Follow with 5 sets of 10 reps each of leg curls and calf raises. Rest 1-2 minutes between sets."
+    },
+    {
+      "name": "Complete Lower Body Workout",
+      "category": "Lower Body",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Start with 10 minutes of warm-up on the elliptical machine. Then, perform 4 sets of 12 reps each of leg press, leg extensions, and Romanian deadlifts. Follow with 4 sets of 12 reps each of calf raises and walking lunges. Finish with 10 minutes of cooldown and stretching."
+    },
+    {
+      "name": "Lower Body Strength and Power",
+      "category": "Lower Body",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Perform 5 sets of 8 reps each of back squats, box jumps, and deadlifts. Follow with 5 sets of 10 reps each of leg curls and calf raises. Rest 1-2 minutes between sets."
+    },
+    {
+      "name": "Leg Day Superset Challenge",
+      "category": "Lower Body",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Superset barbell squats with Romanian deadlifts for 4 sets of 12 reps each. Then, superset leg press with calf raises for 4 sets of 12 reps each. Follow with superset walking lunges with leg curls for 4 sets of 12 reps each. Rest 1-2 minutes between supersets."
+    },
+    {
+      "name": "Core Burn",
+      "category": "Abs",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Perform 10 reps of cable crunches, followed by 10 reps of Russian twists. Then, do 10 reps of leg raises and 10 reps of bicycle crunches. Repeat this circuit for 15 minutes."
+    },
+    {
+      "name": "Quick Core Blast",
+      "category": "Abs",
+      "image": "images/elliptical.jpeg",
+      "time": "15 minutes",
+      "description": "Start with 10 reps of Swiss ball crunches, then do 10 reps of plank twists. Follow with 10 reps of reverse crunches and 10 reps of mountain climbers. Repeat for 15 minutes."
+    },
+    {
+      "name": "Abdominal Strength",
+      "category": "Abs",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Perform 3 sets of 15 reps each of weighted sit-ups, followed by 3 sets of 15 reps each of cable woodchoppers. Then, do 3 sets of 15 reps each of hanging leg raises and Russian twists. Rest 1 minute between sets."
+    },
+    {
+      "name": "Core Crusher",
+      "category": "Abs",
+      "image": "images/elliptical.jpeg",
+      "time": "30 minutes",
+      "description": "Start with 15 reps of decline sit-ups, then do 15 reps of cable oblique twists. Follow with 15 reps of hanging knee raises and 15 reps of seated leg tucks. Repeat for 30 minutes."
+    },
+    {
+      "name": "Abs and Obliques Sculpt",
+      "category": "Abs",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Perform 4 sets of 20 reps each of decline crunches, followed by 4 sets of 20 reps each of side plank dips on each side. Then, do 4 sets of 20 reps each of Russian twists and hanging windshield wipers. Rest 1 minute between sets."
+    },
+    {
+      "name": "Core Strength and Stability",
+      "category": "Abs",
+      "image": "images/elliptical.jpeg",
+      "time": "45 minutes",
+      "description": "Start with 20 reps of stability ball rollouts, then do 20 reps of cable rope crunches. Follow with 20 reps of weighted side bends on each side and 20 reps of jackknife sit-ups. Repeat for 45 minutes."
+    },
+    {
+      "name": "Abs Circuit Challenge",
+      "category": "Abs",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Perform 5 sets of 15 reps each of hanging leg raises, followed by 5 sets of 15 reps each of weighted Swiss ball crunches. Then, do 5 sets of 15 reps each of cable twists and mountain climbers. Rest 1-2 minutes between sets."
+    },
+    {
+      "name": "Complete Ab Workout",
+      "category": "Abs",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Start with 10 minutes of warm-up on the elliptical machine. Then, perform 4 sets of 20 reps each of weighted decline sit-ups, followed by 4 sets of 20 reps each of cable woodchoppers. Follow with 4 sets of 20 reps each of hanging leg raises and Russian twists. Finish with 10 minutes of cooldown and stretching."
+    },
+    {
+      "name": "Abs and Core Strength",
+      "category": "Abs",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Perform 5 sets of 15 reps each of weighted crunches, followed by 5 sets of 15 reps each of side plank raises on each side. Then, do 5 sets of 15 reps each of reverse crunches and oblique cable twists. Rest 1-2 minutes between sets."
+    },
+    {
+      "name": "Ab Superset Challenge",
+      "category": "Abs",
+      "image": "images/elliptical.jpeg",
+      "time": "60 minutes",
+      "description": "Superset Swiss ball crunches with Russian twists for 4 sets of 20 reps each. Then, superset hanging leg raises with cable rope crunches for 4 sets of 20 reps each. Follow with superset plank hold with bicycle crunches for 4 sets of 20 reps each. Rest 1-2 minutes between supersets."
     }
   ],
   "defaultItems": [
