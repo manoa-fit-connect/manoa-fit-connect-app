@@ -33,9 +33,17 @@ const ProfileEdit = () => {
   // On successful submit, insert the data.
   const submit = (data) => {
     const { firstName, lastName, age, gender, position, level, roles, goals, styles, sports, hobbies, major, image, availability, description } = data;
-    Profiles.collection.update(_id, { $set: { firstName, lastName, age, gender, position, level, roles, goals, styles, sports, hobbies, major, image, availability, description } }, (error) => (error ?
-      swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success')));
+    Profiles.collection.update(_id, { $set: { firstName, lastName, age, gender, position, level, roles, goals, styles, sports, hobbies, major, image, availability, description } }, (error) => {
+      if (error) {
+        swal('Error', error.message, 'error');
+      } else {
+        swal('Success', 'Profile updated successfully', 'success').then((value) => {
+          if (value) {
+            window.location.href = '/userprofile';
+          }
+        });
+      }
+    });
   };
 
   return ready ? (
