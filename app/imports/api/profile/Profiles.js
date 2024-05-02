@@ -34,18 +34,6 @@ class ProfilesCollection {
         },
         owner: { type: String },
       },
-      {
-        clean: {
-          autoConvert: true,
-          extendAutoValueContext: {},
-          filter: false,
-          getAutoValues: true,
-          removeEmptyStrings: true,
-          removeNullsFromArrays: true,
-          trimStrings: true,
-        },
-        humanizeAutoLabels: true,
-      },
     );
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
