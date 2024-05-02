@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { Card, Image } from 'react-bootstrap';
 
 const GeneratorItem = ({ workout }) => (
-  <Card className="h-100 generator-card">
+  <Card className="h-100 generator-card" style={{ fontFamily: 'Trirong, serif' }}>
     <div className="generator-header">
       <Image src={workout.image} className="generator-image" />
     </div>
     <Card.Body className="generator-details">
       <Card.Title className="generator-name">{workout.name}</Card.Title>
-      <Card.Text className="generator-category">Category: {workout.category}</Card.Text>
-      <Card.Text className="generator-time">Time: {workout.time}</Card.Text>
-      <Card.Text className="generator-description">Description: {workout.description}</Card.Text>
+      <Card.Text className="generator-category" style={{ fontFamily: 'Trirong, serif' }}>Category: {workout.category}</Card.Text>
+      <Card.Text className="generator-time" style={{ fontFamily: 'Trirong, serif' }}>Time: {workout.time}</Card.Text>
+      <Card.Text className="generator-description" style={{ fontFamily: 'Trirong, serif' }}>Description: {workout.description}</Card.Text>
     </Card.Body>
   </Card>
 );

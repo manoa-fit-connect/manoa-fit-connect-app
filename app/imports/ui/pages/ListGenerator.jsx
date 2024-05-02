@@ -58,84 +58,43 @@ const ListGenerator = () => {
     ready ? (
       <Container className="py-3" id="Generator-Page">
         <Row className="justify-content-center">
-          <Col xs={12} md={3} className="order-md-last mb-4">
-            <Button variant="primary" onClick={handleRandomWorkout} className="mb-3">
+          <Col xs={12} md={9} className="text-center">
+            <Card bg="light" className="mb-4 equipment-card" style={{ fontFamily: 'Trirong, serif' }}>
+              <Card.Body className="equipment-details">
+                <Card.Text className="equipment-title" style={{ fontSize: '1.2rem' }}>
+                  <h>Welcome to the Workout Generator!</h>
+                  <p>This tool helps you create personalized workout routines based on your preferences. You can generate a random workout or add your custom exercises. Your favorite workouts are also saved here for easy access!</p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row className="justify-content-center">
+          <Col xs={12} md={3} className="mb-4">
+            <Button variant="primary" onClick={handleRandomWorkout} className="mb-3" style={{ fontFamily: 'Trirong, serif' }}>
               Generate Random Workout
             </Button>
+          </Col>
+
+          <Col xs={12} md={9} className="mb-4">
             {randomWorkout && (
-              <Card bg="danger" text="white">
-                <Card.Body>
-                  <Card.Title>{randomWorkout.name}</Card.Title>
-                  <Card.Text>
-                    {randomWorkout.description}
-                  </Card.Text>
+              <Card bg="light" className="mb-4 equipment-card" style={{ fontFamily: 'Trirong, serif' }}>
+                <Card.Body className="equipment-details">
+                  <Card.Text className="equipment-name">{randomWorkout.name}</Card.Text>
+                  <Card.Text className="equipment-description">{randomWorkout.description}</Card.Text>
                 </Card.Body>
               </Card>
             )}
           </Col>
-          <Col xs={12} md={9}>
-            <Row className="mb-4">
-              <Col className="text-center">
-                <h2 style={{ color: 'white', fontSize: '2.5rem' }}>Workouts</h2>
-              </Col>
-            </Row>
-            <Form className="g-4 text-center mb-4">
-              <Form.Group controlId="category">
-                <Form.Label style={{ color: 'white', fontWeight: 'bold', display: 'block' }}>Select a category</Form.Label>
-                <Form.Control
-                  as="select"
-                  name="category"
-                  value={filters.category || ''}
-                  onChange={handleFilterChange}
-                  className="mx-auto w-50"
-                >
-                  <option value="">All Categories</option>
-                  <option value="Cardio">Cardio</option>
-                  <option value="Strength">Strength</option>
-                  <option value="Flexibility">Flexibility</option>
-                  <option value="Warm-Up">Warm-up</option>
-                  <option value="Upper Body">Upper Body</option>
-                  <option value="Lower Body">Lower Body</option>
-                  <option value="Abs">Abs</option>
-                </Form.Control>
-              </Form.Group>
-              <Form.Group controlId="time">
-                <Form.Label style={{ color: 'white', fontWeight: 'bold', display: 'block' }}>Select time</Form.Label>
-                <Form.Control
-                  as="select"
-                  name="time"
-                  value={filters.time || ''}
-                  onChange={handleFilterChange}
-                  className="mx-auto w-50"
-                >
-                  <option value="">All</option>
-                  <option value="15 minutes">15 minutes</option>
-                  <option value="30 minutes">30 minutes</option>
-                  <option value="45 minutes">45 minutes</option>
-                  <option value="60 minutes">60 minutes</option>
-                </Form.Control>
-              </Form.Group>
-              <Form.Group controlId="search">
-                <Form.Label style={{ color: 'white', fontWeight: 'bold', display: 'block' }}>Search by description</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter keyword"
-                  name="search"
-                  value={filters.search}
-                  onChange={handleFilterChange}
-                  className="mx-auto w-50"
-                />
-              </Form.Group>
-            </Form>
+        </Row>
 
-            <Row xs={1} md={2} lg={3} className="g-4">
-              {workouts.map((workout, index) => (
-                <Col key={index}>
-                  <GeneratorItem workout={workout} />
-                </Col>
-              ))}
-            </Row>
-          </Col>
+        <Row xs={1} md={2} lg={3} className="g-4 justify-content-center">
+          {workouts.map((workout, index) => (
+            <Col key={index}>
+              <GeneratorItem workout={workout} />
+            </Col>
+          ))}
         </Row>
       </Container>
     ) : <LoadingSpinner />
