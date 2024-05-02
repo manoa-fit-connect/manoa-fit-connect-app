@@ -1,4 +1,5 @@
-name: ci-meteor-application-template-react
+name: Manoa-Fit-Connect
+
 
 on:
   push:

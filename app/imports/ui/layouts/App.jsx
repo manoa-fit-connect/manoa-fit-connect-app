@@ -19,15 +19,12 @@ import ProfileCreate from '../pages/ProfileCreate';
 import ProfileEdit from '../pages/ProfileEdit';
 import ProgressTracker from '../pages/ProgressTracker';
 import Friends from '../pages/Friends';
-import EquipmentItem from '../pages/EquipmentItem';
-import FavoriteWorkout from '../pages/FavoriteWorkout';
 import Event from '../pages/Event';
 import AboutUs from '../pages/AboutUs';
 import AddWorkout from '../pages/AddWorkout';
 import AddPRS from '../pages/AddPRS';
 import EditPRS from '../pages/EditPRS';
 import ListEquipment from '../pages/ListEquipment';
-import MapPage from '../pages/MapPage';
 import AddStuff from '../pages/AddStuff';
 import WorkoutGenerator from '../pages/WorkoutGenerator';
 import EditWorkout from '../pages/EditWorkout';
@@ -54,7 +51,6 @@ const App = () => {
           <Route path="/editprofile/:_id" element={<ProtectedRoute><ProfileEdit /></ProtectedRoute>} />
           <Route path="/friends" element={<ProtectedRoute><Friends /></ProtectedRoute>} />
           <Route path="/Progress" element={<ProtectedRoute><ProgressTracker /></ProtectedRoute>} />
-          <Route path="/equipment" element={<ProtectedRoute><EquipmentItem /></ProtectedRoute>} />
           <Route path="/addWorkout" element={<ProtectedRoute><AddWorkout /></ProtectedRoute>} />
           <Route path="/addPR" element={<ProtectedRoute><AddPRS /></ProtectedRoute>} />
           <Route path="/editPR/:_id" element={<ProtectedRoute><EditPRS /></ProtectedRoute>} />
@@ -65,12 +61,10 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
           <Route path="/generator" element={<ProtectedRoute><WorkoutGenerator /></ProtectedRoute>} />
-          <Route path="/favorite" element={<ProtectedRoute><FavoriteWorkout /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
           <Route path="/listEquipment" element={<ListEquipment />} />
-          <Route path="/map" element={<MapPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

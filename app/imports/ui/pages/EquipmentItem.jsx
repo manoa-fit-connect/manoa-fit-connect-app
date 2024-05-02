@@ -6,17 +6,10 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { Equipments } from '../../api/equipment/Equipments';
 import Equipment from '../components/Equipment';
 
-/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const EquipmentItem = () => {
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, equipments } = useTracker(() => {
-    // Note that this subscription will get cleaned up
-    // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
     const subscription = Meteor.subscribe(Equipments.userPublicationName);
-    // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the Stuff documents
     const equipmentItems = Equipments.collection.find({}).fetch();
     return {
       equipments: equipmentItems,

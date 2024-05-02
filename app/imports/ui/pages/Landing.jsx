@@ -24,7 +24,7 @@ const Landing = () => {
           <Col>
             <Link to="/Friends" style={linkStyles} id="Friends-Page">
               <div className="d-flex justify-content-center">
-                <PeopleFill size={125} />
+                <PeopleFill className="logo" />
               </div>
               <h1 className="text-md-center">Your friends</h1>
               <h5 className="text-md-center">See who is online and working out and match people with similar interests</h5>
@@ -33,7 +33,7 @@ const Landing = () => {
           <Col>
             <Link to="/listEquipment" style={linkStyles} id="Equipment-Page">
               <div className="d-flex justify-content-center">
-                <Image width={125} className="pt-3 pb-3" src="\images\dumbbell_logo.png" />
+                <Image size={125} className="logo py-4" src="\images\dumbbell_logo.png" />
               </div>
               <h1 className="text-md-center">Equipment</h1>
               <h5 className="text-md-center">See what equipment is available in the gym</h5>
@@ -42,18 +42,18 @@ const Landing = () => {
           <Col>
             <Link to="/userprofile" style={linkStyles} id="Profile-Page">
               <div className="d-flex justify-content-center">
-                <PersonFill size={125} />
+                <PersonFill className="logo" />
               </div>
               <h1 className="text-md-center">Profile</h1>
               <h5 className="text-md-center">View or edit your profile</h5>
             </Link>
           </Col>
         </Row>
-        <Row className="pt-5">
+        <Row className="py-5">
           <Col>
             <Link to="/Progress" style={linkStyles} id="Progress-Page">
               <div className="d-flex justify-content-center">
-                <GraphUp size={125} />
+                <GraphUp className="logo" />
               </div>
               <h1 className="text-md-center">Progress Tracker</h1>
               <h5 className="text-md-center">Track personal best and how your work outs have been going</h5>
@@ -62,7 +62,7 @@ const Landing = () => {
           <Col>
             <Link to="/generator" style={linkStyles} id="Generator-Page">
               <div className="d-flex justify-content-center">
-                <Image width={125} src="\images\heart.png" />
+                <Image className="logo" src="\images\heart.png" />
               </div>
               <h1 className="text-md-center">Workout Generator</h1>
               <h5 className="text-md-center">Track and update what your favorite workout is</h5>
@@ -71,7 +71,7 @@ const Landing = () => {
           <Col>
             <Link to="/Events" style={linkStyles} id="Events-Page">
               <div className="d-flex justify-content-center">
-                <CalendarEventFill size={125} />
+                <CalendarEventFill className="logo" />
               </div>
               <h1 className="text-md-center">Events</h1>
               <h5 className="text-md-center">See what events are happening</h5>
@@ -83,7 +83,7 @@ const Landing = () => {
   }
 
   return (
-    <Container id="landing-page">
+    <div id="landing-page">
       <Row className="justify-content-center">
         <Col md={4}>
           <Image src="/images/MFCLogo.png" className="w-100" />
@@ -99,7 +99,7 @@ const Landing = () => {
           <Button href="/signin" variant="success">Sign In</Button>{' '}
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 
 };

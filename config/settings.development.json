@@ -24,114 +24,32 @@
     }
   ],
 
-  "defaultEquipments": [
-    {
-      "equipmentName": "Treadmill",
-      "equipmentLocation": "1st Floor",
-      "equipmentTag": "Cardio Lower Body",
-      "equipmentImage": "images/heart.png",
-      "equipmentDescription": "A treadmill is a staple piece of cardio equipment that simulates walking, jogging, or running indoors. It's excellent for improving cardiovascular health and burning calories.",
-      "owner": "admin@foo.com"
-    },
-    {
-      "equipmentName": "Elliptical Machine",
-      "equipmentLocation": "1st Floor",
-      "equipmentTag": "Cardio Full Body",
-      "equipmentImage": "blank",
-      "equipmentDescription": "An elliptical machine provides a low-impact cardiovascular workout while engaging both the upper and lower body.",
-      "owner": "admin@foo.com"
-    },
-    {
-      "equipmentName": "Stationary Bicycle",
-      "equipmentLocation": "1st Floor",
-      "equipmentTag": "Cardio Lower Body",
-      "equipmentImage": "blank",
-      "equipmentDescription": "Stationary bikes offer a seated cardiovascular workout primarily targeting the lower body muscles.",
-      "owner": "admin@foo.com"
-    },
-    {
-      "equipmentName": "Rowing Machine",
-      "equipmentLocation": "1st Floor",
-      "equipmentTag": "Cardio Full Body",
-      "equipmentImage": "blank",
-      "equipmentDescription": "A rowing machine provides a full-body cardiovascular workout while emphasizing the muscles in the back, arms, and legs.",
-      "owner": "admin@foo.com"
-    },
-    {
-      "equipmentName": "Stair Climber",
-      "equipmentLocation": "1st Floor",
-      "equipmentTag": "Cardio Lower Body",
-      "equipmentImage": "blank",
-      "equipmentDescription": "The stair climber simulates climbing stairs and provides an intense lower body workout while also engaging the cardiovascular system.",
-      "owner": "admin@foo.com"
-    },
-    {
-      "equipmentName": "Leg Press Machine",
-      "equipmentLocation": "1st Floor",
-      "equipmentTag": "Strength Lower Body",
-      "equipmentImage": "blank",
-      "equipmentDescription": "The leg press machine targets the muscles of the lower body, including the quadriceps, hamstrings, and glutes.",
-      "owner": "admin@foo.com"
-    },
-    {
-      "equipmentName": "Chest Press Machine",
-      "equipmentLocation": "1st Floor",
-      "equipmentTag": "Strength Upper Body",
-      "equipmentImage": "blank",
-      "equipmentDescription": "The chest press machine is a strength training equipment that primarily targets the muscles of the chest (pectoralis major), shoulders (anterior deltoids), and triceps.",
-      "owner": "admin@foo.com"
-    },
-    {
-      "equipmentName": "Lat Pulldown Machine",
-      "equipmentLocation": "1st Floor",
-      "equipmentTag": "Strength Upper Body",
-      "equipmentImage": "blank",
-      "equipmentDescription": "The lat pulldown machine is designed to strengthen the muscles of the upper back, particularly the latissimus dorsi (lats), as well as the biceps and forearms.",
-      "owner": "admin@foo.com"
-    },
-    {
-      "equipmentName": "Cable Crossover Machine",
-      "equipmentLocation": "1st Floor",
-      "equipmentTag": "Strength Upper Body",
-      "equipmentImage": "blank",
-      "equipmentDescription": "The cable crossover machine is a versatile piece of equipment for targeting various muscles in the upper body, including the chest, shoulders, and arms.",
-      "owner": "admin@foo.com"
-    },
-    {
-      "equipmentName": "Smith Machine",
-      "equipmentLocation": "1st Floor",
-      "equipmentTag": "Strength Full Body",
-      "equipmentImage": "blank",
-      "equipmentDescription": "The Smith machine is a versatile piece of equipment that allows for a wide range of exercises targeting various muscle groups, including chest, shoulders, legs, and more.",
-      "owner": "admin@foo.com"
-    }
-  ],
   "defaultItems": [
     {
       "itemName": "Elliptical Machine",
       "category": "Cardio",
-      "locationFound": "1st Floor",
+      "locationFound": "2nd Floor",
       "image": "images/elliptical.jpeg",
       "description": "An elliptical machine provides a low-impact cardiovascular workout while engaging both the upper and lower body."
     },
     {
       "itemName": "Stationary Bicycle",
       "category": "Cardio",
-      "locationFound": "1st Floor",
+      "locationFound": "2nd Floor",
       "image": "images/stationbike.jpeg",
       "description": "Stationary bikes offer a seated cardiovascular workout primarily targeting the lower body muscles."
     },
     {
       "itemName": "Rowing Machine",
       "category": "Cardio",
-      "locationFound": "1st Floor",
+      "locationFound": "2nd Floor",
       "image": "images/rowing.jpeg",
       "description": "A rowing machine provides a full-body cardiovascular workout while emphasizing the muscles in the back, arms, and legs."
     },
     {
       "itemName": "Stair Climber",
       "category": "Cardio",
-      "locationFound": "1st Floor",
+      "locationFound": "2nd Floor",
       "image": "images/stair.jpeg",
       "description": "The stair climber simulates climbing stairs and provides an intense lower body workout while also engaging the cardiovascular system."
     },
@@ -152,14 +70,14 @@
     {
       "itemName": "Lat Pulldown Machine",
       "category": "Strength",
-      "locationFound": "1st Floor",
+      "locationFound": "2nd Floor",
       "image": "images/lat.jpeg",
       "description": "The lat pulldown machine is designed to strengthen the muscles of the upper back, particularly the latissimus dorsi (lats), as well as the biceps and forearms."
     },
     {
       "itemName": "Cable Crossover Machine",
       "category": "Strength",
-      "locationFound": "1st Floor",
+      "locationFound": "2nd Floor",
       "image": "images/cablecross.jpeg",
       "description": "The cable crossover machine is a versatile piece of equipment for targeting various muscles in the upper body, including the chest, shoulders, and arms."
     },
@@ -187,14 +105,14 @@
     {
       "itemName": "Treadmill",
       "category": "Cardio",
-      "locationFound": "1st Floor",
+      "locationFound": "2nd Floor",
       "image": "images/treadmill.jpeg",
       "description": "A treadmill is a cardio machine used for walking, running, or climbing while remaining in the same place."
     },
     {
       "itemName": "Dumbbells",
       "category": "Strength",
-      "locationFound": "1st Floor",
+      "locationFound": "2nd Floor",
       "image": "images/dumbells.jpeg",
       "description": "Dumbbells are free weights used in strength training, typically consisting of a handle with weights attached at each end."
     },
@@ -208,7 +126,7 @@
     {
       "itemName": "Bench Press",
       "category": "Strength",
-      "locationFound": "2nd Floor",
+      "locationFound": "1st Floor",
       "image": "images/bench.jpeg",
       "description": "The bench press is a strength training exercise that works the chest, shoulders, and triceps using a barbell or dumbbells."
     },
@@ -229,14 +147,14 @@
     {
       "itemName": "Stretching Strap",
       "category": "Flexibility",
-      "locationFound": "2nd Floor",
+      "locationFound": "1st Floor",
       "image": "images/stretch.jpeg",
       "description": "A stretching strap is used to assist in stretching exercises, helping to increase flexibility and improve range of motion."
     },
     {
       "itemName": "Pilates Ring",
       "category": "Flexibility",
-      "locationFound": "2nd Floor",
+      "locationFound": "1st Floor",
       "image": "images/pilates.jpeg",
       "description": "A Pilates ring, also known as a magic circle, is a flexible ring used in Pilates exercises to add resistance and improve flexibility and muscle tone."
     },
@@ -250,9 +168,198 @@
     {
       "itemName": "Resistance Bands",
       "category": "Flexibility",
-      "locationFound": "2nd Floor",
+      "locationFound": "1st Floor",
       "image": "images/resistance.jpeg",
       "description": "Resistance bands are elastic bands used for stretching, strengthening, and flexibility exercises to target various muscle groups."
+    },
+    {
+      "itemName": "Kettlebells",
+      "category": "Strength",
+      "locationFound": "2nd Floor",
+      "image": "images/kettle.jpeg",
+      "description": "Kettlebells are cast iron weights with a handle used for ballistic exercises that combine cardiovascular, strength, and flexibility training."
+    },
+    {
+      "itemName": "Battle Ropes",
+      "category": "Cardio",
+      "locationFound": "2nd Floor",
+      "image": "images/rope.jpeg",
+      "description": "Battle ropes are thick, heavy ropes that are anchored and used in high-intensity interval training (HIIT) and other workouts to improve cardiovascular endurance and strength."
+    },
+    {
+      "itemName": "Boxing Punching Bag",
+      "category": "Cardio",
+      "locationFound": "2nd Floor",
+      "image": "images/punch.jpeg",
+      "description": "A boxing punching bag is used for cardiovascular workouts, endurance training, and improving boxing or martial arts techniques."
+    },
+    {
+      "itemName": "Medicine Balls",
+      "category": "Strength",
+      "locationFound": "1st Floor",
+      "image": "images/med.jpeg",
+      "description": "Medicine balls are weighted balls used for strength training, plyometrics, and rehabilitation exercises, improving core strength, coordination, and explosive power."
+    },
+    {
+      "itemName": "TRX Suspension Trainer",
+      "category": "Other",
+      "locationFound": "2nd Floor",
+      "image": "images/trx.jpeg",
+      "description": "The TRX suspension trainer uses gravity and bodyweight exercises to develop strength, balance, flexibility, and core stability."
+    },
+    {
+      "itemName": "Jump Rope",
+      "category": "Cardio",
+      "locationFound": "1st Floor",
+      "image": "images/jump.jpeg",
+      "description": "A jump rope is a simple and effective cardio tool for improving coordination, agility, and cardiovascular health."
+    },
+    {
+      "itemName": "Plyometric Box",
+      "category": "Other",
+      "locationFound": "2nd Floor",
+      "image": "images/plyo.jpeg",
+      "description": "A plyometric box is used for plyometric exercises, such as box jumps and step-ups, to improve power, speed, and explosiveness."
+    },
+    {
+      "itemName": "Sled Push",
+      "category": "Strength",
+      "locationFound": "1st Floor",
+      "image": "images/sled.jpeg",
+      "description": "A sled push is a functional strength training exercise where the user pushes a weighted sled to develop lower body strength, power, and endurance."
+    },
+    {
+      "itemName": "Glider Discs",
+      "category": "Flexibility",
+      "locationFound": "1st Floor",
+      "image": "images/slide.jpeg",
+      "description": "Glider discs are used to perform exercises that engage multiple muscle groups, improve stability, and enhance flexibility, particularly in core and lower body muscles."
+    },
+    {
+      "itemName": "Agility Ladder",
+      "category": "Other",
+      "locationFound": "2nd Floor",
+      "image": "images/lad.jpeg",
+      "description": "An agility ladder is used for footwork drills and agility training, improving coordination, speed, and agility for athletes and fitness enthusiasts."
+    },
+    {
+      "itemName": "Ab Roller Wheel",
+      "category": "Strength",
+      "locationFound": "1st Floor",
+      "image": "images/roll.jpeg",
+      "description": "An ab roller wheel is a compact fitness tool used for core strengthening exercises, targeting the abdominals, obliques, and lower back muscles."
+    },
+    {
+      "itemName": "Resistance Loop Bands",
+      "category": "Flexibility",
+      "locationFound": "1st Floor",
+      "image": "images/loop.jpeg",
+      "description": "Resistance loop bands are small, portable bands used for strength training, rehabilitation, and flexibility exercises to target specific muscle groups."
+    },
+    {
+      "itemName": "Power Tower",
+      "category": "Strength",
+      "locationFound": "2nd Floor",
+      "image": "images/tow.jpeg",
+      "description": "A power tower is a multi-functional piece of equipment for bodyweight exercises like pull-ups, dips, and leg raises, targeting various muscle groups."
+    },
+    {
+      "itemName": "Squat Rack",
+      "category": "Strength",
+      "locationFound": "1st Floor",
+      "image": "images/squat.jpeg",
+      "description": "A squat rack is used for performing squats, bench presses, and other barbell exercises, providing safety and stability during heavy lifting."
+    },
+    {
+      "itemName": "Landmine Attachment",
+      "category": "Other",
+      "locationFound": "2nd Floor",
+      "image": "images/land.jpeg",
+      "description": "A landmine attachment is a versatile tool for performing rotational exercises, presses, and rows, adding variety to strength training workouts."
+    },
+    {
+      "itemName": "Assault Bike",
+      "category": "Cardio",
+      "locationFound": "2nd Floor",
+      "image": "images/bik.jpeg",
+      "description": "An assault bike is a stationary exercise bike with fan blades for resistance, providing a high-intensity cardiovascular workout for both upper and lower body."
+    },
+    {
+      "itemName": "Glute-Ham Developer",
+      "category": "Strength",
+      "locationFound": "1st Floor",
+      "image": "images/glute.jpeg",
+      "description": "A glute-ham developer is used for strengthening the posterior chain muscles, including the glutes, hamstrings, and lower back."
+    },
+    {
+      "itemName": "Agility Cone Set",
+      "category": "Other",
+      "locationFound": "1st Floor",
+      "image": "images/cone.jpeg",
+      "description": "An agility cone set is used for agility drills, speed training, and footwork exercises to improve athletic performance and coordination."
+    },
+    {
+      "itemName": "Leg Extension Machine",
+      "category": "Strength",
+      "locationFound": "1st Floor",
+      "image": "images/leg.jpeg",
+      "description": "The leg extension machine isolates and strengthens the quadriceps muscles through controlled leg extension movements."
+    },
+    {
+      "itemName": "Seated Leg Curl Machine",
+      "category": "Strength",
+      "locationFound": "1st Floor",
+      "image": "images/curl.jpeg",
+      "description": "The seated leg curl machine targets the hamstrings, promoting knee flexion against resistance for strength and muscle development."
+    },
+    {
+      "itemName": "Tricep Rope Attachment",
+      "category": "Other",
+      "locationFound": "2nd Floor",
+      "image": "images/tri.jpeg",
+      "description": "The tricep rope attachment is used for various tricep exercises on cable machines, targeting the muscles of the upper arm."
+    },
+    {
+      "itemName": "Close Grip Row Handle",
+      "category": "Other",
+      "locationFound": "2nd Floor",
+      "image": "images/close.jpeg",
+      "description": "The close grip row handle is designed for rowing exercises, focusing on the back muscles, including the latissimus dorsi and rhomboids."
+    },
+    {
+      "itemName": "V-Bar Attachment",
+      "category": "Other",
+      "locationFound": "2nd Floor",
+      "image": "images/v.jpeg",
+      "description": "The V-bar attachment is commonly used for cable exercises like rows and pulldowns, targeting the back and arm muscles."
+    },
+    {
+      "itemName": "Cable Ankle Strap",
+      "category": "Other",
+      "locationFound": "1st Floor",
+      "image": "images/ankle.jpeg",
+      "description": "The cable ankle strap attaches to cable machines for lower body exercises, such as leg lifts, hip abductions, and kickbacks."
+    },
+    {
+      "itemName": "Basketball",
+      "category": "Sports Equipment",
+      "locationFound": "1st Floor",
+      "image": "images/basket.jpeg",
+      "description": "A basketball for playing basketball games on the court. Suitable for individual practice or team games."
+    },
+    {
+      "itemName": "Soccer Ball",
+      "category": "Sports Equipment",
+      "locationFound": "1st Floor",
+      "image": "images/soccer.jpeg",
+      "description": "A soccer ball for playing soccer matches or practice. Suitable for both indoor and outdoor use."
+    },
+    {
+      "itemName": "Volleyball",
+      "category": "Sports Equipment",
+      "locationFound": "1st Floor",
+      "image": "images/volleyball.jpeg",
+      "description": "A volleyball for playing volleyball games on the court. Suitable for casual games or competitive matches."
     }
   ],
   "defaultWorkouts": [
