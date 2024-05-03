@@ -182,3 +182,41 @@ body .navbar {
   width: 175px;
   height: 175px;
 }
+
+.generator-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.generator-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.generator-header {
+  height: 100px;
+  overflow: hidden;
+}
+
+.generator-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.generator-details {
+  padding: 1rem;
+}
+
+.generator-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.generator-muscle-group,
+.generator-duration,
+.generator-exercise,
+.generator-description {
+  margin-top: 0.5rem;
+}
