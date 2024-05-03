@@ -74,7 +74,7 @@ test('Test the Generator page', async (testController) => {
   await Generator.gotoGeneratorPage(testController);
   await Generator.isDisplayed(testController);
 });
-test('Test the Events page', async (testController) => {
+test('Test the Event page', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await Events.gotoEventsPage(testController);

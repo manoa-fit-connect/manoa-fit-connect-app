@@ -3,12 +3,12 @@ import { Selector } from 'testcafe';
 class EventsPage {
 
   constructor() {
-    this.pageId = '#Events-Page';
+    this.pageId = '#Event-Page';
     this.pageSelector = Selector(this.pageId);
   }
 
   async gotoEventsPage(testController) {
-    await testController.click('#Events-Page');
+    await testController.click('#Event-Page');
   }
 
   async isDisplayed(testController) {

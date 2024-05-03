@@ -69,11 +69,11 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/Events" style={linkStyles} id="Events-Page">
+            <Link to="/Event" style={linkStyles} id="Events-Page">
               <div className="d-flex justify-content-center">
                 <CalendarEventFill className="logo" />
               </div>
-              <h1 className="text-md-center">Events</h1>
+              <h1 className="text-md-center">Event</h1>
               <h5 className="text-md-center">See what events are happening</h5>
             </Link>
           </Col>

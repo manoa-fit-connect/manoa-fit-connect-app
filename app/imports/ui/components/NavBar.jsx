@@ -6,7 +6,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Col, Container, Image, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill, Bell } from 'react-bootstrap-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { events } from '../../api/event/events';
+import { events } from '../../api/event/Event';
 
 const NavBar = () => {
   const { currentUser, upcomingEvents } = useTracker(() => ({

@@ -27,6 +27,6 @@ class EventsCollection {
 
 /**
  * The singleton instance of the EquipmentItemsCollection.
- * @type {EquipmentItemsCollection}
+ * @type {EventsCollection}
  */
-export const events = new EventsCollection();
+export const Events = new EventsCollection();

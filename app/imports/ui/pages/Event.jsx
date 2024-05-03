@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import { Clock } from 'react-bootstrap-icons';
 import { Image } from 'react-bootstrap';
+import AddEvent from './AddEvent';
 
 const Event = () => {
   // Mock data for workout events
@@ -12,22 +12,6 @@ const Event = () => {
     { date: '2024-04-15', title: 'Workout Event 2' },
     { date: '2024-04-20', title: 'Workout Event 3' },
   ]);
-
-  // State to manage new event form
-  const [newEvent, setNewEvent] = useState({ date: '', title: '' });
-
-  // Function to handle changes in the form inputs
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setNewEvent({ ...newEvent, [name]: value });
-  };
-
-  // Function to add a new event
-  const addEvent = () => {
-    setEvents([...events, newEvent]);
-    setNewEvent({ date: '', title: '' }); // Reset form inputs
-  };
-
   // Function to remove an event
   const removeEvent = (index) => {
     const updatedEvents = [...events];
@@ -73,22 +57,7 @@ const Event = () => {
         </Card.Body>
       </Card>
       <br />
-      <Card>
-        <Card.Body>
-          <Card.Title>Workout Events</Card.Title>
-          <Form>
-            <Form.Group controlId="formDate">
-              <Form.Label>Date</Form.Label>
-              <Form.Control type="date" name="date" value={newEvent.date} onChange={handleInputChange} />
-            </Form.Group>
-            <Form.Group controlId="formTitle">
-              <Form.Label>Title</Form.Label>
-              <Form.Control type="text" name="title" value={newEvent.title} onChange={handleInputChange} />
-            </Form.Group>
-            <Button variant="primary" onClick={addEvent}>Add Event</Button>
-          </Form>
-        </Card.Body>
-      </Card>
+      <AddEvent />
     </div>
   );
 };
