@@ -17,7 +17,21 @@ const AboutUs = () => (
         <Image src="images/victoria.png" className="pfp" />
       </Col>
       <Col md={5}>
-        <p className="pfpText">I am currently a Junior at UH Manoa, studying Computer Science. I have worked on independent projects but this is my first time working with a team to develop a website or application. I am looking forward to applying the skills I have learned in team setting to make a functional and user friendly application.</p>
+        <p className="pfpText">As a Junior at UH Manoa studying for a BS in Computer Science, I've had the opportunity to work on various projects, but none quite like this website development endeavor.
+          Being in charge of creating the equipment and workout pages was both challenging and rewarding.
+          It allowed me to dive into the design process, ensuring that users could easily access and understand our fitness resources.
+
+          {/* eslint-disable-next-line max-len */}
+          Alongside this, contributing to the user guide, initial calendar, and website style has been a valuable learning experience. Despite not having prior experience in designing websites with a team, I found immense enjoyment in the collaborative process.
+          It was gratifying to see our ideas come to life and witness the project evolve from concept to completion.
+
+          {/* eslint-disable-next-line max-len,react/no-unescaped-entities */}
+          As I reflect on my role in this project, I've come to appreciate the importance of teamwork and effective communication. Each step of the design process presented its own set of challenges, but overcoming them together only strengthened our project and our bonds as a team.
+
+          While my journey as a student will soon reach its culmination with graduation in Fall 2024, I'm proud of the skills I've developed and the contributions I've made to this project.
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          Looking back, I can confidently say that I've enjoyed every moment of the design process and am eager to apply what I've learned to future endeavors.
+        </p>
       </Col>
     </Row>
     <Row className="mb-5">
