@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row, Card } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { CalendarEventFill, GraphUp, PeopleFill, PersonFill } from 'react-bootstrap-icons';
@@ -90,13 +90,44 @@ const Landing = () => {
         </Col>
         <Col md={4}>
           <br /> <br />
-          <p className="pfpText">We are Manoa Fit Connect, a program intended to help students find partners to
-            go to the gym together.
-            Our goal is to reduce any hesitation for people to go to the gym, and make it fun. (if you guys want to
-            change this go ahead)
-          </p>
+          <h3 className="pfpText">We are Manoa Fit Connect, a program intended to help students find partners to go to the gym together. Our goal is to reduce any hesitation for people to go to the gym and make it fun. (if you guys want to change this go ahead)</h3>
           <Button href="/about" variant="success">About Us</Button>{' '}
           <Button href="/signin" variant="success">Sign In</Button>{' '}
+        </Col>
+      </Row>
+      <Row className="justify-content-center mt-4">
+        <Col sm={3}>
+          <Card>
+            <Card.Img variant="top" src="/images/warriorrec.jpeg" />
+            <Card.Body>
+              <Card.Title className="text-center">Warrior Image</Card.Title>
+              <Card.Text className="text-center">
+                This is a warrior image card.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col sm={3}>
+          <Card>
+            <Card.Img variant="top" src="/images/warriorrec.jpeg" />
+            <Card.Body>
+              <Card.Title className="text-center">Warrior Image</Card.Title>
+              <Card.Text className="text-center">
+                This is a warrior image card.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col sm={3}>
+          <Card>
+            <Card.Img variant="top" src="/images/warriorrec.jpeg" />
+            <Card.Body>
+              <Card.Title className="text-center">Warrior Image</Card.Title>
+              <Card.Text className="text-center">
+                This is a warrior image card.
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </div>
