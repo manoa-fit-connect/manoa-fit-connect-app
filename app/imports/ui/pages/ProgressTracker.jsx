@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row, Table } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import Button from 'react-bootstrap/Button';
+import { _ } from 'meteor/underscore';
 import PersonalRecords from '../components/PersonalRecords';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Workout from '../components/Workout';
