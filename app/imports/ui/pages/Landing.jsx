@@ -36,7 +36,7 @@ const Landing = () => {
                 <Image size={125} className="logo py-4" src="\images\dumbbell_logo.png" />
               </div>
               <h1 className="text-md-center">Equipment</h1>
-              <h5 className="text-md-center">See what equipment is available in the gym</h5>
+              <h5 className="text-md-center">See what equipment is available in the gym and get tips on how to use them</h5>
             </Link>
           </Col>
           <Col>
@@ -64,8 +64,8 @@ const Landing = () => {
               <div className="d-flex justify-content-center">
                 <Image className="logo" src="\images\heart.png" />
               </div>
-              <h1 className="text-md-center">Workout Generator</h1>
-              <h5 className="text-md-center">Track and update what your favorite workout is</h5>
+              <h1 className="text-md-center">Workouts</h1>
+              <h5 className="text-md-center">Choose from an array of workouts, perfectly organized by category and difficulty with option to randomly select a workout</h5>
             </Link>
           </Col>
           <Col>
