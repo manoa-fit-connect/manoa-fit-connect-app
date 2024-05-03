@@ -98,33 +98,30 @@ const Landing = () => {
       <Row className="justify-content-center mt-4">
         <Col sm={3}>
           <Card>
-            <Card.Img variant="top" src="/images/warriorrec.jpeg" />
+            <Card.Img className="landing-image" variant="top" src="/images/landing1.png" />
             <Card.Body>
-              <Card.Title className="text-center">Warrior Image</Card.Title>
               <Card.Text className="text-center">
-                This is a warrior image card.
+                Our goal is to encourage health and wellness by offering unique workout routines that build memorable experiences, shared goals, and foster the spirit of community.
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
         <Col sm={3}>
           <Card>
-            <Card.Img variant="top" src="/images/warriorrec.jpeg" />
+            <Card.Img className="landing-image" variant="top" src="/images/landing4.png" />
             <Card.Body>
-              <Card.Title className="text-center">Warrior Image</Card.Title>
               <Card.Text className="text-center">
-                This is a warrior image card.
+                We are reinventing the fitness experience, our aim is to engage people within our community, using our Warrior Recreation Center by creating an atmosphere of understanding.
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
         <Col sm={3}>
           <Card>
-            <Card.Img variant="top" src="/images/warriorrec.jpeg" />
+            <Card.Img className="landing-image" variant="top" src="/images/landing2.png" />
             <Card.Body>
-              <Card.Title className="text-center">Warrior Image</Card.Title>
               <Card.Text className="text-center">
-                This is a warrior image card.
+                Let us accompany every member in their journey towards improved health and fitness, providing guidance and motivation in a supportive, community-based experience.
               </Card.Text>
             </Card.Body>
           </Card>
