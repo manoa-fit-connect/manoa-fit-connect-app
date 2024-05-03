@@ -90,7 +90,7 @@ const Landing = () => {
         </Col>
         <Col md={4}>
           <br /> <br />
-          <h3 className="pfpText">We are Manoa Fit Connect, a program intended to help students find partners to go to the gym together. Our goal is to reduce any hesitation for people to go to the gym and make it fun. (if you guys want to change this go ahead)</h3>
+          <h3 className="pfpText">We are Manoa Fit Connect, a program intended to help students find partners to go to the gym together. Our goal is to reduce any hesitation for people to go to the gym and make it fun. </h3>
           <Button href="/about" variant="success">About Us</Button>{' '}
           <Button href="/signin" variant="success">Sign In</Button>{' '}
         </Col>
