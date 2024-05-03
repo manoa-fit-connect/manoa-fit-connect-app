@@ -60,7 +60,7 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/generator" style={linkStyles} id="Generator-Page">
+            <Link to="/listGenerator" style={linkStyles} id="ListGenerator-Page">
               <div className="d-flex justify-content-center">
                 <Image className="logo" src="\images\heart.png" />
               </div>

@@ -13,6 +13,18 @@
 
   "defaultProfiles": [
     {
+      "firstName": "John",
+      "lastName": "Doe",
+      "image": "https://raw.githubusercontent.com/manoa-fit-connect/manoa-fit-connect.github.io/main/images/placeholder.png",
+      "status": "Undergraduate Student",
+      "level": "Intermediate",
+      "goals": "Strength",
+      "styles": "Powerlifting",
+      "owner": "john@foo.com"
+    }
+  ],
+  "defaultGenerator": [
+    {
       "name": "Treadmill Intervals",
       "category": "Cardio",
       "image": "images/level2.png",
