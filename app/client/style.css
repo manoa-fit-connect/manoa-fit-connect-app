@@ -59,7 +59,8 @@ body .navbar {
   text-shadow: 0 0 5px black; /* Add a black shadow behind the text */
 }
 .bg-dark a.dropdown-item {
-  color: var(--matr-navbar-bg);
+/*  I found this really difficult to read in -Brandon
+ color: var(--matr-navbar-bg); */
   font-family: 'Trirong', serif;
 }
 

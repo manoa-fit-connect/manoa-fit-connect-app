@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Clock } from 'react-bootstrap-icons';
+import { Image } from 'react-bootstrap';
 
 const Event = () => {
   // Mock data for workout events
@@ -50,21 +52,24 @@ const Event = () => {
     <div key={index} className="event-box">
       <div className="event-date">{event.date}</div>
       <div className="event-title">{event.title}</div>
-      <Button variant="outline-danger" size="sm" className="mt-2" onClick={() => removeEvent(index)}>Remove</Button>
+      <Button variant="outline-danger" size="sm" className="md-2" onClick={() => removeEvent(index)}>Remove</Button>
     </div>
   ));
 
   return (
     <div className="container mt-4">
       <Card>
-        <Card.Body>
-          <Card.Title>Upcoming Events</Card.Title>
-          <h1>{months[displayMonthIndex]}</h1>
-          <Button onClick={prevMonth} className="me-1">Previous</Button>
-          <Button onClick={nextMonth}>Next</Button>
-          <div className="event-container">
-            {renderEventBoxes()}
+        <Card.Body style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div>
+            <Card.Title>Upcoming Events<Clock /></Card.Title>
+            <h1>{months[displayMonthIndex]}</h1>
+            <Button onClick={prevMonth} className="me-1">Previous</Button>
+            <Button onClick={nextMonth}>Next</Button>
+            <div className="event-container">
+              {renderEventBoxes()}
+            </div>
           </div>
+          <Image src="images/dumbells.jpeg" />
         </Card.Body>
       </Card>
       <br />

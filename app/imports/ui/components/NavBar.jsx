@@ -4,12 +4,14 @@ import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import { Col, Container, Image, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap';
-import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { BoxArrowRight, PersonFill, PersonPlusFill, Bell } from 'react-bootstrap-icons';
+import Dropdown from 'react-bootstrap/Dropdown';
+import { events } from '../../api/event/events';
 
 const NavBar = () => {
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { currentUser } = useTracker(() => ({
+  const { currentUser, upcomingEvents } = useTracker(() => ({
     currentUser: Meteor.user() ? Meteor.user().username : '',
+    upcomingEvents: events.collection.find({ date: { $gte: new Date() } }).fetch(),
   }), []);
 
   return (
@@ -28,6 +30,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start ms-auto">
+            {/* Navigation links for authenticated users */}
             {currentUser ? ([
               <Nav.Link id="my-profile-nav" as={NavLink} to="/userprofile" key="user-profile" className="me-3">My Profile</Nav.Link>,
               <Nav.Link id="progress-tracker-nav" as={NavLink} to="/progress" key="progress" className="me-3">Progress Tracker</Nav.Link>,
@@ -35,11 +38,27 @@ const NavBar = () => {
               <Nav.Link id="list-equipment-nav" as={NavLink} to="/listEquipment" key="listEquipment" className="me-3">Equipment</Nav.Link>,
               <Nav.Link id="generator-nav" as={NavLink} to="/generator" key="generator" className="me-3">Generator</Nav.Link>,
             ]) : ''}
+            {/* Navigation link for admin */}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Nav.Link id="list-stuff-admin-nav" as={NavLink} to="/admin" key="admin">Admin</Nav.Link>
             ) : ''}
           </Nav>
           <Nav className="justify-content-end">
+            {/* Bell dropdown for upcoming events */}
+            <Dropdown>
+              <Dropdown.Toggle>
+                <Bell />
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item className="py-0" href="/events">Upcoming Events!</Dropdown.Item>
+                <hr />
+                {/* Display upcoming events */}
+                {upcomingEvents.map(event => (
+                  <Dropdown.Item key={event._id} href={`/events/${event._id}`}>{event.eventName}</Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
+            {/* Login dropdown */}
             {currentUser === '' ? (
               <NavDropdown id="login-dropdown" title="Login">
                 <NavDropdown.Item id="login-dropdown-sign-in" as={NavLink} to="/signin">
