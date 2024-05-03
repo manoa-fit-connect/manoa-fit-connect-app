@@ -30,18 +30,6 @@ const formSchema = new SimpleSchema(
       allowedValues: ['Weight Lifting', 'Powerlifting', 'Olympic Weightlifting', 'Bodybuilding', 'Calisthenics', 'Plyometrics', 'Aerobic Exercise', 'HIIT', 'Circuit Training', 'Sports'],
     },
   },
-  {
-    clean: {
-      autoConvert: true,
-      extendAutoValueContext: {},
-      filter: false,
-      getAutoValues: true,
-      removeEmptyStrings: true,
-      removeNullsFromArrays: true,
-      trimStrings: true,
-    },
-    humanizeAutoLabels: true,
-  },
 );
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -50,7 +38,7 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 const ProfileCreate = () => {
 
   // On submit, insert the data.
-  const submit = (data, formRef) => {
+  const submit = (data) => {
     const { firstName, lastName, image, status, level, goals, styles } = data;
     const owner = Meteor.user().username;
     Profiles.collection.insert(
@@ -59,8 +47,11 @@ const ProfileCreate = () => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Profile Created', 'success');
-          formRef.reset();
+          swal('Success', 'Profile Created', 'success').then((value) => {
+            if (value) {
+              window.location.href = '/userprofile';
+            }
+          });
         }
       },
     );
