@@ -63,9 +63,11 @@ const ListGenerator = () => {
             <Card bg="light" className="mb-4">
               <Card.Body>
                 <Card.Text>
-                  <strong>Welcome to the Workout Generator!</strong> This tool helps you create personalized workout routines based on your preferences.
-                  You can generate a random workout or add your custom exercises.
-                  Your favorite workouts are also saved here for easy access!
+                  <strong>Welcome to the Workout Generator!</strong>
+                  <p> Explore exercises ranked 1-5 by difficulty.
+                    Filter by category or select a random workout. If you filter by category, only random workouts from that category will be generated.
+                    Get ready to sweat and challenge yourself!
+                  </p>
                 </Card.Text>
               </Card.Body>
             </Card>
