@@ -8,7 +8,7 @@ class GeneratorPage {
   }
 
   async gotoGeneratorPage(testController) {
-    await testController.click('#Generator-Page');
+    await testController.click('#generator-nav');
   }
 
   async isDisplayed(testController) {

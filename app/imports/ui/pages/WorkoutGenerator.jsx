@@ -499,7 +499,7 @@ const WorkoutGenerator = () => {
   };
 
   return (
-    <div>
+    <div id="Generator-Page">
       <div
         className="mt-3"
         style={{

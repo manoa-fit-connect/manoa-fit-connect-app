@@ -56,7 +56,7 @@ const ListGenerator = () => {
 
   return (
     ready ? (
-      <Container className="py-3" id="Generator-Page">
+      <Container className="py-3" id="ListGenerator-Page">
 
         <Row className="justify-content-center">
           <Col xs={12} md={9} className="text-center">

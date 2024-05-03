@@ -8,7 +8,7 @@ class ListGeneratorPage {
   }
 
   async gotoEquipmentPage(testController) {
-    await testController.click('#ListGenerator-Page');
+    await testController.click('#list-generator-nav');
   }
 
   async isDisplayed(testController) {
