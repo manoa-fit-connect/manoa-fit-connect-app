@@ -7,7 +7,7 @@ class ListGeneratorPage {
     this.pageSelector = Selector(this.pageId);
   }
 
-  async gotoEquipmentPage(testController) {
+  async gotoListGeneratorPage(testController) {
     await testController.click('#ListGenerator-Page');
   }
 

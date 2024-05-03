@@ -26,7 +26,6 @@ import AddPRS from '../pages/AddPRS';
 import EditPRS from '../pages/EditPRS';
 import ListEquipment from '../pages/ListEquipment';
 import AddStuff from '../pages/AddStuff';
-import WorkoutGenerator from '../pages/WorkoutGenerator';
 import EditWorkout from '../pages/EditWorkout';
 import ListGenerator from '../pages/ListGenerator';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -61,7 +60,6 @@ const App = () => {
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
-          <Route path="/generator" element={<ProtectedRoute><WorkoutGenerator /></ProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/about" element={<ProtectedRoute><AboutUs /></ProtectedRoute>} />
