@@ -93,7 +93,7 @@ const Landing = () => {
           <p className="pfpText">We are Manoa Fit Connect, a program intended to help students find partners to
             go to the gym together. Our goal is to reduce any hesitation for people to go to the gym and make it fun. Please join our program if you are interested!
           </p>
-          <Button href="/about" variant="success">About Us</Button>{' '}
+          <Button href="/about" variant="success" id="AboutUS-Page">About Us</Button>{' '}
           <Button href="/signin" variant="success">Sign In</Button>{' '}
         </Col>
       </Row>
