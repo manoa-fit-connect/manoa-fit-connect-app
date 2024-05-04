@@ -57,23 +57,25 @@ const NavBar = () => {
           </Nav>
           <Nav className="justify-content-end">
             {/* Bell dropdown for upcoming events */}
-            <Dropdown>
-              <Dropdown.Toggle>
-                <Bell /> {upcomingEvents.length}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item className="py-0" href="/event">See All Events</Dropdown.Item>
-                <hr />
-                {/* Display upcoming events */}
-                {upcomingEvents.length > 0 ? (
-                  upcomingEvents.map(event => (
-                    <Dropdown.Item key={event._id} href="event">{event.eventName}</Dropdown.Item>
-                  ))
-                ) : (
-                  <Dropdown.Item>No upcoming events for this month {currentMonth}</Dropdown.Item>
-                )}
-              </Dropdown.Menu>
-            </Dropdown>
+            {currentUser ? ([
+              <Dropdown>
+                <Dropdown.Toggle>
+                  <Bell /> {upcomingEvents.length}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item className="py-0" href="/event">See All Events</Dropdown.Item>
+                  <hr />
+                  {/* Display upcoming events */}
+                  {upcomingEvents.length > 0 ? (
+                    upcomingEvents.map(event => (
+                      <Dropdown.Item key={event._id} href="event">{event.eventName}</Dropdown.Item>
+                    ))
+                  ) : (
+                    <Dropdown.Item>No upcoming events for this month {currentMonth}</Dropdown.Item>
+                  )}
+                </Dropdown.Menu>
+              </Dropdown>,
+            ]) : ''}
             {/* Login dropdown */}
             {currentUser === '' ? (
               <NavDropdown id="login-dropdown" title="Login">
