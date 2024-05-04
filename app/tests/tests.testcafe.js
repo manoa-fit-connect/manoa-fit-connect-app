@@ -8,6 +8,7 @@ import { Equipment } from './Equipement.page';
 import { Profiles } from './Profile.page';
 import { Events } from './Events.page';
 import { ListGenerator } from './ListGenerator.page';
+import { About } from './AboutUs.page';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
@@ -18,6 +19,10 @@ fixture('meteor-application-template-react localhost test with default db')
 
 test('Test that landing page shows up', async (testController) => {
   await landingPage.isDisplayed(testController);
+});
+test('Test that About US shows up', async (testController) => {
+  await About.gotoAboutUSPage(testController);
+  await About.isDisplayed(testController);
 });
 
 test('Test that signin and signout work', async (testController) => {
