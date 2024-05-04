@@ -73,7 +73,7 @@ test('Test the ListGenerator page', async (testController) => {
   await ListGenerator.gotoListGeneratorPage(testController);
   await ListGenerator.isDisplayed(testController);
 });
-test('Test the EventItem page', async (testController) => {
+test('Test the Event page', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await Events.gotoEventsPage(testController);
