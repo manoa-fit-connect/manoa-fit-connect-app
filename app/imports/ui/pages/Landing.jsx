@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row, Card } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { CalendarEventFill, GraphUp, PeopleFill, PersonFill } from 'react-bootstrap-icons';
@@ -36,7 +36,7 @@ const Landing = () => {
                 <Image size={125} className="logo py-4" src="\images\dumbbell_logo.png" />
               </div>
               <h1 className="text-md-center">Equipment</h1>
-              <h5 className="text-md-center">See what equipment is available in the gym</h5>
+              <h5 className="text-md-center">See what equipment is available in the gym and get tips on how to use them</h5>
             </Link>
           </Col>
           <Col>
@@ -60,12 +60,12 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/generator" style={linkStyles} id="Generator-Page">
+            <Link to="/listGenerator" style={linkStyles} id="ListGenerator-Page">
               <div className="d-flex justify-content-center">
                 <Image className="logo" src="\images\heart.png" />
               </div>
-              <h1 className="text-md-center">Workout Generator</h1>
-              <h5 className="text-md-center">Track and update what your favorite workout is</h5>
+              <h1 className="text-md-center">Workouts</h1>
+              <h5 className="text-md-center">Choose from an array of workouts, perfectly organized by category and difficulty with option to randomly select a workout</h5>
             </Link>
           </Col>
           <Col>
@@ -95,6 +95,38 @@ const Landing = () => {
           </p>
           <Button href="/about" variant="success">About Us</Button>{' '}
           <Button href="/signin" variant="success">Sign In</Button>{' '}
+        </Col>
+      </Row>
+      <Row className="justify-content-center mt-4">
+        <Col sm={3}>
+          <Card>
+            <Card.Img className="landing-image" variant="top" src="/images/landing1.png" />
+            <Card.Body>
+              <Card.Text className="text-center">
+                Our goal is to encourage health and wellness by offering unique workout routines that build memorable experiences, shared goals, and foster the spirit of community.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col sm={3}>
+          <Card>
+            <Card.Img className="landing-image" variant="top" src="/images/landing4.png" />
+            <Card.Body>
+              <Card.Text className="text-center">
+                We are reinventing the fitness experience, our aim is to engage people within our community, using our Warrior Recreation Center by creating an atmosphere of understanding.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col sm={3}>
+          <Card>
+            <Card.Img className="landing-image" variant="top" src="/images/landing2.png" />
+            <Card.Body>
+              <Card.Text className="text-center">
+                Let us accompany every member in their journey towards improved health and fitness, providing guidance and motivation in a supportive, community-based experience.
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
     </div>

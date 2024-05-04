@@ -6,9 +6,8 @@ import { Progress } from './Progress.page';
 import { Friends } from './Friends.page';
 import { Equipment } from './Equipement.page';
 import { Profiles } from './Profile.page';
-import { Generator } from './Generator.page';
 import { Events } from './Events.page';
-
+import { ListGenerator } from './ListGenerator.page';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
@@ -68,11 +67,11 @@ test('Test the Progress Tracker page', async (testController) => {
   await Progress.gotoEditWorkoutPage(testController);
   await Progress.hasCard(testController);
 });
-test('Test the Generator page', async (testController) => {
+test('Test the ListGenerator page', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
-  await Generator.gotoGeneratorPage(testController);
-  await Generator.isDisplayed(testController);
+  await ListGenerator.gotoListGeneratorPage(testController);
+  await ListGenerator.isDisplayed(testController);
 });
 test('Test the EventItem page', async (testController) => {
   await navBar.gotoSignInPage(testController);

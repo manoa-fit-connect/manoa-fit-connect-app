@@ -4,7 +4,7 @@ import { Profiles } from '../../api/profile/Profiles';
 import { PRS } from '../../api/PRS/prs';
 import { EquipmentItems } from '../../api/item/EquipmentItems';
 import { Workouts } from '../../api/Workouts/Workout';
-import { Events } from '../../api/event/Event';
+import { GeneratorItems } from '../../api/generator/GeneratorItems';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
@@ -70,5 +70,17 @@ if (Workouts.collection.find().count() === 0) {
   if (Meteor.settings.defaultWorkouts) {
     console.log('Creating default workouts.');
     Meteor.settings.defaultWorkouts.forEach(workout => addWorkouts(workout));
+  }
+}
+
+const addGeneratorItem = (generator) => {
+  console.log(` Adding: ${generator.name} `);
+  GeneratorItems.collection.insert(generator);
+};
+
+if (GeneratorItems.collection.find().count() === 0) {
+  if (Meteor.settings.defaultGenerator) {
+    console.log('Creating default workout.');
+    Meteor.settings.defaultGenerator.forEach(generatorfound => addGeneratorItem(generatorfound));
   }
 }

@@ -48,7 +48,7 @@ const NavBar = () => {
               <Nav.Link id="progress-tracker-nav" as={NavLink} to="/progress" key="progress" className="me-3">Progress Tracker</Nav.Link>,
               <Nav.Link id="friends-nav" as={NavLink} to="/friends" key="friends" className="me-3">Friends</Nav.Link>,
               <Nav.Link id="list-equipment-nav" as={NavLink} to="/listEquipment" key="listEquipment" className="me-3">Equipment</Nav.Link>,
-              <Nav.Link id="generator-nav" as={NavLink} to="/generator" key="generator" className="me-3">Generator</Nav.Link>,
+              <Nav.Link id="list-generator-nav" as={NavLink} to="/listGenerator" key="listGenerator" className="me-3">Workouts</Nav.Link>,
             ]) : ''}
             {/* Navigation link for admin */}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
