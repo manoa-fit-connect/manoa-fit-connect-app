@@ -43,8 +43,8 @@ const Event = () => {
 
   return (
     ready ? (
-      <div>
-        <Card className="py-3 mx-5 ">
+      <div id="Event-Page">
+        <Card className="py-3 mx-5">
           <CardBody>
             <h1> {monthList[selectedMonth]} {currentYear}</h1>
             <Button onClick={handlePrevMonth}>{'<'}</Button> <Button onClick={handleNextMonth}>{'>'}</Button>
