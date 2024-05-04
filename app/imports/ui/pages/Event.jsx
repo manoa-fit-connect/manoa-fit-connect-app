@@ -60,36 +60,6 @@ const Event = () => {
         <AddEvent />
       </div>
     ) : null
-    <div className="container mt-4" id="Events-Page">
-      <Card>
-        <Card.Body>
-          <Card.Title>Upcoming Events</Card.Title>
-          <h1>{months[displayMonthIndex]}</h1>
-          <Button onClick={prevMonth} className="me-1">Previous</Button>
-          <Button onClick={nextMonth}>Next</Button>
-          <div className="event-container">
-            {renderEventBoxes()}
-          </div>
-        </Card.Body>
-      </Card>
-      <br />
-      <Card>
-        <Card.Body>
-          <Card.Title>Workout Events</Card.Title>
-          <Form>
-            <Form.Group controlId="formDate">
-              <Form.Label>Date</Form.Label>
-              <Form.Control type="date" name="date" value={newEvent.date} onChange={handleInputChange} />
-            </Form.Group>
-            <Form.Group controlId="formTitle">
-              <Form.Label>Title</Form.Label>
-              <Form.Control type="text" name="title" value={newEvent.title} onChange={handleInputChange} />
-            </Form.Group>
-            <Button variant="primary" onClick={addEvent}>Add Event</Button>
-          </Form>
-        </Card.Body>
-      </Card>
-    </div>
   );
 
 };
