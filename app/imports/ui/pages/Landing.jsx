@@ -69,11 +69,11 @@ const Landing = () => {
             </Link>
           </Col>
           <Col>
-            <Link to="/Event" style={linkStyles} id="Events-Page">
+            <Link to="/event" style={linkStyles} id="Events-Page">
               <div className="d-flex justify-content-center">
                 <CalendarEventFill className="logo" />
               </div>
-              <h1 className="text-md-center">Event</h1>
+              <h1 className="text-md-center">Events</h1>
               <h5 className="text-md-center">See what events are happening</h5>
             </Link>
           </Col>
@@ -91,9 +91,7 @@ const Landing = () => {
         <Col md={4}>
           <br /> <br />
           <p className="pfpText">We are Manoa Fit Connect, a program intended to help students find partners to
-            go to the gym together.
-            Our goal is to reduce any hesitation for people to go to the gym, and make it fun. (if you guys want to
-            change this go ahead)
+            go to the gym together. Our goal is to reduce any hesitation for people to go to the gym and make it fun. Please join our program if you are interested!
           </p>
           <Button href="/about" variant="success">About Us</Button>{' '}
           <Button href="/signin" variant="success">Sign In</Button>{' '}

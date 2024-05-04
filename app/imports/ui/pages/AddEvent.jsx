@@ -12,6 +12,7 @@ const formSchema = new SimpleSchema({
   eventName: String,
   image: String,
   date: Date,
+  time: String,
   description: String,
   locationFound: String,
 });
@@ -20,19 +21,18 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 
 /* Renders the AddStuff page for adding a document. */
 const AddEvent = () => {
-
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { eventName, image, description, date, locationFound } = data;
+    const { eventName, image, description, date, locationFound, time } = data;
     const owner = Meteor.user().username;
     const interest = 0;
     Events.collection.insert(
-      { eventName, image, interest, description, date, owner, locationFound },
+      { eventName, image, interest, description, date, owner, locationFound, time },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Item added successfully', 'success');
+          swal('Success', 'Your event was added successfully', 'success');
           formRef.reset();
         }
       },
@@ -53,6 +53,7 @@ const AddEvent = () => {
                 <DateField name="date" type="date" />
                 <TextField name="image" />
                 <TextField name="locationFound" />
+                <TextField name="time" />
                 <LongTextField name="description" />
                 <SubmitField value="Submit" />
                 <ErrorsField />

@@ -15,6 +15,7 @@ class EventsCollection {
       interest: Number,
       description: String,
       locationFound: String,
+      time: String,
     });
 
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

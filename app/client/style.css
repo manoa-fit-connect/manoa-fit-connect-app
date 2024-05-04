@@ -16,7 +16,7 @@
 body {
   --bs-dark: var(--matr-navbar-bg);
   --bs-dark-rgb: var(--matr-navbar-bg-rgb);
-  background: url('/images/UHBackground.jpg');
+  background: url('images/UHBackground.jpg');
   background-size: 100% auto;
   font-family: 'Trirong', serif;
 }

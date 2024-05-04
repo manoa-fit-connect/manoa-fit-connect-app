@@ -6,13 +6,25 @@ import { Roles } from 'meteor/alanning:roles';
 import { Col, Container, Image, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill, Bell } from 'react-bootstrap-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { events } from '../../api/event/Event';
+import { Events } from '../../api/event/Event';
 
 const NavBar = () => {
-  const { currentUser, upcomingEvents } = useTracker(() => ({
-    currentUser: Meteor.user() ? Meteor.user().username : '',
-    upcomingEvents: events.collection.find({ date: { $gte: new Date() } }).fetch(),
-  }), []);
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1;
+  const { currentUser, upcomingEvents } = useTracker(() => {
+    Meteor.subscribe(Events.userPublicationName);
+    // Fetch all events
+    const allEvents = Events.collection.find().fetch();
+    const eventsThisMonth = allEvents.filter(event => {
+      const eventDate = new Date(event.date);
+      const eventMonth = eventDate.getMonth() + 1;
+      return eventMonth === currentMonth;
+    });
+
+    return { currentUser: Meteor.user() ? Meteor.user().username : '',
+      upcomingEvents: eventsThisMonth,
+    };
+  });
 
   return (
     <Navbar bg="dark" expand="lg">
@@ -47,15 +59,19 @@ const NavBar = () => {
             {/* Bell dropdown for upcoming events */}
             <Dropdown>
               <Dropdown.Toggle>
-                <Bell />
+                <Bell /> {upcomingEvents.length}
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item className="py-0" href="/events">Upcoming Events!</Dropdown.Item>
+                <Dropdown.Item className="py-0" href="/event">See All Events</Dropdown.Item>
                 <hr />
                 {/* Display upcoming events */}
-                {upcomingEvents.map(event => (
-                  <Dropdown.Item key={event._id} href={`/events/${event._id}`}>{event.eventName}</Dropdown.Item>
-                ))}
+                {upcomingEvents.length > 0 ? (
+                  upcomingEvents.map(event => (
+                    <Dropdown.Item key={event._id} href="event">{event.eventName}</Dropdown.Item>
+                  ))
+                ) : (
+                  <Dropdown.Item>No upcoming events for this month {currentMonth}</Dropdown.Item>
+                )}
               </Dropdown.Menu>
             </Dropdown>
             {/* Login dropdown */}

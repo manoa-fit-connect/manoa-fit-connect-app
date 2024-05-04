@@ -1,65 +1,67 @@
 import React, { useState } from 'react';
+import { Meteor } from 'meteor/meteor';
+import { useTracker } from 'meteor/react-meteor-data';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import { Clock } from 'react-bootstrap-icons';
-import { Image } from 'react-bootstrap';
+import { CardBody, Button } from 'react-bootstrap';
+import { Events } from '../../api/event/Event';
+import EventItem from '../components/EventItem';
 import AddEvent from './AddEvent';
 
 const Event = () => {
-  // Mock data for workout events
-  const [events, setEvents] = useState([
-    { date: '2024-04-11', title: 'Workout Event 1' },
-    { date: '2024-04-15', title: 'Workout Event 2' },
-    { date: '2024-04-20', title: 'Workout Event 3' },
-  ]);
-  // Function to remove an event
-  const removeEvent = (index) => {
-    const updatedEvents = [...events];
-    updatedEvents.splice(index, 1);
-    setEvents(updatedEvents);
-  };
-  const months = ['January 2024', 'February 2024', 'March 2024', 'April 2024', 'May 2024', 'June 2024', 'July 2024', 'August 2024', 'September 2024', 'October 2024', 'November 2024', 'December 2024'];
-  const [displayMonthIndex, setDisplayMonthIndex] = useState(new Date().getMonth());
-  const filteredEvents = events.filter(event => new Date(event.date).getMonth() === displayMonthIndex);
+  const currentDate = new Date();
+  const currentMonthIndex = currentDate.getMonth();
+  const currentYear = currentDate.getFullYear();
+  const monthList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-  const prevMonth = () => {
-    const newMonthIndex = (displayMonthIndex - 1 + 12) % 12;
-    setDisplayMonthIndex(newMonthIndex);
+  const [selectedMonth, setSelectedMonth] = useState(currentMonthIndex);
+
+  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const { events, ready } = useTracker(() => {
+    // Get access to Stuff documents.
+    const subscription = Meteor.subscribe(Events.userPublicationName);
+    // Determine if the subscription is ready
+    const rdy = subscription.ready();
+    // Get the Stuff documents
+    const items = Events.collection.find({}).fetch();
+    return {
+      events: items,
+      ready: rdy,
+    };
+  }, []);
+
+  // Function to handle clicking the previous month button
+  const handlePrevMonth = () => {
+    setSelectedMonth(prevMonth => (prevMonth === 0 ? 11 : prevMonth - 1)); // Loop back to December if current month is January
   };
 
-  const nextMonth = () => {
-    const newMonthIndex = (displayMonthIndex + 1 + 12) % 12;
-    setDisplayMonthIndex(newMonthIndex);
+  // Function to handle clicking the next month button
+  const handleNextMonth = () => {
+    setSelectedMonth(prevMonth => (prevMonth === 11 ? 0 : prevMonth + 1)); // Loop back to January if current month is December
   };
 
-  const renderEventBoxes = () => filteredEvents.map((event, index) => (
-    <div key={index} className="event-box">
-      <div className="event-date">{event.date}</div>
-      <div className="event-title">{event.title}</div>
-      <Button variant="outline-danger" size="sm" className="md-2" onClick={() => removeEvent(index)}>Remove</Button>
-    </div>
-  ));
+  const filteredEvents = events.filter(event => new Date(event.date).getMonth() === selectedMonth);
 
   return (
-    <div className="container mt-4">
-      <Card>
-        <Card.Body style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>
-            <Card.Title>Upcoming Events<Clock /></Card.Title>
-            <h1>{months[displayMonthIndex]}</h1>
-            <Button onClick={prevMonth} className="me-1">Previous</Button>
-            <Button onClick={nextMonth}>Next</Button>
-            <div className="event-container">
-              {renderEventBoxes()}
-            </div>
-          </div>
-          <Image src="images/dumbells.jpeg" />
-        </Card.Body>
-      </Card>
-      <br />
-      <AddEvent />
-    </div>
+    ready ? (
+      <div>
+        <Card className="py-3 mx-5 ">
+          <CardBody>
+            <h1> {monthList[selectedMonth]} {currentYear}</h1>
+            <Button onClick={handlePrevMonth}>{'<'}</Button> <Button onClick={handleNextMonth}>{'>'}</Button>
+            <h4>Upcoming Events:</h4>
+            <hr />
+            {filteredEvents.length > 0 ? (
+              filteredEvents.map((event) => <EventItem key={event._id} event={event} />)
+            ) : (
+              <h5>There are no upcoming events this month</h5>
+            )}
+          </CardBody>
+        </Card>
+        <AddEvent />
+      </div>
+    ) : null
   );
+
 };
 
 export default Event;

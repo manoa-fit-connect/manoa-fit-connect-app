@@ -4,6 +4,7 @@ import { Profiles } from '../../api/profile/Profiles';
 import { PRS } from '../../api/PRS/prs';
 import { EquipmentItems } from '../../api/item/EquipmentItems';
 import { Workouts } from '../../api/Workouts/Workout';
+import { Events } from '../../api/event/Event';
 /* eslint-disable no-console */
 
 // Initialize the database with a default data document.
