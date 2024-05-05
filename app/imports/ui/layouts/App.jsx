@@ -28,6 +28,7 @@ import ListEquipment from '../pages/ListEquipment';
 import AddStuff from '../pages/AddStuff';
 import EditWorkout from '../pages/EditWorkout';
 import ListGenerator from '../pages/ListGenerator';
+import WorkoutBuddy from '../pages/WorkoutBuddy';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/signout" element={<SignOut />} />
           <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
           <Route path="/userprofile" element={<ProtectedRoute><ProfileUser /></ProtectedRoute>} />
+          <Route path="/workoutbuddy" element={<ProtectedRoute><WorkoutBuddy /></ProtectedRoute>} />
           <Route path="/createprofile" element={<ProtectedRoute><ProfileCreate /></ProtectedRoute>} />
           <Route path="/editprofile/:_id" element={<ProtectedRoute><ProfileEdit /></ProtectedRoute>} />
           <Route path="/friends" element={<ProtectedRoute><Friends /></ProtectedRoute>} />
