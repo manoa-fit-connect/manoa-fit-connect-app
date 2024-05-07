@@ -1,43 +1,104 @@
-import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { Col, Container, Row } from 'react-bootstrap';
-import { useTracker } from 'meteor/react-meteor-data';
-import LoadingSpinner from '../components/LoadingSpinner';
-import { Profiles } from '../../api/profile/Profiles';
-import Profile from '../components/Profile';
+import React, { useState, useEffect } from 'react';
+import { Col, Container, Row, Button, Pagination } from 'react-bootstrap';
+import User from '../components/User';
 
-/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+const favoriteWorkouts = [
+  'Circuit Training',
+  'Powerlifting',
+  'CrossFit',
+  'Yoga',
+  'Cardio',
+  'Bodybuilding',
+  'Pilates',
+  'Aerobics',
+];
+
+const workoutTimes = [
+  'Morning',
+  'Midday',
+  'Evening',
+  'Late Night',
+];
+
+const fitnessGoals = [
+  'Increase muscle mass',
+  'Improve cardiovascular health',
+  'Weight loss',
+  'Improve flexibility',
+  'Enhance endurance',
+  'Train for a marathon',
+  'General wellness',
+];
+
+// Function to generate a random element from an array
+const getRandomElement = (array) => array[Math.floor(Math.random() * array.length)];
+
+/** Render Users Page */
 const WorkoutBuddy = () => {
-  // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, profiles } = useTracker(() => {
-    // Note that this subscription will get cleaned up
-    // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
-    const subscription = Meteor.subscribe(Profiles.userPublicationName);
-    // Determine if the subscription is ready
-    const rdy = subscription.ready();
-    // Get the Stuff documents
-    const profileItems = Profiles.collection.find({}).fetch();
-    return {
-      profiles: profileItems,
-      ready: rdy,
-    };
-  }, []);
+  const [users, setUsers] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalUsers] = useState(31);
+  const [usersPerPage] = useState(6);
 
-  return (ready ? (
-    <Container className="py-3" id="Profile-Page">
-      <Row className="justify-content-center">
-        <Col>
-          <Col className="text-center">
-            <h2>User Profile</h2>
+  // Generates fake users for testing purposes
+  // TODO: this should be replaced with a call to the database
+  useEffect(() => {
+    fetch(`https://randomuser.me/api/?results=${totalUsers}&inc=name,picture,login&id`)
+      .then(response => response.json())
+      .then(data => {
+        const formattedUsers = data.results.map(user => {
+          const randomWorkoutTimes = [getRandomElement(workoutTimes)];
+          return {
+            _id: user.login.uuid,
+            firstName: user.name.first,
+            lastName: user.name.last,
+            image: user.picture.large,
+            favoriteWorkout: getRandomElement(favoriteWorkouts),
+            workoutTimes: randomWorkoutTimes,
+            fitnessGoals: getRandomElement(fitnessGoals),
+          };
+        });
+        setUsers(formattedUsers);
+      });
+  }, [totalUsers]);
+
+  // Calculate the number of pages
+  const totalPages = Math.ceil(users.length / usersPerPage);
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+
+  // Get current users to be displayed based on pagination
+  const indexOfLastFriend = currentPage * usersPerPage;
+  const indexOfFirstFriend = indexOfLastFriend - usersPerPage;
+  const currentUsers = users.slice(indexOfFirstFriend, indexOfLastFriend);
+
+  // Function to change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  return (
+    <Container className="py-3" id="Users-Page">
+      <Row>
+        {currentUsers.map(friend => (
+          <Col xs={12} md={4} key={friend._id}>
+            <User friend={friend} />
           </Col>
-          <Row xs={1} md={2} lg={3} className="g-4">
-            {profiles.map((profile) => (<Col key={profile._id}><Profile profile={profile} /></Col>))}
-          </Row>
-        </Col>
+        ))}
+      </Row>
+      <Row>
+        <Pagination className="justify-content-center mt-4">
+          {pageNumbers.map(number => (
+            <li key={number} className="page-item">
+              <Button onClick={() => paginate(number)} className="page-link">
+                {number}
+              </Button>
+            </li>
+          ))}
+        </Pagination>
       </Row>
     </Container>
-  ) : <LoadingSpinner />);
+  );
 };
 
 export default WorkoutBuddy;
