@@ -4,17 +4,22 @@ import { Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ProgressTracker.jsx. */
 
-const PersonalRecords = ({ PRS }) => (
-  <tr>
-    <td>{PRS.exercise}</td>
-    <td>{PRS.weight}</td>
-    <td>{PRS.repsOrDist}</td>
-    <td>{PRS.date.toLocaleDateString('en-US', { timeZone: 'GMT', day: 'numeric', month: 'numeric', year: 'numeric' })}</td>
-    <td>
-      <Link to={`/editPR/${PRS._id}`} id="EditPR-Page">Edit</Link>
-    </td>
-  </tr>
-);
+const PersonalRecords = ({ PRS }) => {
+  // Check if date is a Date object, if not, parse it
+  const date = PRS.date instanceof Date ? PRS.date : new Date(PRS.date);
+
+  return (
+    <tr>
+      <td>{PRS.exercise}</td>
+      <td>{PRS.weight}</td>
+      <td>{PRS.repsOrDist}</td>
+      <td>{date.toLocaleDateString('en-US')}</td>
+      <td>
+        <Link to={`/editPR/${PRS._id}`} id="EditPR-Page">Edit</Link>
+      </td>
+    </tr>
+  );
+};
 
 // Require a document to be passed to this component.
 PersonalRecords.propTypes = {
