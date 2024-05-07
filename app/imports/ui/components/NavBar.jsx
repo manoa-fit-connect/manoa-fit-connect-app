@@ -46,6 +46,7 @@ const NavBar = () => {
             {currentUser ? ([
               <Nav.Link id="my-profile-nav" as={NavLink} to="/userprofile" key="user-profile" className="me-3">My Profile</Nav.Link>,
               <Nav.Link id="progress-tracker-nav" as={NavLink} to="/progress" key="progress" className="me-3">Progress Tracker</Nav.Link>,
+              <Nav.Link id="workoutbuddy-nav" as={NavLink} to="/workoutbuddy" key="workoutbuddy" className="me-3">Workout Buddy</Nav.Link>,
               <Nav.Link id="friends-nav" as={NavLink} to="/friends" key="friends" className="me-3">Friends</Nav.Link>,
               <Nav.Link id="list-equipment-nav" as={NavLink} to="/listEquipment" key="listEquipment" className="me-3">Equipment</Nav.Link>,
               <Nav.Link id="list-generator-nav" as={NavLink} to="/listGenerator" key="listGenerator" className="me-3">Workouts</Nav.Link>,
