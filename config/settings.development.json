@@ -21,6 +21,66 @@
       "goals": "Strength",
       "styles": "Powerlifting",
       "owner": "john@foo.com"
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "image": "https://raw.githubusercontent.com/manoa-fit-connect/manoa-fit-connect.github.io/main/images/placeholder.png",
+      "status": "Graduate Student",
+      "level": "Advanced",
+      "goals": "Cardio",
+      "styles": "HIIT",
+      "owner": "jane@foo.com"
+    },
+    {
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "image": "https://raw.githubusercontent.com/manoa-fit-connect/manoa-fit-connect.github.io/main/images/placeholder.png",
+      "status": "Faculty/Staff",
+      "level": "Expert",
+      "goals": "Weight Loss",
+      "styles": "Aerobic Exercise",
+      "owner": "alice@foo.com"
+    },
+    {
+      "firstName": "Bob",
+      "lastName": "Brown",
+      "image": "https://raw.githubusercontent.com/manoa-fit-connect/manoa-fit-connect.github.io/main/images/placeholder.png",
+      "status": "Undergraduate Student",
+      "level": "Novice",
+      "goals": "Exercise",
+      "styles": "Calisthenics",
+      "owner": "bob@foo.com"
+    },
+    {
+      "firstName": "Carol",
+      "lastName": "White",
+      "image": "https://raw.githubusercontent.com/manoa-fit-connect/manoa-fit-connect.github.io/main/images/placeholder.png",
+      "status": "Graduate Student",
+      "level": "Beginner",
+      "goals": "Strength",
+      "styles": "Weight Lifting",
+      "owner": "carol@foo.com"
+    },
+    {
+      "firstName": "Dave",
+      "lastName": "Green",
+      "image": "https://raw.githubusercontent.com/manoa-fit-connect/manoa-fit-connect.github.io/main/images/placeholder.png",
+      "status": "Faculty/Staff",
+      "level": "Advanced",
+      "goals": "Cardio",
+      "styles": "Circuit Training",
+      "owner": "dave@foo.com"
+    },
+    {
+      "firstName": "Eva",
+      "lastName": "Black",
+      "image": "https://raw.githubusercontent.com/manoa-fit-connect/manoa-fit-connect.github.io/main/images/placeholder.png",
+      "status": "Undergraduate Student",
+      "level": "Expert",
+      "goals": "Weight Loss",
+      "styles": "Bodybuilding",
+      "owner": "eva@foo.com"
     }
   ],
   "defaultGenerator": [

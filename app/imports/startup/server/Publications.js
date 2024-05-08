@@ -94,3 +94,12 @@ Meteor.publish(GeneratorItems.userPublicationName, function () {
   }
   return this.ready();
 });
+
+// General user-level publication.
+// If logged in, then publish all profiles. Otherwise, publish nothing.
+Meteor.publish('profiles.all', function () {
+  if (this.userId) { // Checks if the user is logged in
+    return Profiles.collection.find({});
+  }
+  return this.ready(); // If not logged in, don't publish anything.
+});

@@ -1,33 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { Card, Col, Image, Row } from 'react-bootstrap';
 
-/** Renders a single friend in a card format. */
-const Friend = ({ friend }) => (
-  <Card className="h-200 m-1">
-    <Card.Img variant="top" src={friend.image} style={{ width: '100px' }} />
+/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+const Friend = ({ profile }) => (
+  <Card className="h-100">
+    <Card.Header>
+      <Row>
+        <Col>
+          <Image width={100} src={profile.image} />
+        </Col>
+        <Col>
+          <Card.Title>{profile.firstName} {profile.lastName}</Card.Title>
+          <Card.Subtitle>Level: {profile.level}</Card.Subtitle>
+          <Card.Subtitle>Goals: {profile.goals}</Card.Subtitle>
+          <Card.Subtitle>Styles: {profile.styles}</Card.Subtitle>
+        </Col>
+      </Row>
+    </Card.Header>
     <Card.Body>
-      <Card.Title>{friend.firstName} {friend.lastName}</Card.Title>
-      <ListGroup variant="flush">
-        <ListGroup.Item>Favorite Workout: {friend.favoriteWorkout}</ListGroup.Item>
-        <ListGroup.Item>Workout Times: {friend.workoutTimes.join(', ')}</ListGroup.Item>
-        <ListGroup.Item>Fitness Goals: {friend.fitnessGoals}</ListGroup.Item>
-      </ListGroup>
-      <Link to={`/profile/${friend._id}`}>View</Link>
+      <Card.Text>Availability: MTWRF 12-1:30pm</Card.Text>
+      <Card.Text>Routine: Chest, Legs, Shoulders, Back, Arms and Legs</Card.Text>
     </Card.Body>
   </Card>
 );
 
+// Require a document to be passed to this component.
 Friend.propTypes = {
-  friend: PropTypes.shape({
+  profile: PropTypes.shape({
     firstName: PropTypes.string,
     lastName: PropTypes.string,
     image: PropTypes.string,
-    favoriteWorkout: PropTypes.string,
-    workoutTimes: PropTypes.arrayOf(PropTypes.string),
-    fitnessGoals: PropTypes.string,
+    status: PropTypes.string,
+    level: PropTypes.string,
+    goals: PropTypes.string,
+    styles: PropTypes.string,
+    owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
 };
