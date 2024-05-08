@@ -36,7 +36,7 @@ const Friends = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return ready ? (
-    <Container className="py-3" id="Users-Page">
+    <Container className="py-3" id="Friends-Page">
       <Row xs={1} md={2} lg={3} className="g-4">
         {currentProfiles.map((profile, index) => (
           <Col key={index}>
