@@ -25,16 +25,9 @@ const ProfileUser = () => {
   }, []);
 
   return (ready ? (
-    <Container className="py-3" id="Profile-Page">
-      <Row className="justify-content-center">
-        <Col>
-          <Col className="text-center">
-            <h2>User Profile</h2>
-          </Col>
-          <Row xs={1} md={2} lg={3} className="g-4">
-            {profiles.map((profile) => (<Col key={profile._id}><Profile profile={profile} /></Col>))}
-          </Row>
-        </Col>
+    <Container className="py-3 justify-content-center" id="Profile-Page">
+      <Row className="g-4">
+        {profiles.map((profile) => (<Col key={profile._id}><Profile profile={profile} /></Col>))}
       </Row>
     </Container>
   ) : <LoadingSpinner />);

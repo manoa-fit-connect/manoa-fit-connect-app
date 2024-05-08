@@ -1,30 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Card, Col, Image, Row } from 'react-bootstrap';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const Profile = ({ profile }) => (
-  <Card className="h-100">
-    <Card.Header>
+  <div className="h-100 text-dark" style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+
+    <Container className="flex-wrap container-fluid p-3">
       <Row>
-        <Col>
-          <Image width={100} src={profile.image} />
+        <Col sm={4} id="profile-image">
+          <Image fluid width={250} src={profile.image} />
         </Col>
-        <Col>
-          <Card.Title>{profile.firstName} {profile.lastName}</Card.Title>
-          <Card.Subtitle>Level: {profile.level}</Card.Subtitle>
-          <Card.Subtitle>Goals: {profile.goals}</Card.Subtitle>
-          <Card.Subtitle>Styles: {profile.styles}</Card.Subtitle>
+        <Col id="profile-details">
+          <Container>
+            <Row className="h4">{profile.firstName} {profile.lastName}</Row>
+            <Row className="h6">Level: {profile.level}</Row>
+            <Row className="h6">Goal: {profile.goals}</Row>
+            <Row className="h6">Style: {profile.styles}</Row>
+            <Row className="h6">Status: {profile.status}</Row>
+          </Container>
         </Col>
       </Row>
-    </Card.Header>
-    <Card.Body>
-      <Card.Text>Availability: MTWRF 12-1:30pm</Card.Text>
-      <Card.Text>Routine: Chest, Legs, Shoulders, Back, Arms and Legs</Card.Text>
-      <Link to={`/editprofile/${profile._id}`} id="EditProfile-Page">Edit</Link>
-    </Card.Body>
-  </Card>
+    </Container>
+    <Container className="p-3">
+      <Link to={`/editprofile/${profile._id}`} id="EditProfile-Page" className="text-dark">Edit Profile</Link>
+    </Container>
+  </div>
 );
 
 // Require a document to be passed to this component.
