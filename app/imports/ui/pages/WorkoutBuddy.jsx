@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { Container, Row, Col, Pagination } from 'react-bootstrap';
 import { Profiles } from '../../api/profile/Profiles';
 import LoadingSpinner from '../components/LoadingSpinner';
-import Friend from '../components/Friend';
+import User from '../components/User';
 
 const WorkoutBuddy = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,7 +40,7 @@ const WorkoutBuddy = () => {
       <Row xs={1} md={2} lg={3} className="g-4">
         {currentProfiles.map((profile, index) => (
           <Col key={index}>
-            <Friend profile={profile} />
+            <User profile={profile} />
           </Col>
         ))}
       </Row>
