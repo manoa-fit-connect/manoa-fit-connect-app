@@ -10,13 +10,16 @@ const Friends = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 6; // You can adjust this to show more or fewer profiles per page
 
+  // List of friend owners
+  const friendOwners = ['john@foo.com', 'jane@foo.com', 'alice@foo.com'];
+
   const { profiles, ready } = useTracker(() => {
     const subscription = Meteor.subscribe('profiles.all');
     return {
-      profiles: Profiles.collection.find({}).fetch(),
+      profiles: Profiles.collection.find({ owner: { $in: friendOwners } }).fetch(),
       ready: subscription.ready(),
     };
-  }, []);
+  }, [currentPage]);
 
   // Calculate total number of pages needed for pagination
   const totalPages = Math.ceil(profiles.length / usersPerPage);
