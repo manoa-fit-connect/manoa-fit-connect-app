@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Col, Image, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const Friend = ({ profile }) => (
@@ -20,8 +21,11 @@ const Friend = ({ profile }) => (
     </Card.Header>
     <Card.Body>
       <Card.Text>Availability: MTWRF 12-1:30pm</Card.Text>
-      <Card.Text>Routine: Chest, Legs, Shoulders, Back, Arms and Legs</Card.Text>
+      <Card.Text>Routine: {profile.styles}</Card.Text>
     </Card.Body>
+    <Card.Footer>
+      <Link to={`/user/${profile._id}`}>View</Link>
+    </Card.Footer>
   </Card>
 );
 
