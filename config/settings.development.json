@@ -15,7 +15,7 @@
     {
       "firstName": "John",
       "lastName": "Doe",
-      "image": "https://github.com/manoa-fit-connect/manoa-fit-connect.github.io/blob/main/images/profileImage.png",
+      "image": "images/profileImage.png",
       "status": "Undergraduate Student",
       "level": "Intermediate",
       "goals": "Strength",
@@ -25,7 +25,7 @@
     {
       "firstName": "Jane",
       "lastName": "Smith",
-      "image": "https://github.com/manoa-fit-connect/manoa-fit-connect.github.io/blob/main/images/profileImage.png",
+      "image": "images/profileImage.png",
       "status": "Graduate Student",
       "level": "Advanced",
       "goals": "Cardio",
@@ -35,7 +35,7 @@
     {
       "firstName": "Alice",
       "lastName": "Johnson",
-      "image": "https://github.com/manoa-fit-connect/manoa-fit-connect.github.io/blob/main/images/profileImage.png",
+      "image": "images/profileImage.png",
       "status": "Faculty/Staff",
       "level": "Expert",
       "goals": "Weight Loss",
@@ -45,7 +45,7 @@
     {
       "firstName": "Bob",
       "lastName": "Brown",
-      "image": "https://github.com/manoa-fit-connect/manoa-fit-connect.github.io/blob/main/images/profileImage.png",
+      "image": "images/profileImage.png",
       "status": "Undergraduate Student",
       "level": "Novice",
       "goals": "Exercise",
@@ -55,7 +55,7 @@
     {
       "firstName": "Carol",
       "lastName": "White",
-      "image": "https://github.com/manoa-fit-connect/manoa-fit-connect.github.io/blob/main/images/profileImage.png",
+      "image": "images/profileImage.png",
       "status": "Graduate Student",
       "level": "Beginner",
       "goals": "Strength",
@@ -65,7 +65,7 @@
     {
       "firstName": "Dave",
       "lastName": "Green",
-      "image": "https://github.com/manoa-fit-connect/manoa-fit-connect.github.io/blob/main/images/profileImage.png",
+      "image": "images/profileImage.png",
       "status": "Faculty/Staff",
       "level": "Advanced",
       "goals": "Cardio",
@@ -75,7 +75,7 @@
     {
       "firstName": "Eva",
       "lastName": "Black",
-      "image": "https://github.com/manoa-fit-connect/manoa-fit-connect.github.io/blob/main/images/profileImage.png",
+      "image": "images/profileImage.png",
       "status": "Undergraduate Student",
       "level": "Expert",
       "goals": "Weight Loss",
