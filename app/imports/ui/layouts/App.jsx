@@ -29,6 +29,7 @@ import AddStuff from '../pages/AddStuff';
 import EditWorkout from '../pages/EditWorkout';
 import ListGenerator from '../pages/ListGenerator';
 import WorkoutBuddy from '../pages/WorkoutBuddy';
+import User from '../pages/User';
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
   const { ready } = useTracker(() => {
@@ -57,6 +58,7 @@ const App = () => {
           <Route path="/addPR" element={<ProtectedRoute><AddPRS /></ProtectedRoute>} />
           <Route path="/editPR/:_id" element={<ProtectedRoute><EditPRS /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
+          <Route path="/user/:_id" element={<ProtectedRoute><User /></ProtectedRoute>} />
           <Route path="/editWorkout/:_id" element={<ProtectedRoute><EditWorkout /></ProtectedRoute>} />
           <Route path="/event" element={<ProtectedRoute><Event /></ProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
