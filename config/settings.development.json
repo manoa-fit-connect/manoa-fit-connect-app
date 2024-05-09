@@ -25,7 +25,7 @@
     {
       "firstName": "Jane",
       "lastName": "Smith",
-      "image": "images/profileImage.png",
+      "image": "images/jane.png",
       "status": "Graduate Student",
       "level": "Advanced",
       "goals": "Cardio",
@@ -35,7 +35,7 @@
     {
       "firstName": "Alice",
       "lastName": "Johnson",
-      "image": "images/profileImage.png",
+      "image": "images/alice.png",
       "status": "Faculty/Staff",
       "level": "Expert",
       "goals": "Weight Loss",
@@ -45,7 +45,7 @@
     {
       "firstName": "Bob",
       "lastName": "Brown",
-      "image": "images/profileImage.png",
+      "image": "images/bob.png",
       "status": "Undergraduate Student",
       "level": "Novice",
       "goals": "Exercise",
@@ -55,7 +55,7 @@
     {
       "firstName": "Carol",
       "lastName": "White",
-      "image": "images/profileImage.png",
+      "image": "images/carol.png",
       "status": "Graduate Student",
       "level": "Beginner",
       "goals": "Strength",
@@ -65,7 +65,7 @@
     {
       "firstName": "Dave",
       "lastName": "Green",
-      "image": "images/profileImage.png",
+      "image": "images/dave.png",
       "status": "Faculty/Staff",
       "level": "Advanced",
       "goals": "Cardio",
@@ -75,7 +75,7 @@
     {
       "firstName": "Eva",
       "lastName": "Black",
-      "image": "images/profileImage.png",
+      "image": "images/eva.png",
       "status": "Undergraduate Student",
       "level": "Expert",
       "goals": "Weight Loss",
