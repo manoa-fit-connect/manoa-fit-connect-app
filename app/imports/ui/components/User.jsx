@@ -1,31 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Card, Col, Image, Row } from 'react-bootstrap';
+import { Card, Col, Image, Row, Button } from 'react-bootstrap';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const User = ({ profile }) => (
-  <Card className="h-100">
-    <Card.Header>
-      <Row>
-        <Col>
-          <Image width={100} src={profile.image} />
-        </Col>
-        <Col>
-          <Card.Title>{profile.firstName} {profile.lastName}</Card.Title>
-          <Card.Subtitle>Level: {profile.level}</Card.Subtitle>
-          <Card.Subtitle>Goals: {profile.goals}</Card.Subtitle>
-          <Card.Subtitle>Styles: {profile.styles}</Card.Subtitle>
-        </Col>
-      </Row>
-    </Card.Header>
-    <Card.Body>
-      <Card.Text>Availability: MTWRF 12-1:30pm</Card.Text>
-      <Card.Text>Routine: Chest, Legs, Shoulders, Back, Arms and Legs</Card.Text>
-    </Card.Body>
-  </Card>
-);
+const User = ({ profile }) => {
+  const [requestSent, setRequestSent] = useState(false);
 
-// Require a document to be passed to this component.
+  const handleAddFriendClick = () => {
+    setRequestSent(true);
+  };
+
+  return (
+    <Card className="h-100">
+      <Card.Header>
+        <Row>
+          <Col>
+            <Image width={100} src={profile.image} />
+          </Col>
+          <Col>
+            <Card.Title>{profile.firstName} {profile.lastName}</Card.Title>
+            <Card.Subtitle>Level: {profile.level}</Card.Subtitle>
+            <Card.Subtitle>Styles: {profile.styles}</Card.Subtitle>
+          </Col>
+        </Row>
+      </Card.Header>
+      <Card.Body>
+        <Card.Text>Status: {profile.status}</Card.Text>
+        <Card.Text>Goals: {profile.goals}</Card.Text>
+        <Button variant="primary" onClick={handleAddFriendClick} disabled={requestSent}>
+          {requestSent ? 'Request Sent!' : 'Add Friend'}
+        </Button>
+      </Card.Body>
+    </Card>
+  );
+};
+
 User.propTypes = {
   profile: PropTypes.shape({
     firstName: PropTypes.string,
